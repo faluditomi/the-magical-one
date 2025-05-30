@@ -1,0 +1,138 @@
+# Unity-related files
+[Aa]ssets/AssetStoreTools*
+[Bb]uild/
+[Ll]ibrary/
+[Ll]ocal[Cc]ache/
+[Oo]bj/
+[Tt]emp/
+[Uu]nityGenerated/
+
+# file on crash reports
+sysinfo.txt
+
+# Unity3D generated meta files
+*.pidb.meta
+
+# Unity crash reports
+*.stacktrace
+
+# User-specific files
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# macOS specific files
+.DS_Store
+*.AppleDouble
+*.LSOverride
+
+# Windows specific files
+Thumbs.db
+ehthumbs.db
+
+# Linux specific files
+.directory
+
+# Python environment
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.pdb
+*.env
+*.egg
+*.egg-info
+dist/
+build/
+
+# Package distribution
+*.tar.gz
+*.zip
+*.whl
+
+###
+# OS generated
+###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+desktop.ini
+Thumbs.db
+
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+MemoryCaptures/
+[Uu]serSettings/
+
+# VS/JetBrains
+.vscode/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+.idea/
+*.sln.DotSettings
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Crash/Profiler data
+sysinfo.txt
+
+# Unity Addressables
+Assets/AddressableAssetsData/*.bin*
+Assets/AddressableAssetsData/*.linker
+Assets/AddressableAssetsData/*/catalog_*.json
+Assets/AddressableAssetsData/*/settings.json
+Assets/AddressableAssetsData/*/buildlayout.txt
+
+# Build artifacts
+*.apk
+*.aab
+*.xcodeproj
+*.xcworkspace
+*.jar
+*.dex
+*.class
+*.pdb
+*.mdb
+*.exe
+*.dll
+*.app
+
+# Auto-generated spell cache (if applicable)
+Assets/SpellCache/
+
+# Collab (if you're using Unity Collaborate and want to exclude)
+.collabignore
+.collab/
+
+# Unity Cloud Diagnostics
+.crashlytics/
+
+# Other
+*.bak
+*.backup
+*.orig
+*.swp
+*.tmp
