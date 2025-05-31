@@ -9,13 +9,10 @@ public class AIConversant : MonoBehaviour
     public Dialogue dialogue;
     private Dialogue currentDialogue;
     private DialogueNode currentNode;
-    //private PlayerCombat playerCombat;
 
     private Transform dialogueBubblePosition;
 
     private GameObject dialogueBubbleGameObject;
-
-    //private OutlineMaterial outlineMaterial;
 
     private Image dialoguePanelText;
 
@@ -33,18 +30,6 @@ public class AIConversant : MonoBehaviour
         dialogueBubblePosition = GetComponentInChildren<Transform>().Find("DialogueBoxPosition");
 
         dialogueBubbleGameObject = GameObject.Find("DialogueBubble");
-
-        //playerCombat = FindObjectOfType<PlayerCombat>();
-
-        //outlineMaterial = GetComponent<OutlineMaterial>();
-    }
-        
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if(other.CompareTag("Player") && isDialoguing)
-        {
-            StartCoroutine(EarlyQuitDialogue());
-        }
     }
     #endregion
 
@@ -85,6 +70,21 @@ public class AIConversant : MonoBehaviour
         }
     }
     #endregion
+
+    private void OnEnable()
+    {
+        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Hello, StartRunDialogueCoroutine);
+    }
+
+    private void OnDisable()
+    {
+        SpellEventSubscriber.Instance().UnsubscribeFromSpell(SpellWords.Hello, StartRunDialogueCoroutine);
+    }
+
+    public void StartRunDialogueCoroutine(SpellArgs args)
+    {
+        StartCoroutine(RunDialogue());
+    }
 
     #region Coroutines
     public IEnumerator RunDialogue()
@@ -137,8 +137,6 @@ public class AIConversant : MonoBehaviour
 
         currentNode = currentDialogue.GetNodeByIndex(index);
 
-        //PlayerStateController.SetIsInDialogue(true);
-
         isEarlyQuit = false;
 
         StartCoroutine(FadeInBehaviour(GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>()));
@@ -157,14 +155,10 @@ public class AIConversant : MonoBehaviour
             isDialoguing = false;
 
             StartCoroutine(FadeOutImageBehaviour(dialoguePanelText));
-                
-            //outlineMaterial.SetDefaultMaterial();
 
             currentDialogue = null;
 
             currentNode = null;
-
-            //PlayerStateController.SetIsInDialogue(false);
 
             index = 0;
 
@@ -197,14 +191,10 @@ public class AIConversant : MonoBehaviour
         isDialoguing = false;
 
         StartCoroutine(FadeOutImageBehaviour(dialoguePanelText));
-            
-        //outlineMaterial.SetDefaultMaterial();
 
         currentDialogue = null;
 
         currentNode = null;
-
-        //PlayerStateController.SetIsInDialogue(false);
 
         index = 0;
 

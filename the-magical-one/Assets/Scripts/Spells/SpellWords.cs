@@ -4,7 +4,6 @@
 /// </summary>
 public enum SpellWords
 {
-    
-    
-
+    Yep,
+    Hello
 }
