@@ -7,6 +7,7 @@ public class InteractionController : MonoBehaviour
     private Transform levitatePosition;
     private GameObject currentLevitateTarget;
     private GameObject currentDialogueTarget;
+    private ParticleSystem currentHoverParticles;
 
     private void Awake()
     {
@@ -33,7 +34,8 @@ public class InteractionController : MonoBehaviour
         if(hit.collider.CompareTag("Levitateable"))
         {
             currentLevitateTarget = hit.collider.gameObject;
-            currentLevitateTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>().Play();
+            currentHoverParticles = currentLevitateTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>();
+            currentHoverParticles.Play();
         }
         else if(hit.collider.CompareTag("StartDialogue"))
         {
@@ -49,7 +51,8 @@ public class InteractionController : MonoBehaviour
     {
         if(currentLevitateTarget != null)
         {
-            currentLevitateTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>().Stop();
+            currentHoverParticles.Stop();
+            currentHoverParticles = null;
             currentLevitateTarget = null;
         }
         if(currentDialogueTarget != null)
@@ -75,6 +78,7 @@ public class InteractionController : MonoBehaviour
 
         if(currentLevitateTarget != null)
         {
+            currentHoverParticles.Stop();
             currentLevitateTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
         }
     }
