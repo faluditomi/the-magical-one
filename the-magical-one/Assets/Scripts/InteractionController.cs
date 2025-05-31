@@ -61,7 +61,12 @@ public class InteractionController : MonoBehaviour
     private void OnEnable()
     {
         SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Levitate, Levitate);
+
         SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Hello, StartDialogue);
+        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yep, StartDialogue);
+        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Okay, StartDialogue);
+        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yes, StartDialogue);
+        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yeah, StartDialogue);
     }
 
     private void Levitate(SpellArgs args)
@@ -82,5 +87,4 @@ public class InteractionController : MonoBehaviour
             aIConversant.StartCoroutine(aIConversant.RunDialogue());
         }
     }
-    
 }
