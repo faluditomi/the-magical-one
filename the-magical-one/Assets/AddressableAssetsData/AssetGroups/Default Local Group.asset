@@ -15,23 +15,8 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 2b27af1849966ef4295bb9536e128847
   m_SerializeEntries:
-  - m_GUID: 0d03e92fea681f7498b3cbd31ff40b92
-    m_Address: Jump
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 1bcc783285861304dbe2746d59d351f0
-    m_Address: Back
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 25df2086522d3dd4ca9902b6412ad9f7
     m_Address: Assets/ScriptableObject/Spells
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3afc1c43659c104449a51f3b2e9052ef
-    m_Address: Fuck
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -40,23 +25,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4440d65fd88108441b9a9fcbf119fb9f
-    m_Address: Forward
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 494fbc08470904a4fa2b68ff58912da1
     m_Address: Yes
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 4ccb4f1095e5f1a438d65c4ef6fe2ccc
-    m_Address: Stop
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6cdf33cf970decb4daaaecc9ad123f57
-    m_Address: Left
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -82,21 +52,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e63a4c6ce3cd6164ab12ed4f77d20609
     m_Address: Hello
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: eb5e66a5cec536842813c7e8fb1d25eb
-    m_Address: Switch_Cam
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f01f593ce39ad504a949ba87335b93cf
-    m_Address: Right
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f04b169f18d1d264999423bfb9f99382
-    m_Address: Reset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
