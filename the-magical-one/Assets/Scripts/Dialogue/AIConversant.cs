@@ -177,6 +177,8 @@ public class AIConversant : MonoBehaviour
 
         currentDialogue = null;
 
+        dialogue = null;
+
         currentNode = null;
 
         index = 0;
