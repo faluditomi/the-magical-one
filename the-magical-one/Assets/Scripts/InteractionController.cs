@@ -24,6 +24,12 @@ public class InteractionController : MonoBehaviour
         RaycastHit hit;
         Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, int.MaxValue);
 
+        if(hit.collider == null)
+        {
+            NullTargets();
+            return;
+        }
+
         if(hit.collider.CompareTag("Levitateable"))
         {
             currentLevitateTarget = hit.collider.gameObject;
@@ -35,15 +41,20 @@ public class InteractionController : MonoBehaviour
         }
         else
         {
-            if(currentLevitateTarget != null)
-            {
-                //turn off the currentTarget's outline
-                currentLevitateTarget = null;
-            }
-            if(currentDialogueTarget != null)
-            {
-                currentDialogueTarget = null;
-            }
+            NullTargets();
+        }
+    }
+
+    private void NullTargets()
+    {
+        if(currentLevitateTarget != null)
+        {
+            //turn off the currentTarget's outline
+            currentLevitateTarget = null;
+        }
+        if(currentDialogueTarget != null)
+        {
+            currentDialogueTarget = null;
         }
     }
 
@@ -51,12 +62,6 @@ public class InteractionController : MonoBehaviour
     {
         SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Levitate, Levitate);
         SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Hello, StartDialogue);
-    }
-
-    private void OnDisable()
-    {
-        SpellEventSubscriber.Instance().UnsubscribeFromSpell(SpellWords.Levitate, Levitate);
-        SpellEventSubscriber.Instance().UnsubscribeFromSpell(SpellWords.Hello, StartDialogue);
     }
 
     private void Levitate(SpellArgs args)

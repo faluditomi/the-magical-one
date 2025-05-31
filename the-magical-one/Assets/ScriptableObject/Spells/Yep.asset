@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a0719a5dd722d3478f4cabce3a2de4c, type: 3}
   m_Name: Yep
   m_EditorClassIdentifier: 
-  spellWord: 0
+  spellWord: 2
   cooldownDuration: 0

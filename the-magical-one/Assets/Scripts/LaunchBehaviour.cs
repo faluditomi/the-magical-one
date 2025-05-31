@@ -18,11 +18,6 @@ public class LaunchBehaviour : MonoBehaviour
         SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Launch, Launch);
     }
 
-    private void OnDisable()
-    {
-        SpellEventSubscriber.Instance().UnsubscribeFromSpell(SpellWords.Launch, Launch);
-    }
-
     private void Launch(SpellArgs args)
     {
         LaunchArgs myArgs = SpellSessionCache.GetSpellArgs<LaunchArgs>(args);
