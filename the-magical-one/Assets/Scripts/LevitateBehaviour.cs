@@ -6,7 +6,7 @@ public class LevitateBehaviour : MonoBehaviour
     private bool isLevitating;
     private float currentShuffleSpeed;
     private float currentCollectedRadius;
-    private float collectionSpeed = 10f;
+    private float collectionSpeed = 20f;
     private Transform currentDestination;
     private Vector3 currentShuffleOffset;
     private Quaternion initialRotationOffset;
@@ -21,7 +21,19 @@ public class LevitateBehaviour : MonoBehaviour
     {
         if(isLevitating)
         {
-            if(Vector3.Distance(transform.position, currentDestination.position) > 0.1f)
+            // if(Vector3.Distance(transform.position, currentDestination.position) > 0.1f)
+            // {
+            //     Vector3 toTarget = currentDestination.position - transform.position;
+            //     float distance = toTarget.magnitude;
+            //     Vector3 direction = toTarget.normalized;
+            //     float speed = Mathf.Min(distance * collectionSpeed, collectionSpeed);
+            //     myRigidbody.linearVelocity = direction * speed;
+            // }
+            // else
+            // {
+            //     myRigidbody.linearVelocity = Vector3.zero;
+            // }
+            if(Vector3.Distance(transform.position, currentDestination.position) > currentCollectedRadius)
             {
                 Vector3 toTarget = currentDestination.position - transform.position;
                 float distance = toTarget.magnitude;
@@ -31,24 +43,19 @@ public class LevitateBehaviour : MonoBehaviour
             }
             else
             {
-                myRigidbody.linearVelocity = Vector3.zero;
+                if(Vector3.Distance(transform.position, currentDestination.position + currentDestination.TransformDirection(currentShuffleOffset)) < 0.3f)
+                {
+                    myRigidbody.linearVelocity = Vector3.zero;
+                    myRigidbody.angularVelocity = Vector3.zero;
+                    currentShuffleOffset = GetNewShuffleOffset();
+                }
+                
+                Vector3 toTarget = currentDestination.position + currentDestination.TransformDirection(currentShuffleOffset) - transform.position;
+                float distance = toTarget.magnitude;
+                Vector3 direction = toTarget.normalized;
+                float speed = Mathf.Min(distance * currentShuffleSpeed, currentShuffleSpeed);
+                myRigidbody.linearVelocity = direction * speed;
             }
-            // if(Vector3.Distance(transform.position, currentDestination.position) > currentCollectedRadius)
-            // {
-            //     Vector3 direction = (currentDestination.position - transform.position).normalized;
-            //     myRigidbody.linearVelocity = direction * collectionSpeed;
-            // }
-            // else
-            // {
-            //     if(Vector3.Distance(transform.position, currentDestination.position + currentDestination.TransformDirection(currentShuffleOffset)) < 0.3f)
-            //     {
-            //         myRigidbody.linearVelocity = Vector3.zero;
-            //         currentShuffleOffset = GetNewShuffleOffset();
-            //     }
-
-            //     Vector3 direction = (currentDestination.position + currentDestination.TransformDirection(currentShuffleOffset) - transform.position).normalized;
-            //     myRigidbody.linearVelocity = direction * currentShuffleSpeed;
-            // }
 
             transform.rotation = currentDestination.rotation * initialRotationOffset;
         }
