@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9370225a2ca94276b870d5f87b0db55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logLevel: 1
+  logLevel: 2
   modelPath: ggml-tiny.en.bin
   isModelPathInStreamingAssets: 1
   initOnAwake: 1
@@ -58,7 +58,10 @@ MonoBehaviour:
   noContext: 1
   singleSegment: 1
   enableTokens: 0
-  initialPrompt: 
+  initialPrompt: 'The player is using voice commands in a video game to control a
+    character. Recognize short commands like: levitate, launch, yep, yes, yeah, hello,
+    okay. These commands may be spoken quickly, with background noise, different
+    accents, or poor microphone quality. Recognize the commands exactly.'
   stepSec: 0.2
   keepSec: 0.2
   lengthSec: 3

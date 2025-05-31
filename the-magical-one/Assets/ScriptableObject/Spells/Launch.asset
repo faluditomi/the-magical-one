@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellWord: 1
   cooldownDuration: 0
-  launchForce: 10
+  launchForce: 100
