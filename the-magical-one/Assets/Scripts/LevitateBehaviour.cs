@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class LevitateBehaviour : MonoBehaviour
@@ -62,7 +61,7 @@ public class LevitateBehaviour : MonoBehaviour
 
     public void StartLevitate(float currentShuffleSpeed, float currentCollectedRadius, Transform currentDestination)
     {
-        GameManager.Instance().StartLevitating();
+        GameManager.Instance().StartLevitating(transform);
         isLevitating = true;
         this.currentShuffleSpeed = currentShuffleSpeed;
         this.currentDestination = currentDestination;

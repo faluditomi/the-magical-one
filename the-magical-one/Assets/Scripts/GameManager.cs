@@ -4,7 +4,9 @@ public class GameManager : MonoBehaviour
 {
 
     private static GameManager _instance;
+
     private bool isLevitationInProgress;
+    private Transform currentLevitatingTransform;
 
     public static GameManager Instance()
     {
@@ -18,19 +20,26 @@ public class GameManager : MonoBehaviour
         return _instance;
     }
 
-    public void StartLevitating()
+    public void StartLevitating(Transform levitatingObject)
     {
         isLevitationInProgress = true;
+        currentLevitatingTransform = levitatingObject;
     }
 
     public void StopLevitating()
     {
         isLevitationInProgress = false;
+        currentLevitatingTransform = null;
     }
 
     public bool IsLevitationInProgress()
     {
         return isLevitationInProgress;
+    }
+
+    public Transform GetCurrentLevitatingTransform()
+    {
+        return currentLevitatingTransform;
     }
 
 }
