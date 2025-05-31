@@ -33,7 +33,7 @@ public class InteractionController : MonoBehaviour
         if(hit.collider.CompareTag("Levitateable"))
         {
             currentLevitateTarget = hit.collider.gameObject;
-            //turn on the currentTarget's outline
+            currentLevitateTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>().Play();
         }
         else if(hit.collider.CompareTag("StartDialogue"))
         {
@@ -49,7 +49,7 @@ public class InteractionController : MonoBehaviour
     {
         if(currentLevitateTarget != null)
         {
-            //turn off the currentTarget's outline
+            currentLevitateTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>().Stop();
             currentLevitateTarget = null;
         }
         if(currentDialogueTarget != null)
