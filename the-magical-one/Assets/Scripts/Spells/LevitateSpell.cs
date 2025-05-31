@@ -7,14 +7,14 @@ public class LevitateSpell : Spell
     [Min(0f), Tooltip("How much the object should move around while it's levitating.")]
     public float jitterMagnitude;
     [Min(0f), Tooltip("How far from the levitation point the object starts to float around randomly.")]
-    public float currentCollectedRadius;
+    public float collectedRadius;
 
     protected override SpellArgs CreateArgs()
     {
         LevitateArgs myArgs = new LevitateArgs
         {
             shuffleSpeed = this.jitterMagnitude,
-            collectedRadius = this.currentCollectedRadius
+            collectedRadius = this.collectedRadius
         };
 
         return CopyTo(myArgs);

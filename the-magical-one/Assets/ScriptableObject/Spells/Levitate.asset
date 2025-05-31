@@ -15,4 +15,4 @@ MonoBehaviour:
   spellWord: 0
   cooldownDuration: 0
   jitterMagnitude: 1
-  levitateOffset: {x: 5, y: 0, z: 0}
+  collectedRadius: 2
