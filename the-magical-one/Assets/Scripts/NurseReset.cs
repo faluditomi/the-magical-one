@@ -1,12 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using System.Collections.Generic;
+using System.Linq;
+using System;
 
 public class NurseReset : MonoBehaviour
 {
-    private InteractionController interactionController;
-
-    private GameObject currentInteractionObject;
 
     [SerializeField] float waitTime = 2f;
 
@@ -16,12 +16,12 @@ public class NurseReset : MonoBehaviour
 
     private bool isResetting = false;
 
+    private Stack<Tuple<GameObject, Vector3>> targets = new Stack<Tuple<GameObject, Vector3>>();
+
 
     private void Awake()
     {
-        interactionController = FindFirstObjectByType<InteractionController>();
-
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Start()
@@ -31,27 +31,38 @@ public class NurseReset : MonoBehaviour
 
     private void Update()
     {
-        
+        if(targets.Count > 0 && !isResetting)
+        {
+            StartCoroutine(NurseBehaviour());
+        }
     }
 
-    public void NurseCoroutine()
+    public void AddTarget(GameObject newTarget, Vector3 resetPosition)
     {
-        StartCoroutine(NurseBehaviour(currentInteractionObject));
+        targets.Push(new Tuple<GameObject, Vector3>(newTarget, resetPosition));
     }
 
-    private IEnumerator NurseBehaviour(GameObject target)
-    {   
+    private IEnumerator NurseBehaviour()
+    {
         isResetting = true;
 
-        agent.SetDestination(target.transform.position);
+        while(targets.Count > 0)
+        {
+            Tuple<GameObject, Vector3> resetObject = targets.Pop();
+            agent.SetDestination(resetObject.Item2);
 
-        yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance);
+            yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance);
 
-        yield return new WaitForSeconds(waitTime);
+            //turn on light
 
-        //Reset object
-        //target.Reset();
-        
+            yield return new WaitForSeconds(waitTime);
+
+            resetObject.Item1.GetComponent<ResetController>().Reset();
+            //turn off light
+
+            yield return null;
+        }
+
         agent.SetDestination(originalPosition);
 
         yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance);

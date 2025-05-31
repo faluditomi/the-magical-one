@@ -1,20 +1,21 @@
+using System;
 using UnityEngine;
 
 public class InteractionController : MonoBehaviour
 {
 
+    private NurseReset nurseReset;
     private Transform cameraTransform;
     private Transform levitatePosition;
     private GameObject currentLevitateTarget;
     private GameObject currentDialogueTarget;
     private ParticleSystem currentHoverParticles;
 
-    private bool isFailedThrow = false;
-
     private void Awake()
     {
         cameraTransform = Camera.main.transform;
         levitatePosition = transform.Find("LevitatePosition");
+        nurseReset = FindFirstObjectByType<NurseReset>();
     }
 
     private void Update()
@@ -82,6 +83,7 @@ public class InteractionController : MonoBehaviour
         {
             currentHoverParticles.Stop();
             currentLevitateTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
+            nurseReset.AddTarget(currentLevitateTarget, currentLevitateTarget.transform.Find("ResetPosition").position);
         }
     }
 
@@ -98,14 +100,5 @@ public class InteractionController : MonoBehaviour
     {
         return currentLevitateTarget;
     }
-
-    public bool GetIsFailedThrow()
-    {
-        return isFailedThrow;
-    }
-
-    public void SetIsFailedThrow(bool value)
-    {
-        isFailedThrow = value;
-    }
+    
 }
