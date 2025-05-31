@@ -6,6 +6,8 @@ public enum SpellWords
 {
 
     Levitate,
-    Launch
-
+    Launch,
+    Yep,
+    Hello
+    
 }
