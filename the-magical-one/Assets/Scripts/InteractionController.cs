@@ -5,7 +5,8 @@ public class InteractionController : MonoBehaviour
 
     private Transform cameraTransform;
     private Transform levitatePosition;
-    private GameObject currentTarget;
+    private GameObject currentLevitateTarget;
+    private GameObject currentDialogueTarget;
 
     private void Awake()
     {
@@ -25,33 +26,55 @@ public class InteractionController : MonoBehaviour
 
         if(hit.collider.CompareTag("Levitateable"))
         {
-            currentTarget = hit.collider.gameObject;
+            currentLevitateTarget = hit.collider.gameObject;
             //turn on the currentTarget's outline
         }
-        else if(currentTarget != null)
+        else if(hit.collider.CompareTag("StartDialogue"))
         {
-            //turn off the currentTarget's outline
-            currentTarget = null;
+            currentDialogueTarget = hit.collider.gameObject;
+        }
+        else
+        {
+            if(currentLevitateTarget != null)
+            {
+                //turn off the currentTarget's outline
+                currentLevitateTarget = null;
+            }
+            if(currentDialogueTarget != null)
+            {
+                currentDialogueTarget = null;
+            }
         }
     }
 
     private void OnEnable()
     {
         SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Levitate, Levitate);
+        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Hello, StartDialogue);
     }
 
     private void OnDisable()
     {
         SpellEventSubscriber.Instance().UnsubscribeFromSpell(SpellWords.Levitate, Levitate);
+        SpellEventSubscriber.Instance().UnsubscribeFromSpell(SpellWords.Hello, StartDialogue);
     }
 
     private void Levitate(SpellArgs args)
     {
         LevitateArgs myArgs = SpellSessionCache.GetSpellArgs<LevitateArgs>(args);
 
-        if(currentTarget != null)
+        if(currentLevitateTarget != null)
         {
-            currentTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
+            currentLevitateTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
+        }
+    }
+
+    private void StartDialogue(SpellArgs args)
+    {
+        if(currentDialogueTarget != null)
+        {
+            AIConversant aIConversant = currentDialogueTarget.GetComponent<AIConversant>();
+            aIConversant.StartCoroutine(aIConversant.RunDialogue());
         }
     }
     

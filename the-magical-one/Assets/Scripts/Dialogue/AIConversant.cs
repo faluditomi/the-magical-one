@@ -71,21 +71,6 @@ public class AIConversant : MonoBehaviour
     }
     #endregion
 
-    private void OnEnable()
-    {
-        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Hello, StartRunDialogueCoroutine);
-    }
-
-    private void OnDisable()
-    {
-        SpellEventSubscriber.Instance().UnsubscribeFromSpell(SpellWords.Hello, StartRunDialogueCoroutine);
-    }
-
-    public void StartRunDialogueCoroutine(SpellArgs args)
-    {
-        StartCoroutine(RunDialogue());
-    }
-
     #region Coroutines
     public IEnumerator RunDialogue()
     {
