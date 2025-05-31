@@ -8,7 +8,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 /// A bridge between the SpellWords enum, the Addressables system, and the Spell class. It loads, unloads, manages the spell cache
 /// and provides a centralised way to cast them. 
 /// </summary>
-public static class SessionSpellCache
+public static class SpellSessionCache
 {
 
     private static Dictionary<string, Spell> _spells = new();

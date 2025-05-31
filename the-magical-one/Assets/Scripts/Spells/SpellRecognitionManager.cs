@@ -35,13 +35,13 @@ public class SpellRecognitionManager : MonoBehaviour
 
     private void Start()
     {
-        SessionSpellCache.LoadSessionSpells(activeSpells);
+        SpellSessionCache.LoadSessionSpells(activeSpells);
         spellWordCache = activeSpells.ToDictionary(spell => spell, spell => SpellEnumToStringUtil(spell));
     }
     
     private void OnDisable()
     {
-        SessionSpellCache.UnloadAll();
+        SpellSessionCache.UnloadAll();
     }
     #endregion
 
@@ -86,7 +86,7 @@ public class SpellRecognitionManager : MonoBehaviour
         while(!token.IsCancellationRequested && ContainsSpellStringUtil(segment, spellWord))
         {
             spellsInCurrentSegment.Add(spellWord);
-            SessionSpellCache.CastSpell(spellWord);
+            SpellSessionCache.CastSpell(spellWord);
             segment = RemoveSpellAndBeforeUtil(segment, spellWord);
         }
 

@@ -4,7 +4,8 @@
 /// </summary>
 public enum SpellWords
 {
-    
-    
+
+    Levitate,
+    Launch
 
 }

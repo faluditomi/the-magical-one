@@ -39,7 +39,7 @@ public class SpellEventSubscriber : MonoBehaviour
     /// <param name="action"> The callback that's been listening to the event. </param>
     public void UnsubscribeFromSpell(SpellWords spellWord, System.Action<SpellArgs> action)
     {
-        Spell spell = SessionSpellCache.GetSpell(spellWord);
+        Spell spell = SpellSessionCache.GetSpell(spellWord);
 
         if(spell == null)
         {
@@ -56,8 +56,8 @@ public class SpellEventSubscriber : MonoBehaviour
     /// </summary>
     private IEnumerator SubscribeToSpellBehaviour(SpellWords spellWord, System.Action<SpellArgs> action)
     {
-        yield return new WaitUntil(() => SessionSpellCache.IsSpellCacheReady());
-        Spell spell = SessionSpellCache.GetSpell(spellWord);
+        yield return new WaitUntil(() => SpellSessionCache.IsSpellCacheReady());
+        Spell spell = SpellSessionCache.GetSpell(spellWord);
         
         if(spell == null)
         {
