@@ -78,8 +78,6 @@ public class AIConversant : MonoBehaviour
         {
             if(!isDialoguing)
             {
-                //playerCombat.StopCombo();
-
                 dialogueBubbleGameObject.transform.position = dialogueBubblePosition.position;
 
                 StartCoroutine(FadeInImageBehaviour(dialoguePanelText));

@@ -264,7 +264,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
@@ -638,7 +638,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
@@ -2410,6 +2410,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Recognition Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
+      propertyPath: activeSpells.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9021140145175722540, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2771,7 +2775,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2

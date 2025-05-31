@@ -572,13 +572,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: death
       objectReference: {fileID: 0}
-    - target: {fileID: 4514989989740059679, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_TagString
-      value: StartDialogue
-      objectReference: {fileID: 0}
     - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.51
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -713,6 +709,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
+  - component: {fileID: 330585549}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -855,6 +852,18 @@ MonoBehaviour:
   maxX: 45
   minY: -90
   maxY: 90
+--- !u!114 &330585549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330585543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceaeff88f1df0dd4a97946977e129b09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &358908407
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,6 +2729,30 @@ PrefabInstance:
     - target: {fileID: 302639441178418399, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
       propertyPath: m_Name
       value: Spell Recognition Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
+      propertyPath: activeSpells.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
+      propertyPath: 'activeSpells.Array.data[0]'
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
+      propertyPath: 'activeSpells.Array.data[1]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
+      propertyPath: 'activeSpells.Array.data[2]'
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
+      propertyPath: 'activeSpells.Array.data[3]'
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
+      propertyPath: 'activeSpells.Array.data[4]'
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9021140145175722540, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
       propertyPath: m_LocalPosition.x
