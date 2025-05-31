@@ -8,6 +8,8 @@ public class InteractionController : MonoBehaviour
     private GameObject currentLevitateTarget;
     private GameObject currentDialogueTarget;
 
+    private bool isFailedThrow = false;
+
     private void Awake()
     {
         cameraTransform = Camera.main.transform;
@@ -86,5 +88,20 @@ public class InteractionController : MonoBehaviour
             AIConversant aIConversant = currentDialogueTarget.GetComponent<AIConversant>();
             aIConversant.StartCoroutine(aIConversant.RunDialogue());
         }
+    }
+
+    public GameObject GetCurrentLevitateTarget()
+    {
+        return currentLevitateTarget;
+    }
+
+    public bool GetIsFailedThrow()
+    {
+        return isFailedThrow;
+    }
+
+    public void SetIsFailedThrow(bool value)
+    {
+        isFailedThrow = value;
     }
 }
