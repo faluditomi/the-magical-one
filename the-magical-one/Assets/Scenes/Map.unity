@@ -315,8 +315,39 @@ MonoBehaviour:
   - Name: NursebotMoving
     Value: 0
   OverrideAttenuation: 1
+  OverrideMinDistance: 20
+  OverrideMaxDistance: 30
+--- !u!114 &70413863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70413855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1060896998
+      Data2: 1292804554
+      Data3: -939012932
+      Data4: -812019138
+    Path: event:/SFX/character_nursebot_talking
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 70.43
+  OverrideMaxDistance: 45
 --- !u!1 &85213157
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,6 +1161,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8231961239700669258, guid: dbc70f2914ef81548a4a66afc92b6769, type: 3}
       insertIndex: -1
       addedObject: {fileID: 70413861}
+    - targetCorrespondingSourceObject: {fileID: 8231961239700669258, guid: dbc70f2914ef81548a4a66afc92b6769, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 70413863}
   m_SourcePrefab: {fileID: 100100000, guid: dbc70f2914ef81548a4a66afc92b6769, type: 3}
 --- !u!1 &348004141
 GameObject:
