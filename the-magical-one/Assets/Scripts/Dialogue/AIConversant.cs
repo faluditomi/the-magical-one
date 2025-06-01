@@ -268,7 +268,7 @@ public class AIConversant : MonoBehaviour
             objectColor.a = 0f;
         }
 
-        while(objectColor.a <= 0.9f)
+        while(objectColor.a <= 1f)
         {
             objectColor.a += 5f * Time.deltaTime;
 

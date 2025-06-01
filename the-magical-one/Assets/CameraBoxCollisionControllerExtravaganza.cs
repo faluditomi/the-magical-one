@@ -15,7 +15,9 @@ public class CameraBoxCollisionControllerExtravaganza : MonoBehaviour
         {
             collision.transform.Find("Kid Drawing").gameObject.SetActive(true);
             gameManager.SetCameraHacked();
-            Destroy(gameObject);
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<LevitateBehaviour>().enabled = false;
+            transform.Find("HoverParticles").gameObject.SetActive(false);
         }
     }
 }

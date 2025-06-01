@@ -105,7 +105,6 @@ public class InteractionController : MonoBehaviour
     private void Levitate(SpellArgs args)
     {
         LevitateArgs myArgs = SpellSessionCache.GetSpellArgs<LevitateArgs>(args);
-        AudioManager.instance.StartInstancePlaybackAtThisPosition(levitateEventInstance, gameObject);
         Debug.Log("You cast levitate!");
 
         if(currentLevitateTarget != null && gameManager.hasMagic)
@@ -117,6 +116,7 @@ public class InteractionController : MonoBehaviour
             }
 
             currentHoverParticles.Stop();
+            AudioManager.instance.StartInstancePlaybackAtThisPosition(levitateEventInstance, gameObject);
             currentLevitateTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
             nurseReset.AddTarget(currentLevitateTarget, currentLevitateTarget.transform.Find("ResetPosition").position);
         }

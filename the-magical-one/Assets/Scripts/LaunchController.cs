@@ -30,11 +30,11 @@ public class LaunchController : MonoBehaviour
     private void Launch(SpellArgs args)
     {
         LaunchArgs myArgs = SpellSessionCache.GetSpellArgs<LaunchArgs>(args);
-        AudioManager.instance.PlayOneShot(FMODEvents.instance.magicLevitateLaunch, new Vector3(0,0,0));
         
 
         if(gameManager.IsLevitationInProgress())
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.magicLevitateLaunch, new Vector3(0,0,0));
             Transform transformToLaunch = gameManager.GetCurrentLevitatingTransform();
             transformToLaunch.GetComponent<LevitateBehaviour>().StopLevitate();
             transformToLaunch.GetComponent<Rigidbody>().AddForce(cameraTransform.forward * myArgs.launchForce, ForceMode.Impulse);

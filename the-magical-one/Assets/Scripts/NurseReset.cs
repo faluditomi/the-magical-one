@@ -44,6 +44,13 @@ public class NurseReset : MonoBehaviour
 
     private void Update()
     {
+        Vector3 velocity = agent.desiredVelocity;
+        if (velocity.sqrMagnitude > 0.1f)
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(velocity.normalized);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.fixedDeltaTime * 10f);
+        }
+
         if(targets.Count > 0 && !isResetting && !gameManager.isCameraHacked)
         {
             StartCoroutine(NurseBehaviour());
@@ -63,7 +70,7 @@ public class NurseReset : MonoBehaviour
         {
             Tuple<GameObject, Vector3> resetObject = targets.Pop();
 
-            if(resetObject == null)
+            if(resetObject == null || resetObject.Item1 == null)
             {
                 yield return null;
             }
@@ -76,6 +83,11 @@ public class NurseReset : MonoBehaviour
             //turn on light
             nurseMovingInstance.setParameterByName("NursebotMoving", 0);
             yield return new WaitForSeconds(waitTime);
+
+            if(resetObject == null || resetObject.Item1 == null)
+            {
+                yield return null;
+            }
 
             resetObject.Item1.GetComponent<ResetController>().Reset();
             //turn off light
