@@ -4,6 +4,7 @@
 /// </summary>
 public enum SpellWords
 {
+
     Levitate,
     Launch,
     Yep,
@@ -11,4 +12,5 @@ public enum SpellWords
     Okay,
     Yes,
     Yeah
+
 }

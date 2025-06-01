@@ -1,4 +1,4 @@
-using System;
+using TOS.Dialogue;
 using UnityEngine;
 
 public class InteractionController : MonoBehaviour
@@ -91,6 +91,7 @@ public class InteractionController : MonoBehaviour
     {
         if(currentDialogueTarget != null)
         {
+            print("GGGG");
             AIConversant aIConversant = currentDialogueTarget.GetComponent<AIConversant>();
             aIConversant.StartCoroutine(aIConversant.RunDialogue());
         }

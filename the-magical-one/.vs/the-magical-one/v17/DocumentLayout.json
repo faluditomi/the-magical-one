@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\interactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\interactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\levitatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levitatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\dialogue\\aiconversant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\aiconversant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\endingsequence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\endingsequence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\levitatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\levitatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\spells\\spellwords.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "EndingSequence.cs",
+              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\EndingSequence.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EndingSequence.cs",
+              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\EndingSequence.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EndingSequence.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T07:23:00.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "LevitateBehaviour.cs",
               "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\LevitateBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LevitateBehaviour.cs",
@@ -42,7 +59,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SpellWords.cs",
               "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Spells\\SpellWords.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Spells\\SpellWords.cs",
@@ -60,22 +77,23 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\InteractionController.cs",
               "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\InteractionController.cs",
               "RelativeToolTip": "Assets\\Scripts\\InteractionController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAowE0AAACKAAAAAAAAAA==",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAQwFkAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-31T12:11:59.288Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "AIConversant.cs",
               "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\AIConversant.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Dialogue\\AIConversant.cs",
               "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\AIConversant.cs",
               "RelativeToolTip": "Assets\\Scripts\\Dialogue\\AIConversant.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAAD4v7kAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAhwEoAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T10:02:03.288Z"
+              "WhenOpened": "2025-05-31T10:02:03.288Z",
+              "EditorCaption": ""
             }
           ]
         }
