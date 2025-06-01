@@ -7,11 +7,19 @@
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pause menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\volumeslider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\volumeslider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\menuvolumecontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\menuvolumecontrols.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\dialogue\\aiconversant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\aiconversant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\interactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\interactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -30,8 +38,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MenuVolumeControls.cs",
+              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\MenuVolumeControls.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MenuVolumeControls.cs",
+              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\MenuVolumeControls.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MenuVolumeControls.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T06:56:43.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VolumeSlider.cs",
+              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\VolumeSlider.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\VolumeSlider.cs",
+              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\VolumeSlider.cs",
+              "RelativeToolTip": "Assets\\Scripts\\VolumeSlider.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T06:56:24.157Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -40,14 +74,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Pause Menu.cs",
               "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Pause Menu.cs",
               "RelativeToolTip": "Assets\\Scripts\\Pause Menu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAowDoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-31T21:31:36.97Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "LevitateBehaviour.cs",
               "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\LevitateBehaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LevitateBehaviour.cs",
@@ -59,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "SpellWords.cs",
               "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Spells\\SpellWords.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Spells\\SpellWords.cs",
@@ -71,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "InteractionController.cs",
               "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\InteractionController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InteractionController.cs",
@@ -79,12 +113,11 @@
               "RelativeToolTip": "Assets\\Scripts\\InteractionController.cs",
               "ViewState": "AgIAACoAAAAAAAAAAAAowE0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T12:11:59.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T12:11:59.288Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AIConversant.cs",
               "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\AIConversant.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Dialogue\\AIConversant.cs",
@@ -92,8 +125,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Dialogue\\AIConversant.cs",
               "ViewState": "AgIAAL0AAAAAAAAAAAD4v9QAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T10:02:03.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T10:02:03.288Z"
             }
           ]
         }
