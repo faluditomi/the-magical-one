@@ -53,7 +53,8 @@ MonoBehaviour:
   speakerTextGameObject: SpeakerText
   dialogueTextGameObject: DialogueText
   mAudioClip: {fileID: 8300000, guid: 9f95f0be45d7ec7418c55ccefe1cbec3, type: 3}
-  triggerActions: []
+  triggerActions:
+  - wizard hello off
 --- !u!114 &-2992393900454073546
 MonoBehaviour:
   m_ObjectHideFlags: 0
