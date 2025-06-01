@@ -1,274 +1,232 @@
+using System;
 using UnityEngine;
+using System.Linq;
 using System.Collections;
 using TMPro;
+using UnityEngine.Playables;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
-public class AIConversant : MonoBehaviour
+namespace TOS.Dialogue
 {
-    #region Attributes
-    public Dialogue dialogue;
-    private Dialogue currentDialogue;
-    private DialogueNode currentNode;
-
-    private Transform dialogueBubblePosition;
-
-    private GameObject dialogueBubbleGameObject;
-
-    private Image dialoguePanelText;
-
-    private bool isDialoguing;
-    private bool isEarlyQuit;
-
-    private int index;
-    #endregion
-
-    #region MonoBehaviour Methods
-    private void Awake()
+    public class AIConversant : MonoBehaviour
     {
-        dialoguePanelText = GameObject.Find("DialogueFrame").GetComponent<Image>();
+        #region Attributes
+        public Dialogue dialogue;
 
-        dialogueBubblePosition = GetComponentInChildren<Transform>().Find("DialogueBoxPosition");
+        private Dialogue currentDialogue;
 
-        dialogueBubbleGameObject = GameObject.Find("DialogueBubble");
-    }
-    #endregion
+        private DialogueNode currentNode = null;
 
-    #region Normal Methods
-    //Changes the current node to the next one.
-    private void Next()
-    {
-        TriggerActions();
+        private DialogueNode[] children;
 
-        currentNode = (index < currentDialogue.GetAllNodesByIndex()) ? currentDialogue.GetNodeByIndex(index) : currentDialogue.GetNodeByIndex(index - 1);
-    }
+        private AudioManager audioManager;
+        
+        private bool isDialoguing = false;
 
-    //Checks if there are anymore nodes.
-    private bool HasNext()
-    {
-        return (index <= currentDialogue.GetAllNodesByIndex() - 1);
-    }
+        private bool isTyping = false;
 
-    //Triggers actions, if there are any, when dialoguing. 
-    private void TriggerActions()
-    {
-        if(currentNode != null && currentNode.GetTriggerActions().Count > 0)
+        private GameObject dialogueBox;
+
+        private AudioSource AudioSource;
+
+        private GameObject continueText;
+
+        private int index = 0;
+
+        [SerializeField] private bool lastDialogue;
+        #endregion
+
+        #region MonoBehaviour Methods
+        private void Awake()
         {
-            foreach(DialogueTrigger trigger in this.GetComponents<DialogueTrigger>())
+            audioManager = FindFirstObjectByType<AudioManager>();
+
+            AudioSource = GetComponent<AudioSource>();
+
+            if(transform.childCount != 0)
             {
-                trigger.Trigger(currentNode.GetTriggerActions());
+                GetComponentInChildren<Canvas>().worldCamera = FindFirstObjectByType<Camera>();
             }
         }
-    }
-    #endregion
 
-    #region Setters
-    public void SetNewDialogue(Dialogue newDialogue)
-    {
-        if(newDialogue != null)
+        private void Update()
         {
-            dialogue = newDialogue;
-        }
-    }
-    #endregion
-
-    #region Coroutines
-    public IEnumerator RunDialogue()
-    {
-        if(dialogue != null)
-        {
-            if(!isDialoguing)
+            if(AudioSource.isPlaying)
             {
-                dialogueBubbleGameObject.transform.position = dialogueBubblePosition.position;
-
-                StartCoroutine(FadeInImageBehaviour(dialoguePanelText));
-
-                isDialoguing = true;
-                    
-                StartCoroutine(StartDialogue(dialogue));
-
-                yield return new WaitForEndOfFrame();
-            }
-
-            StartCoroutine(UpdateUI());
-
-            yield return new WaitForEndOfFrame();
+                if(continueText == null)
+                {
+                    return;
+                }
                 
-            if(HasNext())
+                if(continueText.activeSelf)
+                {
+                    continueText.SetActive(false);
+                }
+                
+                return;
+            }
+
+            if(continueText != null)
             {
-                Next();
+                continueText.SetActive(true);
+            }
+        }
 
-                index++;
+        #endregion
 
-                yield return new WaitForEndOfFrame();
+        #region Normal Methods
+        public IEnumerator RunDialogue()
+        {
+            if(AudioSource.isPlaying)
+                {
+                    yield break;
+                }
+                
+                if(!isTyping)
+                {
+                    if(!isDialoguing)
+                    {
+                        isDialoguing = true;
+                        
+                        StartCoroutine(StartDialogue(dialogue));
+                        
+                        yield return new WaitForEndOfFrame();
+                    }
+
+                    StartCoroutine(UpdateUI());
+
+                    yield return new WaitForEndOfFrame();
+
+                    if(HasNext())
+                    {
+                        Next();
+                        
+                        yield return new WaitForEndOfFrame();
+                    }
+                    else
+                    {
+                        isDialoguing = false;
+                        
+                        GameObject.Find(currentNode.dialogueTextName).GetComponent<TextMeshProUGUI>().text = "";
+                        
+                        StartCoroutine(QuitDialogue());
+                        
+                        currentDialogue = dialogue;
+                    }
+                }
+        }
+
+        private IEnumerator StartDialogue(Dialogue newDialogue)
+        {
+            yield return new WaitForEndOfFrame();
+
+            currentDialogue = newDialogue;
+
+            currentNode = currentDialogue.GetNodeByIndex(index);
+
+            index++;
+
+            dialogueBox = GameObject.Find(currentNode.dialogueBoxName).transform.Find("Image").gameObject;
+            
+            dialogueBox.SetActive(true);
+            
+            continueText = dialogueBox.transform.GetChild(0).GetChild(2).gameObject;
+        }
+
+        private bool IsActive()
+        {
+            return currentDialogue != null;
+        }
+
+        //Puts the children of the node in an array, which allows us to read the text they have.
+        private void Next()
+        {
+            currentNode = currentDialogue.GetNodeByIndex(index);
+
+            index++;
+        }
+
+        //Checks if the dialogue node has anymore children.
+        private bool HasNext()
+        {
+            if(currentDialogue.GetNodeByIndex(index - 1).GetText() == "")
+            {
+                return false;
             }
             else
             {
-                yield return new WaitForEndOfFrame();
-
-                StartCoroutine(EarlyQuitDialogue());
+                return true;
             }
         }
-    }
 
-    private IEnumerator StartDialogue(Dialogue newDialogue)
-    {
-        yield return new WaitForEndOfFrame();
-
-        index = 0;
-
-        currentDialogue = newDialogue;
-
-        currentNode = currentDialogue.GetNodeByIndex(index);
-
-        isEarlyQuit = false;
-
-        StartCoroutine(FadeInBehaviour(GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>()));
-    }
-
-    public IEnumerator QuitDialogue()
-    {
-        if(!isEarlyQuit)
+        private IEnumerator QuitDialogue()
         {
             yield return new WaitForEndOfFrame();
-
-            GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>().text = "";
-
-            GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>().color = new Color(GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>().color.r, GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>().color.g, GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>().color.b, 0f);
-
-            isDialoguing = false;
-
-            StartCoroutine(FadeOutImageBehaviour(dialoguePanelText));
-
+            
             currentDialogue = null;
+            
+            GameObject.Find(currentNode.dialogueBoxName).transform.GetChild(0).gameObject.SetActive(false);
 
             currentNode = null;
 
-            index = 0;
+            continueText = null;
 
-            isEarlyQuit = true;
-        }
-    }
-
-    //Temporary. I can't think about it right now. Need an early quit for a bux fix but I can't remember what the bug was. Will remove after we send the demo.
-    public IEnumerator EarlyQuitDialogue()
-    {
-        yield return new WaitForEndOfFrame();
-
-        GameObject find = GameObject.Find(currentNode.dialogueTextGameObject);
-
-        if(find != null)
-        {
-            find.GetComponent<TMP_Text>().text = "";
+            if(lastDialogue)
+            {
+                FindFirstObjectByType<PlayableDirector>().Play();
+            }
         }
 
-        GameObject o = GameObject.Find(currentNode.speakerTextGameObject);
-
-        if(o != null)
-        {
-            o.GetComponent<TMP_Text>().text = "";
-
-            o.GetComponent<TMP_Text>().color = new Color(o.GetComponent<TMP_Text>().color.r,
-                o.GetComponent<TMP_Text>().color.g, o.GetComponent<TMP_Text>().color.b, 0f);
-        }
-
-        isDialoguing = false;
-
-        StartCoroutine(FadeOutImageBehaviour(dialoguePanelText));
-
-        currentDialogue = null;
-
-        dialogue = null;
-
-        currentNode = null;
-
-        index = 0;
-
-        isEarlyQuit = true;
-    }
-
-    //Updates the UI text.
-    private IEnumerator UpdateUI()
-    {                
-        yield return new WaitForEndOfFrame();
-
-        if(index <= currentDialogue.GetAllNodesByIndex())
+        //Updates the UI text.
+        private IEnumerator UpdateUI()
         {
             yield return new WaitForEndOfFrame();
+            
+            GameObject newDialogueBox = GameObject.Find(currentNode.dialogueBoxName).transform.Find("Image").gameObject;
+            
+            if(newDialogueBox != dialogueBox)
+            {
+                dialogueBox.GetComponentInChildren<TMP_Text>().text = "";
 
-            StartCoroutine(WriteTextBehaviour());
+                dialogueBox.SetActive(false);
+                
+                dialogueBox = newDialogueBox;
+
+                dialogueBox.SetActive(true);
+                
+                continueText = dialogueBox.transform.GetChild(0).GetChild(2).gameObject;
+            }
+            
+            GameObject.Find(currentNode.dialogueTextName).GetComponent<TMP_Text>().text = "";
+
+            if(!isTyping)
+            {
+                isTyping = true;
+                
+                AudioSource.clip = currentNode.m_AudioClip;
+
+                AudioSource.Play();
+                
+                StartCoroutine(TypewriterBehaviour());
+            }
         }
-    }
-        
-    private IEnumerator WriteTextBehaviour()
-    {
-        TMP_Text textMeshProUGUI = GameObject.Find(currentNode.dialogueTextGameObject).GetComponent<TMP_Text>();
+        #endregion
 
-        TMP_Text speakerTextMeshProGUI = GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>();
-
-        textMeshProUGUI.color = new Color(textMeshProUGUI.color.r, textMeshProUGUI.color.g, textMeshProUGUI.color.b, 0f);
-
-        speakerTextMeshProGUI.text = currentNode.GetSpeakerText();
-
-        textMeshProUGUI.text = currentNode.GetDialogueText();
-
-        StartCoroutine(FadeInBehaviour(textMeshProUGUI));
-
-        yield return new WaitForEndOfFrame();
-    }
-
-    //Fades in the text at the start of every node.
-    private IEnumerator FadeInBehaviour(TMP_Text text)
-    {
-        Color objectColor = text.color;
-
-        while(objectColor.a <= 1f)
+        #region Coroutines
+        private IEnumerator TypewriterBehaviour()
         {
-            objectColor.a += 0.2f * Time.deltaTime;
+            var textMeshProUGUI = GameObject.Find(currentNode.dialogueTextName).GetComponent<TMP_Text>();
 
-            text.color = objectColor;
+            foreach(char c in currentNode.GetText())
+            {
+                textMeshProUGUI.text += c;
 
-            yield return null;
+                yield return new WaitForSeconds(0.005f);
+            }
+
+            isTyping = false;
         }
+        #endregion
     }
-
-    //Fades in the dialogue bubble at the start of dialoguing.
-    private IEnumerator FadeInImageBehaviour(Image image)
-    {
-        Color objectColor = image.color;
-
-        if(objectColor.a != 0f)
-        {
-            objectColor.a = 0f;
-        }
-
-        while(objectColor.a <= 0.9f)
-        {
-            objectColor.a += 5f * Time.deltaTime;
-
-            image.color = objectColor;
-
-            yield return null;
-        }
-    }
-
-    //Fades out the dialogue bubble at the end of dialoguing.
-    private IEnumerator FadeOutImageBehaviour(Image image)
-    {
-        Color objectColor = image.color;
-
-        if(objectColor.a != 1f)
-        {
-            objectColor.a = 1f;
-        }
-
-        while(objectColor.a >= 0f)
-        {
-            objectColor.a -= 5f * Time.deltaTime;
-
-            image.color = objectColor;
-
-            yield return null;
-        }
-    }
-    #endregion
 }

@@ -1,4 +1,4 @@
-using System;
+using TOS.Dialogue;
 using UnityEngine;
 
 public class InteractionController : MonoBehaviour

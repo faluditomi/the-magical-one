@@ -5020,7 +5020,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
       propertyPath: activeSpells.Array.size
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
       propertyPath: 'activeSpells.Array.data[7]'

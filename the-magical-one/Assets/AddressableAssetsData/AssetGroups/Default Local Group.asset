@@ -40,11 +40,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 88a6aa9c5cc29dc4f8e8ecf3e76025f7
-    m_Address: Levito
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b6948a4430afb3e4ab5928da1202a7c2
     m_Address: Yep
     m_ReadOnly: 0
@@ -52,11 +47,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ddf06a3020303d34ebfd8054ce7a29b9
     m_Address: Levitate
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: e263e6d87b2f5df43a995f67448d44d2
-    m_Address: Tharnis
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
