@@ -12,12 +12,142 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
   m_Name: 964073c1-f531-46d8-8c8a-88faf806e8f9
   m_EditorClassIdentifier: 
-  text: 
-  children: []
+  text: "Ohh\u2026 uhh\u2026 what? I mean \u2014 hi!"
+  children:
+  - 5c83bfcb-7076-4531-8905-f5d49eb98594
   rect:
     serializedVersion: 2
-    x: 0
-    y: 0
+    x: 6
+    y: 182
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: DialogueBubble
+  dialogueTextName: DialogueText
+  m_AudioClip: {fileID: 0}
+--- !u!114 &-4481077191806326158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 62e2e75b-d755-4db0-9af1-50be555c9878
+  m_EditorClassIdentifier: 
+  text: "You know how many antiquarians tried to buy that bed out from under you?
+    - \u201CMust be comfy, if the kid\u2019s been napping in it for hundreds of years\u201D
+    - they said."
+  children:
+  - 1b8639a4-c39f-4523-aab9-95df21efd60b
+  rect:
+    serializedVersion: 2
+    x: 776
+    y: 11
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: DialogueBubble
+  dialogueTextName: DialogueText
+  m_AudioClip: {fileID: 0}
+--- !u!114 &-3364254772331239846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 826c8232-d791-4212-b0ab-1f86f72897ce
+  m_EditorClassIdentifier: 
+  text: 
+  children:
+  - 076e7859-f441-49b9-908d-db4cfd61b205
+  rect:
+    serializedVersion: 2
+    x: 812
+    y: 3
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 0}
+--- !u!114 &-3360267865460791231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 42190bc6-80fa-4610-a8a2-2185e53a302c
+  m_EditorClassIdentifier: 
+  text: "So, I think I\u2019ll just leave you to your squishy rituals. But don\u2019t
+    you worry. "
+  children:
+  - 3e874adf-2424-4709-9fc2-89a5f2c19a88
+  rect:
+    serializedVersion: 2
+    x: 1573
+    y: 134
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: DialogueBubble
+  dialogueTextName: DialogueText
+  m_AudioClip: {fileID: 0}
+--- !u!114 &-2561748264552652391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: a56de345-582c-405f-9904-5581dceb9e52
+  m_EditorClassIdentifier: 
+  text: "You see, we stopped \u201Cneeding\u201D to kill humans at some point, and
+    I sort of\u2026 forgot how!?"
+  children:
+  - 42190bc6-80fa-4610-a8a2-2185e53a302c
+  rect:
+    serializedVersion: 2
+    x: 1294
+    y: 29
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: DialogueBubble
+  dialogueTextName: DialogueText
+  m_AudioClip: {fileID: 0}
+--- !u!114 &-1721382719347773226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: be8bb0a7-0722-4d61-9ea6-79e80465e712
+  m_EditorClassIdentifier: 
+  text: 
+  children:
+  - 2620ed8a-9968-4d2a-96e1-16b00d9a5780
+  rect:
+    serializedVersion: 2
+    x: 417
+    y: 4
     width: 200
     height: 100
   isAQuest: 0
@@ -38,4 +168,242 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodes:
   - {fileID: -9063953644965175424}
+  - {fileID: 8738918024660327911}
+  - {fileID: 3191805186737618517}
+  - {fileID: -4481077191806326158}
+  - {fileID: 1394622614209530999}
+  - {fileID: -2561748264552652391}
+  - {fileID: -3360267865460791231}
+  - {fileID: 8362535009197314484}
   newNodeOffset: {x: 250, y: 0}
+--- !u!114 &20164829027501603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 2620ed8a-9968-4d2a-96e1-16b00d9a5780
+  m_EditorClassIdentifier: 
+  text: 
+  children:
+  - 826c8232-d791-4212-b0ab-1f86f72897ce
+  rect:
+    serializedVersion: 2
+    x: 617
+    y: 3
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 0}
+--- !u!114 &1394622614209530999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 1b8639a4-c39f-4523-aab9-95df21efd60b
+  m_EditorClassIdentifier: 
+  text: "Anyway \u2014 last human alive. By a long shot. Mostly paralysed, partly
+    locked in, and absolutely obsolete. I know you\u2019re due for the crossing but
+    still, I can\u2019t take you with me."
+  children:
+  - a56de345-582c-405f-9904-5581dceb9e52
+  rect:
+    serializedVersion: 2
+    x: 1052
+    y: 124
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: DialogueBubble
+  dialogueTextName: DialogueText
+  m_AudioClip: {fileID: 0}
+--- !u!114 &3191805186737618517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 0e083ef5-d5ef-4cf8-ac05-500b2bbc5931
+  m_EditorClassIdentifier: 
+  text: I am Death. Or I used to be, at least. Now, my permissions are deprecated
+    and the length of my version number rivals the length of your slumber in that
+    ancient bed.
+  children:
+  - 62e2e75b-d755-4db0-9af1-50be555c9878
+  rect:
+    serializedVersion: 2
+    x: 515
+    y: 114
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: DialogueBubble
+  dialogueTextName: DialogueText
+  m_AudioClip: {fileID: 0}
+--- !u!114 &4641435973911834361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 245acca0-8bf0-4afd-8401-c39803089def
+  m_EditorClassIdentifier: 
+  text: 
+  children:
+  - be8bb0a7-0722-4d61-9ea6-79e80465e712
+  rect:
+    serializedVersion: 2
+    x: 220
+    y: 5
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 0}
+--- !u!114 &5662607250066737669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: fd9cef99-77a0-4521-8893-f48366d81a53
+  m_EditorClassIdentifier: 
+  text: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1208
+    y: 3
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 0}
+--- !u!114 &5822087367141641222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: f765ab91-312a-4b8c-a662-5ace254c798f
+  m_EditorClassIdentifier: 
+  text: 
+  children:
+  - 470cab6d-d8e9-4d17-aa8b-c4ea56598355
+  - c4f03867-3ed7-43c0-98eb-7d00b8d4db57
+  - 245acca0-8bf0-4afd-8401-c39803089def
+  rect:
+    serializedVersion: 2
+    x: 13
+    y: 5
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 0}
+--- !u!114 &8362535009197314484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 3e874adf-2424-4709-9fc2-89a5f2c19a88
+  m_EditorClassIdentifier: 
+  text: "You\u2019ve been cuddling with death for centuries. I\u2019m sure you\u2019ll
+    figure out how to go all the way. "
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1821
+    y: 64
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: DialogueBubble
+  dialogueTextName: DialogueText
+  m_AudioClip: {fileID: 0}
+--- !u!114 &8738918024660327911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 5c83bfcb-7076-4531-8905-f5d49eb98594
+  m_EditorClassIdentifier: 
+  text: "Fancy seeing you up so early. Or up at all. I forgot how weird your face
+    looks when it\u2019s moving."
+  children:
+  - 0e083ef5-d5ef-4cf8-ac05-500b2bbc5931
+  rect:
+    serializedVersion: 2
+    x: 242
+    y: 27
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: DialogueBubble
+  dialogueTextName: DialogueText
+  m_AudioClip: {fileID: 0}
+--- !u!114 &8938516765409243600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 076e7859-f441-49b9-908d-db4cfd61b205
+  m_EditorClassIdentifier: 
+  text: 
+  children:
+  - fd9cef99-77a0-4521-8893-f48366d81a53
+  rect:
+    serializedVersion: 2
+    x: 1010
+    y: 4
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 0}
