@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{dff69761-350b-4732-a73d-8cf33e558bce}">
+		<property name="assetPath">
+			<value>MUSIC_radio_guitar&amp;bass_normal_loop.ogg</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>84.70064583333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{93e57aa7-3ab8-4787-b546-95b25ce1b1e9}</destination>
+		</relationship>
+	</object>
+</objects>

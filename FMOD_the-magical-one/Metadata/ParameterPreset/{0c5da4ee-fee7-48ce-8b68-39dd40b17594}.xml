@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{0c5da4ee-fee7-48ce-8b68-39dd40b17594}">
+		<property name="name">
+			<value>isLevitating</value>
+		</property>
+		<relationship name="folder">
+			<destination>{aa74c534-8e1b-433c-8ca2-e29bdea92eaa}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{edfe4b41-4f50-45e6-b602-85693dedef0a}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{edfe4b41-4f50-45e6-b602-85693dedef0a}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

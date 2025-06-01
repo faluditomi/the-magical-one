@@ -24,7 +24,7 @@ MonoBehaviour:
   isAQuest: 0
   dialogueBoxName: DialogueBubble
   dialogueTextName: DialogueText
-  m_AudioClip: {fileID: 0}
+  m_AudioClip: {fileID: 8300000, guid: f1c390d8e1a33f246ab4ac08d71c7568, type: 3}
 --- !u!114 &-4481077191806326158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   isAQuest: 0
   dialogueBoxName: DialogueBubble
   dialogueTextName: DialogueText
-  m_AudioClip: {fileID: 0}
+  m_AudioClip: {fileID: 8300000, guid: b39f96997348ee94bb53f2aeb039e10e, type: 3}
 --- !u!114 &-3364254772331239846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   isAQuest: 0
   dialogueBoxName: DialogueBubble
   dialogueTextName: DialogueText
-  m_AudioClip: {fileID: 0}
+  m_AudioClip: {fileID: 8300000, guid: e4893321ecc3e4149bec2274710c3990, type: 3}
 --- !u!114 &-2561748264552652391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,13 +122,13 @@ MonoBehaviour:
   rect:
     serializedVersion: 2
     x: 1294
-    y: 29
+    y: 28
     width: 200
     height: 100
   isAQuest: 0
   dialogueBoxName: DialogueBubble
   dialogueTextName: DialogueText
-  m_AudioClip: {fileID: 0}
+  m_AudioClip: {fileID: 8300000, guid: d22307403a3340245b89d73b5a9fcdef, type: 3}
 --- !u!114 &-1721382719347773226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
   isAQuest: 0
   dialogueBoxName: DialogueBubble
   dialogueTextName: DialogueText
-  m_AudioClip: {fileID: 0}
+  m_AudioClip: {fileID: 8300000, guid: bf13340834e7389418408f8ee62a91da, type: 3}
 --- !u!114 &3191805186737618517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,9 +240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
   m_Name: 0e083ef5-d5ef-4cf8-ac05-500b2bbc5931
   m_EditorClassIdentifier: 
-  text: I am Death. Or I used to be, at least. Now, my permissions are deprecated
-    and the length of my version number rivals the length of your slumber in that
-    ancient bed.
+  text: 'I am the Grim Reaper. Or I used to be, at least. Now, my permissions are
+    deprecated and the length of my version number rivals the length of your slumber
+    in that ancient bed. '
   children:
   - 62e2e75b-d755-4db0-9af1-50be555c9878
   rect:
@@ -254,7 +254,7 @@ MonoBehaviour:
   isAQuest: 0
   dialogueBoxName: DialogueBubble
   dialogueTextName: DialogueText
-  m_AudioClip: {fileID: 0}
+  m_AudioClip: {fileID: 8300000, guid: 3e9fbe00a052f4947a7f23118b7c062d, type: 3}
 --- !u!114 &4641435973911834361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   isAQuest: 0
   dialogueBoxName: DialogueBubble
   dialogueTextName: DialogueText
-  m_AudioClip: {fileID: 0}
+  m_AudioClip: {fileID: 8300000, guid: baf74b9453700e8478f6c0dd49514014, type: 3}
 --- !u!114 &8738918024660327911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ MonoBehaviour:
   isAQuest: 0
   dialogueBoxName: DialogueBubble
   dialogueTextName: DialogueText
-  m_AudioClip: {fileID: 0}
+  m_AudioClip: {fileID: 8300000, guid: acce99d6c697d5f4887edd1977da569a, type: 3}
 --- !u!114 &8938516765409243600
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2e384e52-ab11-4e7e-a482-51a17a023e19}">
+		<property name="assetPath">
+			<value>AMB_machine_beep_01_oneshot.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.22034375</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{93e57aa7-3ab8-4787-b546-95b25ce1b1e9}</destination>
+		</relationship>
+	</object>
+</objects>

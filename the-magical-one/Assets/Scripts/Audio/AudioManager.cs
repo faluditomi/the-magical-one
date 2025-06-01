@@ -32,21 +32,21 @@ public class AudioManager : MonoBehaviour
     {
 
         // Initializes and starts correct music and ambience
-        string currentScene = SceneManager.GetActiveScene().name;
-        switch (currentScene)
-        {
-            case "Main Menu":
-                InitializeMusic(FMODEvents.instance.menuMusic);
-                InitializeAmbience(FMODEvents.instance.cityMenu);
-                break;
+        //string currentScene = SceneManager.GetActiveScene().name;
+        //switch (currentScene)
+        //{
+        //    case "Main Menu":
+        //        InitializeMusic(FMODEvents.instance.menuMusic);
+        //        InitializeAmbience(FMODEvents.instance.cityMenu);
+        //        break;
 
-            case "Map":
-                InitializeMusic(FMODEvents.instance.music);
-                InitializeAmbience(FMODEvents.instance.city);
-                break;
+        //    case "Map":
+        //        InitializeMusic(FMODEvents.instance.music);
+        //        InitializeAmbience(FMODEvents.instance.city);
+        //        break;
 
 
-        }
+        //}
 
     }
 
@@ -80,6 +80,14 @@ public class AudioManager : MonoBehaviour
     public EventInstance CreateEventInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        eventInstances.Add(eventInstance);
+        return eventInstance;
+    }
+
+    public EventInstance Create3DEventInstance(EventReference eventReference, GameObject emitterGameObject, Rigidbody emitterObjectRigidbody)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        RuntimeManager.AttachInstanceToGameObject(eventInstance, emitterGameObject, emitterObjectRigidbody);
         eventInstances.Add(eventInstance);
         return eventInstance;
     }
