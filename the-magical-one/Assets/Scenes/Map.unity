@@ -3046,6 +3046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 88e50a98ea436cd47b2bbc662ae3a73d, type: 2}
+  lastDialogue: 0
 --- !u!65 &784588792
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5760,6 +5761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 88e50a98ea436cd47b2bbc662ae3a73d, type: 2}
+  lastDialogue: 0
 --- !u!65 &1396206609
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6797,9 +6799,73 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1070015920}
+    - target: {fileID: 2684450102715036976, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2827896132477157126, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
       propertyPath: m_Name
       value: DialogueBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_text
+      value: "Hey\u2026 Squishy! The last human alive, eh?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_fontSize
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_margin.w
+      value: 11.2620945
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_margin.x
+      value: -0.024500791
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_margin.y
+      value: -4.5039
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_margin.z
+      value: 5.6765594
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 60b32f90a39753844a1089a6ff6b0700, type: 2}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7812039183043900828, guid: 60b32f90a39753844a1089a6ff6b0700, type: 2}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790649831791529721, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8380719319709168201, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9019704663283722212, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
       propertyPath: m_Pivot.x
@@ -6882,7 +6948,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8810080726178615021, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}

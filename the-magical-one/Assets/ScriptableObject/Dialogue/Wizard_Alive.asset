@@ -1,0 +1,173 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3810452879949783106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 619783c5-63a0-421b-ab54-1d9504d3ad80
+  m_EditorClassIdentifier: 
+  text: No better place to bury this long-lost art than in the last of your kind.
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1254
+    y: 131
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 8300000, guid: 181c85e0f6843e64b91f67440c7ec894, type: 3}
+--- !u!114 &-535456411237502210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 9efbb122-8204-41be-bfbc-73a4d57e440d
+  m_EditorClassIdentifier: 
+  text: "I applaud you. If you can\u2019t do it right, at least do it long."
+  children:
+  - 4fe8edc4-3c2d-45bf-ba04-3269bc8ad6b3
+  rect:
+    serializedVersion: 2
+    x: 287
+    y: 118
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 8300000, guid: be0508320221d3644ac5f0033011f711, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331ce3a7b1410d84cb07ff7e9f37cf37, type: 3}
+  m_Name: Wizard_Alive
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: 7213998590674644657}
+  - {fileID: -535456411237502210}
+  - {fileID: 2245125209780720953}
+  - {fileID: 262311750931088350}
+  - {fileID: 4145530777532445575}
+  - {fileID: -3810452879949783106}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &262311750931088350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 1472ee40-92d2-4123-bd91-2934b2a04911
+  m_EditorClassIdentifier: 
+  text: Magic!
+  children:
+  - 1a4309ed-6cf9-4e28-927b-60eb8cc48dc1
+  rect:
+    serializedVersion: 2
+    x: 772
+    y: 131
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 8300000, guid: dba41895a183507409b22c85ce6d4164, type: 3}
+--- !u!114 &2245125209780720953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 4fe8edc4-3c2d-45bf-ba04-3269bc8ad6b3
+  m_EditorClassIdentifier: 
+  text: "This old box of cogs has long been fascinated by your kind, you know. And
+    this thing you call\u2026"
+  children:
+  - 1472ee40-92d2-4123-bd91-2934b2a04911
+  rect:
+    serializedVersion: 2
+    x: 534
+    y: 35
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 8300000, guid: df268acd94b163d43924c2c46a842ca7, type: 3}
+--- !u!114 &4145530777532445575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 1a4309ed-6cf9-4e28-927b-60eb8cc48dc1
+  m_EditorClassIdentifier: 
+  text: I wanted to imprint it on your soggy wrinkles before Death comes to push
+    my buttons for good.
+  children:
+  - 619783c5-63a0-421b-ab54-1d9504d3ad80
+  rect:
+    serializedVersion: 2
+    x: 1012
+    y: 31
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 8300000, guid: 14ebe7172c1262141aced17c6397836b, type: 3}
+--- !u!114 &7213998590674644657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: a9a05982-301b-4573-8ee0-85e7b0edfd1f
+  m_EditorClassIdentifier: 
+  text: "Hey\u2026 Squishy! The last human alive, eh?"
+  children:
+  - 9efbb122-8204-41be-bfbc-73a4d57e440d
+  rect:
+    serializedVersion: 2
+    x: 35
+    y: 45
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: 
+  dialogueTextName: 
+  m_AudioClip: {fileID: 8300000, guid: a7bf17fbba83f45449bbe3e3a7546bd7, type: 3}
