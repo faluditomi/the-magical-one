@@ -91,7 +91,6 @@ public class InteractionController : MonoBehaviour
     {
         if(currentDialogueTarget != null)
         {
-            print("GGGG");
             AIConversant aIConversant = currentDialogueTarget.GetComponent<AIConversant>();
             aIConversant.StartCoroutine(aIConversant.RunDialogue());
         }

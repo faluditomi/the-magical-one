@@ -52,6 +52,30 @@ MonoBehaviour:
   dialogueBoxName: DialogueBubble
   dialogueTextName: DialogueText
   m_AudioClip: {fileID: 8300000, guid: b39f96997348ee94bb53f2aeb039e10e, type: 3}
+--- !u!114 &-4447484904414920398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 8fb52595-759f-4003-9cec-a951fcc18d69
+  m_EditorClassIdentifier: 
+  text: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2071
+    y: 64
+    width: 200
+    height: 100
+  isAQuest: 0
+  dialogueBoxName: DialogueBubble
+  dialogueTextName: DialogueText
+  m_AudioClip: {fileID: 0}
 --- !u!114 &-3364254772331239846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +199,7 @@ MonoBehaviour:
   - {fileID: -2561748264552652391}
   - {fileID: -3360267865460791231}
   - {fileID: 8362535009197314484}
+  - {fileID: -4447484904414920398}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &20164829027501603
 MonoBehaviour:
@@ -345,7 +370,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "You\u2019ve been cuddling with death for centuries. I\u2019m sure you\u2019ll
     figure out how to go all the way. "
-  children: []
+  children:
+  - 8fb52595-759f-4003-9cec-a951fcc18d69
   rect:
     serializedVersion: 2
     x: 1821
