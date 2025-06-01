@@ -10,8 +10,7 @@ public class Radio : MonoBehaviour
     private void Start()
     {
         AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.radio, gameObject);
-        radioInstance = AudioManager.instance.CreateEventInstance(FMODEvents.instance.radio);
-        RuntimeManager.AttachInstanceToGameObject(radioInstance, gameObject, GetComponent<Rigidbody>());
+        radioInstance = AudioManager.instance.Create3DEventInstance(FMODEvents.instance.radio, gameObject, GetComponent<Rigidbody>());
         radioInstance.start();
 
     }
