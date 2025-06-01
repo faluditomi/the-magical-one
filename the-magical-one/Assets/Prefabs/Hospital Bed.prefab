@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5293717093765541879}
   - component: {fileID: 3220364537586577855}
   - component: {fileID: 7487171595931401401}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8828940377710230669}
   - component: {fileID: 207406142723000149}
   - component: {fileID: 8856125045999746059}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 2610059535232862905}
   - component: {fileID: 3820419224619300183}
   - component: {fileID: 8791474338973954670}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 7535702543282162807}
   - component: {fileID: 4957986357221804780}
   - component: {fileID: 1054180903290860197}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 5810694359330598390}
   - component: {fileID: 4074392511488721067}
   - component: {fileID: 4611408023921337022}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -408,7 +408,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fa5e25bad1a5b9243a9d069230b1dbf8, type: 2}
+  - {fileID: 2100000, guid: 3cd173ae4543f8745ac463237321e8db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 2160407738968281584}
   - component: {fileID: 9057697393841106738}
   - component: {fileID: 9054072969723851568}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +528,7 @@ GameObject:
   - component: {fileID: 2615990658370644142}
   - component: {fileID: 2265533795138391106}
   - component: {fileID: 8590482837348051376}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 5225780321715361102}
   - component: {fileID: 8873819466786671516}
   - component: {fileID: 4399887528891097137}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hospital Bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -703,7 +703,7 @@ GameObject:
   - component: {fileID: 6907682628705221878}
   - component: {fileID: 5447118800685834864}
   - component: {fileID: 6590965499859237991}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cylinder.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -756,7 +756,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e9f5aa5240c9ced4d915e68d5e16ba8e, type: 2}
+  - {fileID: 2100000, guid: 3cd173ae4543f8745ac463237321e8db, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

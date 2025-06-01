@@ -18,7 +18,6 @@ public class InteractionController : MonoBehaviour
     private void Start()
     {
         levitateEventInstance = AudioManager.instance.CreateEventInstance(FMODEvents.instance.magicLevitate);
-
     }
 
     private void Awake()
@@ -37,7 +36,9 @@ public class InteractionController : MonoBehaviour
         }
 
         RaycastHit hit;
-        Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, int.MaxValue);
+        int layerToIgnore = 2;
+        int layerMask = ~(1 << layerToIgnore);
+        Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, int.MaxValue, layerMask);
 
         if(hit.collider == null)
         {
