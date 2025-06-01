@@ -57,7 +57,6 @@ public class ResetController : MonoBehaviour
             transform.position = initialPosition;
             transform.rotation = initialRotation;
         }
-        
     }
 
 }

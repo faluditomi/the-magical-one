@@ -187,7 +187,7 @@ Transform:
   m_GameObject: {fileID: 5019473337230178491}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08537292, y: -0.90652823, z: 0.03876281, w: 0.41160113}
-  m_LocalPosition: {x: 10.723264, y: -2.0648358, z: 2.963386}
+  m_LocalPosition: {x: -2.06824, y: -2.5, z: 2.9736147}
   m_LocalScale: {x: 2.54, y: 1.51827, z: 0.04948001}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -366,6 +366,8 @@ GameObject:
   - component: {fileID: 4235403031746120306}
   - component: {fileID: 4326287430153821148}
   - component: {fileID: 238128972790097206}
+  - component: {fileID: 8076635413704825189}
+  - component: {fileID: 8041178859137472841}
   m_Layer: 0
   m_Name: radio
   m_TagString: Levitateable
@@ -551,6 +553,32 @@ MonoBehaviour:
   isRope: 0
   ropeRigidbodies: []
 --- !u!114 &238128972790097206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132759799171492668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c48fb991daebeea4dbb75ebebd5f6f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8076635413704825189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7132759799171492668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f994f4a299aa089469d27e5944291849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRope: 0
+  ropeRigidbodies: []
+--- !u!114 &8041178859137472841
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

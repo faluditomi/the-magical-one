@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LevitateBehaviour : MonoBehaviour
@@ -12,6 +13,8 @@ public class LevitateBehaviour : MonoBehaviour
     private Quaternion initialRotationOffset;
     private Rigidbody myRigidbody;
     private GameManager gameManager;
+    public bool isRope;
+    public List<Rigidbody> ropeRigidbodies;
 
     void Awake()
     {
@@ -77,20 +80,44 @@ public class LevitateBehaviour : MonoBehaviour
         this.currentCollectedRadius = currentCollectedRadius;
         currentShuffleOffset = GetNewShuffleOffset();
         initialRotationOffset = Quaternion.Inverse(currentDestination.rotation) * transform.rotation;
-        myRigidbody.useGravity = false;
-        myRigidbody.isKinematic = false;
+
+        if(!isRope)
+        {
+            myRigidbody.useGravity = false;
+            myRigidbody.isKinematic = false;
+        }
+        else
+        {
+            foreach(Rigidbody rope in ropeRigidbodies)
+            {
+                rope.useGravity = false;
+                rope.isKinematic = false;
+            }
+        }
     }
 
     public void StopLevitate()
     {
         gameManager.StopLevitating();
-        myRigidbody.linearVelocity = Vector3.zero;
         isLevitating = false;
         currentShuffleSpeed = 0f;
         currentDestination = null;
         currentCollectedRadius = 0f;
         currentShuffleOffset = Vector3.zero;
-        myRigidbody.useGravity = true;
+
+        if(!isRope)
+        {
+            myRigidbody.linearVelocity = Vector3.zero;
+            myRigidbody.useGravity = true;
+        }
+        else
+        {
+            foreach(Rigidbody rope in ropeRigidbodies)
+            {
+                rope.linearVelocity = Vector3.zero;
+                rope.useGravity = true;
+            }
+        }
     }
 
 }
