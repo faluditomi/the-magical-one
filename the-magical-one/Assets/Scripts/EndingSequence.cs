@@ -15,6 +15,9 @@ public class EndingSequence : MonoBehaviour
     [SerializeField] private float fadeTime;
     [SerializeField] private float musicTime;
 
+    [SerializeField] private GameObject wizardGameObject;
+    [SerializeField] private GameObject wizardReviveGameObject;
+
     private Coroutine fadeCoroutine;
 
     private bool isFake = true;
@@ -69,6 +72,9 @@ public class EndingSequence : MonoBehaviour
             }
 
             fadeGroup.alpha = 1f;
+
+            wizardGameObject.SetActive(false);
+            wizardReviveGameObject.SetActive(true);
 
             //angelic music
 
@@ -129,7 +135,7 @@ public class EndingSequence : MonoBehaviour
             StopCoroutine(fadeCoroutine);
         }
 
-        fadeCoroutine = StartCoroutine(FadeCanvasGroup(fadeGroup, fadeGroup.alpha, 1f, fadeTime));
+        fadeCoroutine = StartCoroutine(FadeCanvasGroup(fadeGroup, fadeGroup.alpha, 1f, fadeTime * 3f));
 
         yield return fadeCoroutine;
     }
@@ -141,7 +147,7 @@ public class EndingSequence : MonoBehaviour
             StopCoroutine(fadeCoroutine);
         }
 
-        fadeCoroutine = StartCoroutine(FadeCanvasGroup(fadeGroup, fadeGroup.alpha, 0f, fadeTime));
+        fadeCoroutine = StartCoroutine(FadeCanvasGroup(fadeGroup, fadeGroup.alpha, 0f, fadeTime / 2f));
 
         yield return fadeCoroutine;
     }
