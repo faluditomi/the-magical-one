@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{afd28878-3ad6-4d01-8062-65f7a4fb56e0}">
+		<property name="assetPath">
+			<value>SFX_nursebot_moving_start.ogg</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.23198958333333333</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{93e57aa7-3ab8-4787-b546-95b25ce1b1e9}</destination>
+		</relationship>
+	</object>
+</objects>
