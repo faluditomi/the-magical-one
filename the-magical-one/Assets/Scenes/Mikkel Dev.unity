@@ -644,7 +644,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 0
+  m_Constraints: 14
   m_CollisionDetection: 2
 --- !u!1 &226552413
 GameObject:
@@ -1599,7 +1599,7 @@ Transform:
   m_GameObject: {fileID: 777304670}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.48, y: 0.23, z: -3.81}
+  m_LocalPosition: {x: -0.9, y: 1.73, z: -3.81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1639,10 +1639,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 10
   m_CollisionDetection: 0
 --- !u!114 &777304677
 MonoBehaviour:
@@ -1659,11 +1659,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1044236743
+      Data2: 1330570689
+      Data3: -1225902935
+      Data4: 1149099132
+    Path: event:/SFX/radio
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -1671,10 +1671,12 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   NonRigidbodyVelocity: 0
-  Params: []
+  Params:
+  - Name: RadioDamage
+    Value: 0
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 0.1
+  OverrideMaxDistance: 9.8
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0

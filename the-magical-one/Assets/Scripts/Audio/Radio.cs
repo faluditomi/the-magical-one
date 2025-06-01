@@ -1,6 +1,7 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Radio : MonoBehaviour
 {
@@ -10,8 +11,9 @@ public class Radio : MonoBehaviour
     {
         AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.radio, gameObject);
         radioInstance = AudioManager.instance.CreateEventInstance(FMODEvents.instance.radio);
+        RuntimeManager.AttachInstanceToGameObject(radioInstance, gameObject, GetComponent<Rigidbody>());
         radioInstance.start();
-        
+
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -19,12 +21,19 @@ public class Radio : MonoBehaviour
         if(radioInstance.getParameterByName("RadioDamage", out float value) == 0)
         {
             radioInstance.setParameterByName("RadioDamage", 1);
+            value++;
 
+            Debug.Log("RadioDamage = " + value);
         }
-        else if(value == 1f)
+
+        if(value == 1)
         {
             radioInstance.setParameterByName("RadioDamage", 2);
-        }
+            value++;
 
+            Debug.Log("The radio has been fixed!");
+        } else { return; }
+
+        
     }   
 }
