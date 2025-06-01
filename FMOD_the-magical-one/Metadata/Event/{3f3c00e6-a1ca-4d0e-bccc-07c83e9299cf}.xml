@@ -57,6 +57,9 @@
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{994fc48c-3d22-4044-975f-4d11a897358e}">
+		<property name="minimumDistance">
+			<value>5.20000029</value>
+		</property>
 		<property name="maximumDistance">
 			<value>45</value>
 		</property>
@@ -79,6 +82,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{43db5f28-acab-4ead-a828-660967f8697c}">
+		<property name="volume">
+			<value>3</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{88bd0eb6-8271-4c29-b09d-8f9d3a4568b7}</destination>
 		</relationship>
@@ -100,7 +106,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>70</value>
+			<value>94.5</value>
 		</property>
 		<property name="isAsync">
 			<value>true</value>
@@ -188,6 +194,9 @@
 	<object class="MixerBusPanner" id="{2ce09a73-441d-495d-b694-dcee5fdd35de}" />
 	<object class="MixerBusFader" id="{c7dfe89f-f6ff-4a3f-8b12-113d201e56a7}" />
 	<object class="ObjectSpatialiserEffect" id="{ae670490-5e6f-47fc-a175-c75c90918583}">
+		<property name="minimumDistance">
+			<value>5.20000029</value>
+		</property>
 		<property name="maximumDistance">
 			<value>45</value>
 		</property>
@@ -195,7 +204,7 @@
 	<object class="MixerBusFader" id="{32d79309-8d55-45e9-b587-d0d1763d3838}" />
 	<object class="ThreeEQEffect" id="{22d9abaf-330f-4661-be5b-01f298cc177b}">
 		<property name="lowGain">
-			<value>-14.5</value>
+			<value>-51</value>
 		</property>
 	</object>
 	<object class="PitchShifterEffect" id="{78ddaaca-8ada-49b6-8f5b-3a0148ea0589}">
@@ -211,10 +220,10 @@
 	</object>
 	<object class="MultibandEqEffect" id="{2078dd46-97d0-45e1-be99-92e89e9c2ee7}">
 		<property name="frequencyA">
-			<value>9046.57031</value>
+			<value>13135.6514</value>
 		</property>
 		<property name="qualityA">
-			<value>0.644206941</value>
+			<value>0.686068952</value>
 		</property>
 	</object>
 </objects>

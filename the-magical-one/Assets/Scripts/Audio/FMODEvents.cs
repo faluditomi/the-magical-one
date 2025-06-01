@@ -15,9 +15,6 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference machineDialysis { get; private set; }
     [field: SerializeField] public EventReference aircondition { get; private set; }
     [field: SerializeField] public EventReference windowSounds { get; private set; }
-    [field: SerializeField] public EventReference alarmBlaring { get; private set; }
-    [field: SerializeField] public EventReference alarmMachineEKG { get; private set; }
-    [field: SerializeField] public EventReference machineEKG { get; private set; }
 
 
 

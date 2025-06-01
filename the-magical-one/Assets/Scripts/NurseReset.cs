@@ -12,6 +12,8 @@ public class NurseReset : MonoBehaviour
 
     [SerializeField] float waitTime = 2f;
 
+    [SerializeField] float movementPlaybackRate = 0.6f;
+ 
     Vector3 originalPosition;
 
     private NavMeshAgent agent;
@@ -21,6 +23,8 @@ public class NurseReset : MonoBehaviour
     private Stack<Tuple<GameObject, Vector3>> targets = new Stack<Tuple<GameObject, Vector3>>();
 
     private EventInstance nurseMovingInstance;
+
+    
 
     private void Awake()
     {
@@ -58,7 +62,7 @@ public class NurseReset : MonoBehaviour
         {
             Tuple<GameObject, Vector3> resetObject = targets.Pop();
             agent.SetDestination(resetObject.Item2);
-            nurseMovingInstance.setParameterByName("NursebotMoving", 1);
+            nurseMovingInstance.setParameterByName("NursebotMoving", movementPlaybackRate);
 
             yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance);
 
@@ -73,7 +77,7 @@ public class NurseReset : MonoBehaviour
         }
 
         agent.SetDestination(originalPosition);
-        nurseMovingInstance.setParameterByName("NursebotMoving", 1);
+        nurseMovingInstance.setParameterByName("NursebotMoving", movementPlaybackRate);
 
         yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance);
         nurseMovingInstance.setParameterByName("NursebotMoving", 0);
