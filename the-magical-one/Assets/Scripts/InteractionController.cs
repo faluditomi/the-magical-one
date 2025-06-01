@@ -1,5 +1,7 @@
 using TOS.Dialogue;
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class InteractionController : MonoBehaviour
 {
@@ -10,6 +12,13 @@ public class InteractionController : MonoBehaviour
     private GameObject currentLevitateTarget;
     private GameObject currentDialogueTarget;
     private ParticleSystem currentHoverParticles;
+    private EventInstance levitateInstance;
+
+    private void Start()
+    {
+       levitateInstance = AudioManager.instance.Create3DEventInstance(FMODEvents.instance.magicLevitate, gameObject, null);
+
+    }
 
     private void Awake()
     {
@@ -81,6 +90,7 @@ public class InteractionController : MonoBehaviour
 
         if(currentLevitateTarget != null)
         {
+            levitateInstance.start();
             currentHoverParticles.Stop();
             currentLevitateTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
             nurseReset.AddTarget(currentLevitateTarget, currentLevitateTarget.transform.Find("ResetPosition").position);
