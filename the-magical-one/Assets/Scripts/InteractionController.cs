@@ -11,6 +11,8 @@ public class InteractionController : MonoBehaviour
     private ParticleSystem currentHoverParticles;
     private GameManager gameManager;
 
+    public bool fireballActive = false;
+
     private void Awake()
     {
         cameraTransform = Camera.main.transform;
@@ -86,6 +88,8 @@ public class InteractionController : MonoBehaviour
         // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Okay, StartDialogue);
         // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yes, StartDialogue);
         // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yeah, StartDialogue);
+
+        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Fireball, Fireball);
     }
 
     private void Levitate(SpellArgs args)
@@ -111,6 +115,18 @@ public class InteractionController : MonoBehaviour
 
             AIConversant aIConversant = currentDialogueTarget.GetComponent<AIConversant>();
             aIConversant.StartCoroutine(aIConversant.RunDialogue());
+        }
+    }
+
+    private void Fireball(SpellArgs args)
+    {
+        FireballArgs myArgs = SpellSessionCache.GetSpellArgs<FireballArgs>(args);
+
+        FireballController shooter = GetComponent<FireballController>();
+
+        if(shooter != null && fireballActive)
+        {
+            shooter.ShootFireball(myArgs.speed, myArgs.radius);
         }
     }
 

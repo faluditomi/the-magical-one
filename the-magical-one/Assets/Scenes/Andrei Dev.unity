@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &23204915
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -469,6 +469,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30666194}
   m_CullTransparentMesh: 1
+--- !u!1 &52281882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 52281883}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &52281883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 52281882}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.01}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1070015922}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &59407443
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &59407444
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -755,8 +786,8 @@ PrefabInstance:
     - target: {fileID: 6765546419057951258, guid: f0d9aa210ed8143429f4e2d83d24f866, type: 3}
       propertyPath: initialPrompt
       value: 'The player is using voice commands in a video game to control a character.
-        Recognize short commands like: levito, tip, toe, levitate, launch, yep, yes,
-        yeah, hello, okay. These commands may be spoken quickly, with background
+        Recognize short commands like: fireball, levito, tip, toe, levitate, launch,
+        yep, yes, yeah, hello, okay. These commands may be spoken quickly, with background
         noise, different accents, or poor microphone quality. Recognize the commands
         exactly.'
       objectReference: {fileID: 0}
@@ -765,63 +796,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0d9aa210ed8143429f4e2d83d24f866, type: 3}
---- !u!1001 &222991502
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4514989989740059679, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_Name
-      value: death
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.44869
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 29.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7731230085954544539, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5bbd9b9e25214f7429e2b2baa3636d0a, type: 3}
 --- !u!1 &226372115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,6 +2598,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 5402887360643264125, guid: d56f5f8516e82894ea3daea470f232b8, type: 3}
+      propertyPath: fireballActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8868808434680888760, guid: d56f5f8516e82894ea3daea470f232b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2667,11 +2645,17 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 6478070972611478531, guid: d56f5f8516e82894ea3daea470f232b8, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8868808434680888760, guid: d56f5f8516e82894ea3daea470f232b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 52281883}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1621962535785713413, guid: d56f5f8516e82894ea3daea470f232b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1070015914}
+    - targetCorrespondingSourceObject: {fileID: 1621962535785713413, guid: d56f5f8516e82894ea3daea470f232b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1070015923}
   m_SourcePrefab: {fileID: 100100000, guid: d56f5f8516e82894ea3daea470f232b8, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -3275,6 +3259,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
+--- !u!4 &1070015922 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8868808434680888760, guid: d56f5f8516e82894ea3daea470f232b8, type: 3}
+  m_PrefabInstance: {fileID: 761084215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1070015923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070015913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76034b6ca264984da36597a5d1f3a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireballPrefab: {fileID: 5642310300280849607, guid: badb6a50b3b300e4fabdfad58f490790, type: 3}
+  fireballSpawnPoint: {fileID: 52281883}
 --- !u!1 &1091846074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,7 +3740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1297519911
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5020,7 +5023,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
       propertyPath: activeSpells.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7142649178838000013, guid: 8c77d4508f5010f4dac7aee1b00c0d7d, type: 3}
       propertyPath: 'activeSpells.Array.data[7]'
@@ -6575,7 +6578,6 @@ SceneRoots:
   - {fileID: 59407447}
   - {fileID: 1297519914}
   - {fileID: 1854088905}
-  - {fileID: 222991502}
   - {fileID: 1055277598}
   - {fileID: 1646330317}
   - {fileID: 410087041}
