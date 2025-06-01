@@ -113,6 +113,7 @@ public class InteractionController : MonoBehaviour
             if(currentLevitateTarget.name == "Plug")
             {
                 endingSequence.StartEdgingDeath();
+
             }
 
             currentHoverParticles.Stop();

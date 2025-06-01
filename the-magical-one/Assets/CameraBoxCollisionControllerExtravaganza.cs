@@ -2,12 +2,19 @@ using UnityEngine;
 
 public class CameraBoxCollisionControllerExtravaganza : MonoBehaviour
 {
+    private GameManager gameManager;
+
+    void Awake()
+    {
+        gameManager = FindFirstObjectByType<GameManager>();
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         if(collision.transform.tag.Equals("CameraBox"))
         {
             collision.transform.Find("Kid Drawing").gameObject.SetActive(true);
-            //set cam hacked bool in game manager and make nurse not come in anymore
+            gameManager.SetCameraHacked();
             Destroy(gameObject);
         }
     }

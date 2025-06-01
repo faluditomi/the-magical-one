@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public bool hasMagic;
     public bool isPastWizard;
     public bool hasFireball;
+    public bool isCameraHacked;
     private Transform currentLevitatingTransform;
 
     public void StartLevitating(Transform levitatingObject)
@@ -26,6 +27,11 @@ public class GameManager : MonoBehaviour
     public bool IsLevitationInProgress()
     {
         return isLevitationInProgress;
+    }
+
+    public void SetCameraHacked()
+    {
+        isCameraHacked = true;
     }
 
     public void StartDialogue()

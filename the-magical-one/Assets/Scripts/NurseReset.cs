@@ -44,7 +44,7 @@ public class NurseReset : MonoBehaviour
 
     private void Update()
     {
-        if(targets.Count > 0 && !isResetting)
+        if(targets.Count > 0 && !isResetting && !gameManager.isCameraHacked)
         {
             StartCoroutine(NurseBehaviour());
         }

@@ -25,7 +25,8 @@ MonoBehaviour:
   speakerTextGameObject: SpeakerText
   dialogueTextGameObject: DeathDialogueText
   mAudioClip: {fileID: 8300000, guid: f1c390d8e1a33f246ab4ac08d71c7568, type: 3}
-  triggerActions: []
+  triggerActions:
+  - death hello off
 --- !u!114 &-4481077191806326158
 MonoBehaviour:
   m_ObjectHideFlags: 0
