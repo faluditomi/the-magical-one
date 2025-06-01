@@ -11,7 +11,7 @@ public class InteractionController : MonoBehaviour
     private GameObject currentDialogueTarget;
     private ParticleSystem currentHoverParticles;
 
-    private bool fireballActive = false;
+    public bool fireballActive = false;
 
     private void Awake()
     {
@@ -106,7 +106,7 @@ public class InteractionController : MonoBehaviour
 
         FireballController shooter = GetComponent<FireballController>();
 
-        if(shooter != null)
+        if(shooter != null && fireballActive)
         {
             shooter.ShootFireball(myArgs.speed, myArgs.radius);
         }

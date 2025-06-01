@@ -34,18 +34,6 @@ public class Fireball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Explode();
-    }
-
-    private void Explode()
-    {
         Collider[] hits = Physics.OverlapSphere(transform.position, radius);
-
-        foreach(var hit in hits)
-        {
-            
-        }
-
-        Destroy(gameObject);
     }
 }
