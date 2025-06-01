@@ -15,9 +15,12 @@ public class PauseMenu : MonoBehaviour
 
     private bool isPaused;
 
+    private CameraController cameraController;
+
     private void Awake()
     {
         masterBus = RuntimeManager.GetBus("bus:/");
+        cameraController = FindFirstObjectByType<CameraController>();
     }
 
     private void Update()
@@ -50,9 +53,10 @@ public class PauseMenu : MonoBehaviour
 
         isPaused = true;
 
-        Time.timeScale = 0;
+        // Time.timeScale = 0;
+        cameraController.enabled = false;
 
-        masterBus.setPaused(true);
+        // masterBus.setPaused(true);
     }
 
     public void ResumeGame()
@@ -65,9 +69,10 @@ public class PauseMenu : MonoBehaviour
 
         isPaused = false;
 
-        Time.timeScale = 1;
+        // Time.timeScale = 1;
+        cameraController.enabled = true;
 
-        masterBus.setPaused(false);
+        // masterBus.setPaused(false);
     }
 
     public void RestartGame()

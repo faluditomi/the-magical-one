@@ -3,22 +3,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    private static GameManager _instance;
-
     private bool isLevitationInProgress;
+    public bool isDialogueInProgress;
+    public bool isPastDeath;
+    public bool hasMagic;
+    public bool isPastWizard;
     private Transform currentLevitatingTransform;
-
-    public static GameManager Instance()
-    {
-        if(_instance == null)
-        {
-            var obj = new GameObject("GameManager");
-            _instance = obj.AddComponent<GameManager>();
-            DontDestroyOnLoad(obj);
-        }
-
-        return _instance;
-    }
 
     public void StartLevitating(Transform levitatingObject)
     {
@@ -37,6 +27,31 @@ public class GameManager : MonoBehaviour
         return isLevitationInProgress;
     }
 
+    public void StartDialogue()
+    {
+        isDialogueInProgress = true;
+    }
+
+    public void StopDialogue()
+    {
+        isDialogueInProgress = false;
+    }
+
+    public void PastDeath()
+    {
+        isPastDeath = true;
+    }
+
+    public void HasMagic()
+    {
+        hasMagic = true;
+    }
+
+    public void PastWizard()
+    {
+        isPastWizard = true;
+    }
+    
     public Transform GetCurrentLevitatingTransform()
     {
         return currentLevitatingTransform;

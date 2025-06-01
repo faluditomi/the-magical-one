@@ -6,6 +6,8 @@ public class LaunchController : MonoBehaviour
     private static LaunchController _instance;
 
     private Transform cameraTransform;
+    
+    private GameManager gameManager;
 
     private void Awake()
     {
@@ -16,8 +18,8 @@ public class LaunchController : MonoBehaviour
         }
 
         _instance = this;
-
         cameraTransform = Camera.main.transform;
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     private void OnEnable()
@@ -29,9 +31,9 @@ public class LaunchController : MonoBehaviour
     {
         LaunchArgs myArgs = SpellSessionCache.GetSpellArgs<LaunchArgs>(args);
 
-        if(GameManager.Instance().IsLevitationInProgress())
+        if(gameManager.IsLevitationInProgress())
         {
-            Transform transformToLaunch = GameManager.Instance().GetCurrentLevitatingTransform();
+            Transform transformToLaunch = gameManager.GetCurrentLevitatingTransform();
             transformToLaunch.GetComponent<LevitateBehaviour>().StopLevitate();
             transformToLaunch.GetComponent<Rigidbody>().AddForce(cameraTransform.forward * myArgs.launchForce, ForceMode.Impulse);
         }

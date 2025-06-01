@@ -1,4 +1,3 @@
-using TOS.Dialogue;
 using UnityEngine;
 
 public class InteractionController : MonoBehaviour
@@ -10,17 +9,19 @@ public class InteractionController : MonoBehaviour
     private GameObject currentLevitateTarget;
     private GameObject currentDialogueTarget;
     private ParticleSystem currentHoverParticles;
+    private GameManager gameManager;
 
     private void Awake()
     {
         cameraTransform = Camera.main.transform;
         levitatePosition = transform.Find("LevitatePosition");
         nurseReset = FindFirstObjectByType<NurseReset>();
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     private void Update()
     {
-        if(GameManager.Instance().IsLevitationInProgress())
+        if(gameManager.IsLevitationInProgress())
         {
             return;
         }
@@ -34,7 +35,7 @@ public class InteractionController : MonoBehaviour
             return;
         }
 
-        if(hit.collider.CompareTag("Levitateable"))
+        if(hit.collider.CompareTag("Levitateable") && gameManager.hasMagic)
         {
             currentLevitateTarget = hit.collider.gameObject;
             currentHoverParticles = currentLevitateTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>();
@@ -43,6 +44,15 @@ public class InteractionController : MonoBehaviour
         else if(hit.collider.CompareTag("StartDialogue"))
         {
             currentDialogueTarget = hit.collider.gameObject;
+
+            if((!currentDialogueTarget.name.Equals("Dialogue") || (gameManager.isPastDeath && !gameManager.isPastWizard))
+            && !gameManager.isDialogueInProgress)
+            {
+                currentHoverParticles = currentDialogueTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>();
+                currentHoverParticles.Play();
+            }
+
+
         }
         else
         {
@@ -54,13 +64,16 @@ public class InteractionController : MonoBehaviour
     {
         if(currentLevitateTarget != null)
         {
-            currentHoverParticles.Stop();
-            currentHoverParticles = null;
             currentLevitateTarget = null;
         }
         if(currentDialogueTarget != null)
         {
             currentDialogueTarget = null;
+        }
+        if(currentHoverParticles != null)
+        {
+            currentHoverParticles.Stop();
+            currentHoverParticles = null;
         }
     }
 
@@ -69,17 +82,17 @@ public class InteractionController : MonoBehaviour
         SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Levitate, Levitate);
 
         SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Hello, StartDialogue);
-        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yep, StartDialogue);
-        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Okay, StartDialogue);
-        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yes, StartDialogue);
-        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yeah, StartDialogue);
+        // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yep, StartDialogue);
+        // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Okay, StartDialogue);
+        // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yes, StartDialogue);
+        // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yeah, StartDialogue);
     }
 
     private void Levitate(SpellArgs args)
     {
         LevitateArgs myArgs = SpellSessionCache.GetSpellArgs<LevitateArgs>(args);
 
-        if(currentLevitateTarget != null)
+        if(currentLevitateTarget != null && gameManager.hasMagic)
         {
             currentHoverParticles.Stop();
             currentLevitateTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
@@ -89,8 +102,13 @@ public class InteractionController : MonoBehaviour
 
     private void StartDialogue(SpellArgs args)
     {
-        if(currentDialogueTarget != null)
+        if(currentDialogueTarget != null && !gameManager.isDialogueInProgress)
         {
+            if(currentDialogueTarget.name.Equals("Dialogue") && (!gameManager.isPastDeath || gameManager.isPastWizard))
+            {
+                return;
+            }
+
             AIConversant aIConversant = currentDialogueTarget.GetComponent<AIConversant>();
             aIConversant.StartCoroutine(aIConversant.RunDialogue());
         }
