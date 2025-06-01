@@ -6,18 +6,10 @@ using FMOD.Studio;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] TextMeshProUGUI scoreText;
-
-    private Animator scoreTextAnimator;
-
     [SerializeField] GameObject pausePanel;
 
     private Bus masterBus;
 
-    [SerializeField] float remainingTime;
-
-    private int score = 0;
     private int minutes;
     private int seconds;
 
@@ -26,8 +18,6 @@ public class PauseMenu : MonoBehaviour
     private void Awake()
     {
         masterBus = RuntimeManager.GetBus("bus:/");
-
-        scoreTextAnimator = scoreText.gameObject.GetComponent<Animator>();
     }
 
     private void Update()
@@ -43,35 +33,6 @@ public class PauseMenu : MonoBehaviour
                 PauseGame();
             }
         }
-
-        if(remainingTime > 0)
-        {
-            remainingTime -= Time.deltaTime;
-        }
-        else if(remainingTime < 0)
-        {
-            remainingTime = 0;
-        }
-
-        minutes = Mathf.FloorToInt(remainingTime / 60);
-
-        seconds = Mathf.FloorToInt(remainingTime % 60);
-
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
-
-    public void AddTime(float addedTime)
-    {
-        remainingTime += addedTime;
-    }
-
-    public void AddScore(int addedScore)
-    {
-        score += addedScore;
-
-        scoreText.text = score.ToString();
-
-        scoreTextAnimator.SetTrigger("ScoreAdded");
     }
 
     private void OnEnable()
@@ -83,6 +44,10 @@ public class PauseMenu : MonoBehaviour
     {
         pausePanel.SetActive(true);
 
+        Cursor.lockState = CursorLockMode.None;
+
+        Cursor.visible = true;
+
         isPaused = true;
 
         Time.timeScale = 0;
@@ -93,6 +58,10 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pausePanel.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+
+        Cursor.visible = false;
 
         isPaused = false;
 
