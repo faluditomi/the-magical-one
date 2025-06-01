@@ -127,7 +127,7 @@ namespace TOS.Dialogue
 
             index++;
 
-            dialogueBox = GameObject.Find(currentNode.dialogueBoxName).transform.Find("Image").gameObject;
+            dialogueBox = GameObject.Find(currentNode.dialogueBoxName).transform.Find("DialogueFrame").gameObject;
             
             dialogueBox.SetActive(true);
             
@@ -183,7 +183,7 @@ namespace TOS.Dialogue
         {
             yield return new WaitForEndOfFrame();
             
-            GameObject newDialogueBox = GameObject.Find(currentNode.dialogueBoxName).transform.Find("Image").gameObject;
+            GameObject newDialogueBox = GameObject.Find(currentNode.dialogueBoxName).transform.Find("DialogueFrame").gameObject;
             
             if(newDialogueBox != dialogueBox)
             {
