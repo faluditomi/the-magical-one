@@ -15,6 +15,10 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference machineDialysis { get; private set; }
     [field: SerializeField] public EventReference aircondition { get; private set; }
     [field: SerializeField] public EventReference windowSounds { get; private set; }
+    [field: SerializeField] public EventReference alarmBlaring { get; private set; }
+    [field: SerializeField] public EventReference alarmMachineEKG { get; private set; }
+    [field: SerializeField] public EventReference machineEKG { get; private set; }
+
 
 
     [field: Header("SFX")]
@@ -25,7 +29,6 @@ public class FMODEvents : MonoBehaviour
 
 
     [field: Header("NPC SFX")]
-    [field: SerializeField] public EventReference nurseBotIdle { get; private set; }
     [field: SerializeField] public EventReference nurseBotMoving { get; private set; }
     [field: SerializeField] public EventReference nurseBotTalking { get; private set; }
 

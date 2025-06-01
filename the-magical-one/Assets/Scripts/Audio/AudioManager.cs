@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using FMODUnity;
 using FMOD.Studio;
+// using Mono.Cecil;
 
 public class AudioManager : MonoBehaviour
 {
@@ -14,7 +15,10 @@ public class AudioManager : MonoBehaviour
 
 
     private EventInstance ambienceEventInstance;
+    private EventInstance machineDialysisInstance;
+
     public EventInstance musicEventInstance;
+    
 
     private void Awake()
     {
@@ -48,6 +52,8 @@ public class AudioManager : MonoBehaviour
 
         //}
 
+        Initialize3DAmbienceObjects();
+  
     }
 
     private void InitializeMusic(EventReference musicEventReference)
@@ -56,15 +62,34 @@ public class AudioManager : MonoBehaviour
         musicEventInstance.start();
     }
 
-    private void InitializeAmbience(EventReference ambienceEventReferece)
+    private void Initialize3DAmbienceObjects()
     {
-        ambienceEventInstance = CreateEventInstance(ambienceEventReferece);
-        ambienceEventInstance.start();
+        machineDialysisInstance = RuntimeManager.CreateInstance(FMODEvents.instance.machineDialysis);
+
+        RuntimeManager.AttachInstanceToGameObject(machineDialysisInstance, AudioObjects.instance.machineDialysis, AudioObjects.instance.machineDialysis.GetComponent<Rigidbody>());
+        eventInstances.Add(machineDialysisInstance);
+        machineDialysisInstance.start();
     }
 
     public void SetAmbienceParameter(string parameterName, float parameterValue)
     {
         ambienceEventInstance.setParameterByName(parameterName, parameterValue);
+    }
+
+    public void StartInstancePlaybackAtThisPosition(EventInstance eventInstance, GameObject gameObject)
+    {
+        RuntimeManager.AttachInstanceToGameObject(eventInstance, gameObject);
+        eventInstance.start();
+    }
+
+
+    public void StopInstancePlayback(EventInstance eventInstance, FMOD.Studio.STOP_MODE stop)
+    {
+        eventInstance.stop(stop);
+    }
+    public void SetGameParameter(EventInstance eventInstance, string parameterName, float parameterValue)
+    {
+        eventInstance.setParameterByName(parameterName, parameterValue);
     }
 
     // public void SetMusicArea(MusicArea area)

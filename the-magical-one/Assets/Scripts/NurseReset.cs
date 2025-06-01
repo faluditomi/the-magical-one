@@ -4,6 +4,8 @@ using UnityEngine.AI;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using FMODUnity;
+using FMOD.Studio;
 
 public class NurseReset : MonoBehaviour
 {
@@ -18,6 +20,7 @@ public class NurseReset : MonoBehaviour
 
     private Stack<Tuple<GameObject, Vector3>> targets = new Stack<Tuple<GameObject, Vector3>>();
 
+    private EventInstance nurseMovingInstance;
 
     private void Awake()
     {
@@ -27,6 +30,11 @@ public class NurseReset : MonoBehaviour
     private void Start()
     {
         originalPosition = transform.position;
+        AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.nurseBotMoving, gameObject);
+        nurseMovingInstance = AudioManager.instance.Create3DEventInstance(FMODEvents.instance.nurseBotMoving, gameObject, GetComponent<Rigidbody>());
+        nurseMovingInstance.setParameterByName("NursebotMoving", 0);
+        nurseMovingInstance.start();
+
     }
 
     private void Update()
@@ -50,11 +58,12 @@ public class NurseReset : MonoBehaviour
         {
             Tuple<GameObject, Vector3> resetObject = targets.Pop();
             agent.SetDestination(resetObject.Item2);
+            nurseMovingInstance.setParameterByName("NursebotMoving", 1);
 
             yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance);
 
             //turn on light
-
+            nurseMovingInstance.setParameterByName("NursebotMoving", 0);
             yield return new WaitForSeconds(waitTime);
 
             resetObject.Item1.GetComponent<ResetController>().Reset();
@@ -64,8 +73,10 @@ public class NurseReset : MonoBehaviour
         }
 
         agent.SetDestination(originalPosition);
+        nurseMovingInstance.setParameterByName("NursebotMoving", 1);
 
         yield return new WaitUntil(() => !agent.pathPending && agent.remainingDistance <= agent.stoppingDistance);
+        nurseMovingInstance.setParameterByName("NursebotMoving", 0);
 
         isResetting = false;
     }

@@ -1,4 +1,6 @@
 using UnityEngine;
+using FMODUnity;
+using FMOD.Studio;
 
 public class InteractionController : MonoBehaviour
 {
@@ -9,9 +11,15 @@ public class InteractionController : MonoBehaviour
     private GameObject currentLevitateTarget;
     private GameObject currentDialogueTarget;
     private ParticleSystem currentHoverParticles;
+    public EventInstance levitateEventInstance;
     private GameManager gameManager;
-
     public bool fireballActive = false;
+
+    private void Start()
+    {
+        levitateEventInstance = AudioManager.instance.CreateEventInstance(FMODEvents.instance.magicLevitate);
+
+    }
 
     private void Awake()
     {
@@ -95,9 +103,12 @@ public class InteractionController : MonoBehaviour
     private void Levitate(SpellArgs args)
     {
         LevitateArgs myArgs = SpellSessionCache.GetSpellArgs<LevitateArgs>(args);
+        AudioManager.instance.StartInstancePlaybackAtThisPosition(levitateEventInstance, gameObject);
+        Debug.Log("You cast levitate!");
 
         if(currentLevitateTarget != null && gameManager.hasMagic)
         {
+            
             currentHoverParticles.Stop();
             currentLevitateTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
             nurseReset.AddTarget(currentLevitateTarget, currentLevitateTarget.transform.Find("ResetPosition").position);
