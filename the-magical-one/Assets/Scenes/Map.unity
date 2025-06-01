@@ -505,6 +505,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 213464992}
+  - component: {fileID: 213464993}
   m_Layer: 0
   m_Name: window
   m_TagString: Untagged
@@ -521,12 +522,43 @@ Transform:
   m_GameObject: {fileID: 213464991}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.68, y: 6.67, z: -2.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 890725717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &213464993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213464991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1485522650
+      Data2: 1339681654
+      Data3: -1932797264
+      Data4: 76836823
+    Path: event:/Ambience/window_birds and wind_loop
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 3
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 75
 --- !u!1 &218566339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,11 +1563,11 @@ MonoBehaviour:
     Path: event:/SFX/magic_levitate_loop
   <magicLevitateLaunch>k__BackingField:
     Guid:
-      Data1: -279186171
-      Data2: 1240468665
-      Data3: 1586661526
-      Data4: -915198581
-    Path: event:/SFX/magic_levitate_loop
+      Data1: -1235217516
+      Data2: 1325355003
+      Data3: -1555164528
+      Data4: 1786090946
+    Path: event:/SFX/magic_levitate_launch
   <radio>k__BackingField:
     Guid:
       Data1: -1044236743
@@ -1990,7 +2022,7 @@ Transform:
   m_GameObject: {fileID: 454188678}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -26.31, y: 7.4, z: -1.22}
+  m_LocalPosition: {x: -11.58, y: 7.4, z: 5.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2026,7 +2058,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 1
   OverrideMinDistance: 1
-  OverrideMaxDistance: 50
+  OverrideMaxDistance: 75
 --- !u!1001 &456233947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3660,6 +3692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 890725717}
+  - component: {fileID: 890725718}
   m_Layer: 0
   m_Name: Ambience
   m_TagString: Untagged
@@ -3685,6 +3718,37 @@ Transform:
   - {fileID: 598657775}
   m_Father: {fileID: 348004144}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &890725718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890725716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!43 &893094710
 Mesh:
   m_ObjectHideFlags: 0

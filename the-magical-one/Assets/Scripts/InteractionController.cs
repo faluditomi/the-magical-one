@@ -12,11 +12,11 @@ public class InteractionController : MonoBehaviour
     private GameObject currentLevitateTarget;
     private GameObject currentDialogueTarget;
     private ParticleSystem currentHoverParticles;
-    private EventInstance levitateInstance;
+    public EventInstance levitateEventInstance;
 
     private void Start()
     {
-       levitateInstance = AudioManager.instance.Create3DEventInstance(FMODEvents.instance.magicLevitate, gameObject, null);
+        levitateEventInstance = AudioManager.instance.CreateEventInstance(FMODEvents.instance.magicLevitate);
 
     }
 
@@ -87,10 +87,12 @@ public class InteractionController : MonoBehaviour
     private void Levitate(SpellArgs args)
     {
         LevitateArgs myArgs = SpellSessionCache.GetSpellArgs<LevitateArgs>(args);
+        AudioManager.instance.StartInstancePlaybackAtThisPosition(levitateEventInstance, gameObject);
+        Debug.Log("You cast levitate!");
 
         if(currentLevitateTarget != null)
         {
-            levitateInstance.start();
+            
             currentHoverParticles.Stop();
             currentLevitateTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
             nurseReset.AddTarget(currentLevitateTarget, currentLevitateTarget.transform.Find("ResetPosition").position);

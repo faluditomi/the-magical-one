@@ -422,7 +422,7 @@
 			<value>2.4000000000000004</value>
 		</property>
 		<property name="volume">
-			<value>-11.5</value>
+			<value>-10</value>
 		</property>
 		<relationship name="event">
 			<destination>{ff483e51-894a-422b-bf42-04f76b0c090f}</destination>
