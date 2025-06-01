@@ -15,6 +15,8 @@ public class EndingSequence : MonoBehaviour
     [SerializeField] private float fadeTime;
     [SerializeField] private float musicTime;
 
+    private Coroutine fadeCoroutine;
+
     private bool isFake = true;
 
     private void Awake()
@@ -31,8 +33,16 @@ public class EndingSequence : MonoBehaviour
         fadeGroup.alpha = 0f;
         fakeDeathGroup.alpha = 0f;
         realDeathGroup.alpha = 0f;
+    }
 
-        StartEndingSequence();
+    public void StartEdgingDeath()
+    {
+        StartCoroutine(StartEdgingDeathCoroutine());
+    }
+
+    public void EndEdgingDeath()
+    {
+        StartCoroutine(EndEdgingDeathCoroutine());
     }
 
     public void StartEndingSequence()
@@ -40,8 +50,13 @@ public class EndingSequence : MonoBehaviour
         StartCoroutine(EndingSequenceBehaviour());
     }
 
+    //Call first for fake death, then call again for real death.
     private IEnumerator EndingSequenceBehaviour()
     {
+        fadeGroup.alpha = 0f;
+        fakeDeathGroup.alpha = 0f;
+        realDeathGroup.alpha = 0f;
+
         if(isFake)
         {
             fadeGroup.blocksRaycasts = true;
@@ -105,5 +120,47 @@ public class EndingSequence : MonoBehaviour
 
             realDeathGroup.alpha = 1f;
         }
+    }
+
+    private IEnumerator StartEdgingDeathCoroutine()
+    {
+        if(fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+
+        fadeCoroutine = StartCoroutine(FadeCanvasGroup(fadeGroup, fadeGroup.alpha, 1f, fadeTime));
+
+        yield return fadeCoroutine;
+    }
+
+    private IEnumerator EndEdgingDeathCoroutine()
+    {
+        if(fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+        }
+
+        fadeCoroutine = StartCoroutine(FadeCanvasGroup(fadeGroup, fadeGroup.alpha, 0f, fadeTime));
+
+        yield return fadeCoroutine;
+    }
+
+    private IEnumerator FadeCanvasGroup(CanvasGroup group, float startAlpha, float endAlpha, float duration)
+    {
+        float elapsed = 0f;
+        
+        while(elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            group.alpha = Mathf.Lerp(startAlpha, endAlpha, t);
+
+            yield return null;
+        }
+
+        group.alpha = endAlpha;
     }
 }
