@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\fireballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fireballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\endingsequence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\endingsequence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\resetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\resetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\interactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\spells\\fireballspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spells\\fireballspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\levitatebehaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,6 +21,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\spells\\levitatespell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spells\\levitatespell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\spells\\fireballspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spells\\fireballspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\fireballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fireballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\nursereset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nursereset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,17 +46,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ResetController.cs",
+              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\ResetController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ResetController.cs",
+              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\ResetController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ResetController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowCsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T22:55:28.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwCgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T22:28:06.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EndingSequence.cs",
+              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\EndingSequence.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EndingSequence.cs",
+              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\EndingSequence.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EndingSequence.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAApwJIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T22:25:58.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "NurseReset.cs",
+              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\NurseReset.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\NurseReset.cs",
+              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\NurseReset.cs",
+              "RelativeToolTip": "Assets\\Scripts\\NurseReset.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-01T21:46:36.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "FireballController.cs",
               "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\FireballController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\FireballController.cs",
               "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\FireballController.cs",
               "RelativeToolTip": "Assets\\Scripts\\FireballController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-01T15:11:36.452Z",
               "EditorCaption": ""
@@ -53,14 +121,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\LevitateBehaviour.cs",
               "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\LevitateBehaviour.cs",
               "RelativeToolTip": "Assets\\Scripts\\LevitateBehaviour.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAowFsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwA0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-01T14:22:28.842Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "FireballSpell.cs",
               "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Spells\\FireballSpell.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Spells\\FireballSpell.cs",
@@ -73,13 +141,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "InteractionController.cs",
               "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\InteractionController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InteractionController.cs",
               "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\InteractionController.cs",
               "RelativeToolTip": "Assets\\Scripts\\InteractionController.cs",
-              "ViewState": "AgIAAFIAAAAAAAAAAAAcwHMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAIwHMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-31T12:11:59.288Z",
               "EditorCaption": ""
@@ -92,9 +160,10 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Spells\\LevitateSpell.cs",
               "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Spells\\LevitateSpell.cs",
               "RelativeToolTip": "Assets\\Scripts\\Spells\\LevitateSpell.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T13:51:04.845Z"
+              "WhenOpened": "2025-06-01T13:51:04.845Z",
+              "EditorCaption": ""
             }
           ]
         }
