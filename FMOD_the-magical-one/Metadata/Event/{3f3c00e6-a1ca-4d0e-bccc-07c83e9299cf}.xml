@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{3f3c00e6-a1ca-4d0e-bccc-07c83e9299cf}">
 		<property name="name">
-			<value>character_nursebot_dialogue</value>
+			<value>character_nursebot_talking</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -130,6 +130,7 @@
 	<object class="MixerBusEffectChain" id="{88bd0eb6-8271-4c29-b09d-8f9d3a4568b7}">
 		<relationship name="effects">
 			<destination>{c7dfe89f-f6ff-4a3f-8b12-113d201e56a7}</destination>
+			<destination>{ae670490-5e6f-47fc-a175-c75c90918583}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{838a7049-80f4-4282-917d-8cb8b4decdcc}" />
@@ -156,5 +157,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{2ce09a73-441d-495d-b694-dcee5fdd35de}" />
 	<object class="MixerBusFader" id="{c7dfe89f-f6ff-4a3f-8b12-113d201e56a7}" />
+	<object class="ObjectSpatialiserEffect" id="{ae670490-5e6f-47fc-a175-c75c90918583}" />
 	<object class="MixerBusFader" id="{32d79309-8d55-45e9-b587-d0d1763d3838}" />
 </objects>
