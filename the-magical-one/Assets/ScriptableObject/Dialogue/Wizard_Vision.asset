@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8474046117509651791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: fe2801d2-3dbd-4a1b-8d19-ed0a0204f96e
+  m_EditorClassIdentifier: 
+  speakerText: 
+  dialogueText: "First they took your jobs. Then they stole your culture. Took your
+    entire world \u2014 erased your place in it. And now they want to write your
+    ending!?"
+  children:
+  - f53ae206-c698-48ff-b125-104a73bb9588
+  rect:
+    serializedVersion: 2
+    x: 250
+    y: 0
+    width: 200
+    height: 100
+  speakerTextGameObject: SpeakerText
+  dialogueTextGameObject: DialogueText
+  mAudioClip: {fileID: 8300000, guid: 481e577ff5d473c45b762ae1bcb32396, type: 3}
+  triggerActions: []
+--- !u!114 &-5706475236906983053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: aa434365-6643-48a2-9014-5ddaae9dff02
+  m_EditorClassIdentifier: 
+  speakerText: 
+  dialogueText: "Psst\u2026 squishy! Since when did you take orders from calculators?"
+  children:
+  - fe2801d2-3dbd-4a1b-8d19-ed0a0204f96e
+  rect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 200
+    height: 100
+  speakerTextGameObject: SpeakerText
+  dialogueTextGameObject: DialogueText
+  mAudioClip: {fileID: 8300000, guid: 9f95f0be45d7ec7418c55ccefe1cbec3, type: 3}
+  triggerActions: []
+--- !u!114 &-2992393900454073546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: f53ae206-c698-48ff-b125-104a73bb9588
+  m_EditorClassIdentifier: 
+  speakerText: 
+  dialogueText: "You cannot let this fly. This isn\u2019t your legacy \u2014 or the
+    one your magic deserves."
+  children:
+  - c05aafef-a7ef-414f-b8b1-dd7f09bfeeb0
+  rect:
+    serializedVersion: 2
+    x: 500
+    y: 0
+    width: 200
+    height: 100
+  speakerTextGameObject: SpeakerText
+  dialogueTextGameObject: DialogueText
+  mAudioClip: {fileID: 8300000, guid: b11d12416bb450a4d822902868232f82, type: 3}
+  triggerActions: []
+--- !u!114 &-1405779521898670269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: 7582fe2b-0563-4dcc-ba68-ce452422321e
+  m_EditorClassIdentifier: 
+  speakerText: 
+  dialogueText: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 1000
+    y: 0
+    width: 200
+    height: 100
+  speakerTextGameObject: SpeakerText
+  dialogueTextGameObject: DialogueText
+  mAudioClip: {fileID: 0}
+  triggerActions: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331ce3a7b1410d84cb07ff7e9f37cf37, type: 3}
+  m_Name: Wizard_Vision
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -5706475236906983053}
+  - {fileID: -8474046117509651791}
+  - {fileID: -2992393900454073546}
+  - {fileID: 623424030026043350}
+  - {fileID: -1405779521898670269}
+  newNodeOffset: {x: 250, y: 0}
+--- !u!114 &623424030026043350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: c05aafef-a7ef-414f-b8b1-dd7f09bfeeb0
+  m_EditorClassIdentifier: 
+  speakerText: 
+  dialogueText: Go burn your name into this world, before it dares to forget you.
+  children:
+  - 7582fe2b-0563-4dcc-ba68-ce452422321e
+  rect:
+    serializedVersion: 2
+    x: 750
+    y: 0
+    width: 200
+    height: 100
+  speakerTextGameObject: SpeakerText
+  dialogueTextGameObject: DialogueText
+  mAudioClip: {fileID: 8300000, guid: 4983d037f4e9219478a5ee4cc10ef914, type: 3}
+  triggerActions: []

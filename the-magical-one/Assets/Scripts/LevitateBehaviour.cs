@@ -11,10 +11,12 @@ public class LevitateBehaviour : MonoBehaviour
     private Vector3 currentShuffleOffset;
     private Quaternion initialRotationOffset;
     private Rigidbody myRigidbody;
+    private GameManager gameManager;
 
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     private void FixedUpdate()
@@ -68,7 +70,7 @@ public class LevitateBehaviour : MonoBehaviour
 
     public void StartLevitate(float currentShuffleSpeed, float currentCollectedRadius, Transform currentDestination)
     {
-        GameManager.Instance().StartLevitating(transform);
+        gameManager.StartLevitating(transform);
         isLevitating = true;
         this.currentShuffleSpeed = currentShuffleSpeed;
         this.currentDestination = currentDestination;
@@ -80,7 +82,7 @@ public class LevitateBehaviour : MonoBehaviour
 
     public void StopLevitate()
     {
-        GameManager.Instance().StopLevitating();
+        gameManager.StopLevitating();
         myRigidbody.linearVelocity = Vector3.zero;
         isLevitating = false;
         currentShuffleSpeed = 0f;

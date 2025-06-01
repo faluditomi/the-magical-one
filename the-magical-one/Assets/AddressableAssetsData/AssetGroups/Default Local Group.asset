@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 2b27af1849966ef4295bb9536e128847
   m_SerializeEntries:
+  - m_GUID: 202e5da4defa01a4792c881334669b90
+    m_Address: Fireball
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 25df2086522d3dd4ca9902b6412ad9f7
     m_Address: Assets/ScriptableObject/Spells
     m_ReadOnly: 0

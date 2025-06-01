@@ -11,6 +11,7 @@ public enum SpellWords
     Hello,
     Okay,
     Yes,
-    Yeah
+    Yeah,
+    Fireball
 
 }
