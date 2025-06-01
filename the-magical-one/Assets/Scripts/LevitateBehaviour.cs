@@ -78,6 +78,7 @@ public class LevitateBehaviour : MonoBehaviour
         currentShuffleOffset = GetNewShuffleOffset();
         initialRotationOffset = Quaternion.Inverse(currentDestination.rotation) * transform.rotation;
         myRigidbody.useGravity = false;
+        myRigidbody.isKinematic = false;
     }
 
     public void StopLevitate()
