@@ -8,13 +8,16 @@ public class ResetController : MonoBehaviour
     private Quaternion initialRotation;
     private Rigidbody myRigidbody;
     private LevitateBehaviour levitateBehaviour;
-    public bool isRope;
+    [SerializeField] bool isRope;
+    [SerializeField] bool isPlug;
     public List<Rigidbody> ropeRigidbodies;
+    private EndingSequence endingSequence;
 
     private void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
         levitateBehaviour = GetComponent<LevitateBehaviour>();
+        endingSequence = FindFirstObjectByType<EndingSequence>();
     }
 
     private void Start()
@@ -37,6 +40,11 @@ public class ResetController : MonoBehaviour
     public void Reset()
     {
         levitateBehaviour.StopLevitate();
+
+        if(isPlug)
+        {
+            endingSequence.EndEdgingDeath();
+        }
 
         if(isRope)
         {

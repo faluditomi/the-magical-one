@@ -13,7 +13,7 @@ public class InteractionController : MonoBehaviour
     private ParticleSystem currentHoverParticles;
     public EventInstance levitateEventInstance;
     private GameManager gameManager;
-    public bool fireballActive = false;
+    private EndingSequence endingSequence;
 
     private void Start()
     {
@@ -26,6 +26,7 @@ public class InteractionController : MonoBehaviour
         levitatePosition = transform.Find("LevitatePosition");
         nurseReset = FindFirstObjectByType<NurseReset>();
         gameManager = FindFirstObjectByType<GameManager>();
+        endingSequence = FindFirstObjectByType<EndingSequence>();
     }
 
     private void Update()
@@ -109,7 +110,11 @@ public class InteractionController : MonoBehaviour
 
         if(currentLevitateTarget != null && gameManager.hasMagic)
         {
-            
+            if(currentLevitateTarget.name == "Plug")
+            {
+                endingSequence.StartEdgingDeath();
+            }
+
             currentHoverParticles.Stop();
             currentLevitateTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
             nurseReset.AddTarget(currentLevitateTarget, currentLevitateTarget.transform.Find("ResetPosition").position);
@@ -136,7 +141,7 @@ public class InteractionController : MonoBehaviour
 
         FireballController shooter = GetComponent<FireballController>();
 
-        if(shooter != null && fireballActive)
+        if(shooter != null && gameManager.hasFireball == true)
         {
             shooter.ShootFireball(myArgs.speed, myArgs.radius);
         }

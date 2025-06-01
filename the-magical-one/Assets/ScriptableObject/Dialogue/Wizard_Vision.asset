@@ -105,7 +105,8 @@ MonoBehaviour:
   speakerTextGameObject: SpeakerText
   dialogueTextGameObject: DialogueText
   mAudioClip: {fileID: 0}
-  triggerActions: []
+  triggerActions:
+  - fireball
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

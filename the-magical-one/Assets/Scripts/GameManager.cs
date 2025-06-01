@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public bool isPastDeath;
     public bool hasMagic;
     public bool isPastWizard;
+    public bool hasFireball;
     private Transform currentLevitatingTransform;
 
     public void StartLevitating(Transform levitatingObject)
@@ -50,6 +51,11 @@ public class GameManager : MonoBehaviour
     public void PastWizard()
     {
         isPastWizard = true;
+    }
+
+    public void HasFireball()
+    {
+        hasFireball = true;
     }
     
     public Transform GetCurrentLevitatingTransform()
