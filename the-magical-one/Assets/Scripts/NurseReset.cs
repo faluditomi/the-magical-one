@@ -24,11 +24,12 @@ public class NurseReset : MonoBehaviour
 
     private EventInstance nurseMovingInstance;
 
-    
+    private GameManager gameManager;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        gameManager = FindFirstObjectByType<GameManager>();
     }
 
     private void Start()
@@ -61,6 +62,12 @@ public class NurseReset : MonoBehaviour
         while(targets.Count > 0)
         {
             Tuple<GameObject, Vector3> resetObject = targets.Pop();
+
+            if(resetObject == null)
+            {
+                yield return null;
+            }
+
             agent.SetDestination(resetObject.Item2);
             nurseMovingInstance.setParameterByName("NursebotMoving", movementPlaybackRate);
 
