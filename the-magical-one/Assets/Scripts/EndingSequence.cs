@@ -23,6 +23,8 @@ public class EndingSequence : MonoBehaviour
 
     private Coroutine fadeCoroutine;
 
+    private bool started = false;
+
     private void Awake()
     {
         if(Instance == null)
@@ -106,32 +108,37 @@ public class EndingSequence : MonoBehaviour
         }
         else
         {
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.angelic, new Vector3(0, 1.64f, -4.058f));
-            nurseGameObject.SetActive(false);
-
-            fadeGroup.blocksRaycasts = true;
-
-            for(float x = 0f; x <= 1; x += Time.deltaTime / fadeTime)
+            if(started == false)
             {
-                fadeGroup.alpha = x;
+                started = true;
 
-                yield return null;
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.angelic, new Vector3(0, 1.64f, -4.058f));
+
+                nurseGameObject.SetActive(false);
+
+                fadeGroup.blocksRaycasts = true;
+
+                for(float x = 0f; x <= 1; x += Time.deltaTime / fadeTime)
+                {
+                    fadeGroup.alpha = x;
+
+                    yield return null;
+                }
+
+                fadeGroup.alpha = 1f;
+
+                yield return new WaitForSeconds(1f);
+
+                for(float y = 0f; y <= 1; y += Time.deltaTime / 1)
+                {
+                    realDeathGroup.alpha = y;
+
+                    yield return null;
+                }
+
+                realDeathGroup.alpha = 1f;
             }
-
-            fadeGroup.alpha = 1f;
-
             
-
-            yield return new WaitForSeconds(2f);
-
-            for(float y = 0f; y <= 1; y += Time.deltaTime / 1)
-            {
-                realDeathGroup.alpha = y;
-
-                yield return null;
-            }
-
-            realDeathGroup.alpha = 1f;
         }
     }
 
