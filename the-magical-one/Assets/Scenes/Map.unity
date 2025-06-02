@@ -14247,43 +14247,43 @@ PrefabInstance:
     - target: {fileID: 7772812137609515629, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: 'ropeRigidbodies.Array.data[0]'
       value: 
-      objectReference: {fileID: 1015865067}
+      objectReference: {fileID: 1549322682}
     - target: {fileID: 7772812137609515629, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: 'ropeRigidbodies.Array.data[1]'
       value: 
-      objectReference: {fileID: 1066236801}
+      objectReference: {fileID: 1549322681}
     - target: {fileID: 7772812137609515629, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: 'ropeRigidbodies.Array.data[2]'
       value: 
-      objectReference: {fileID: 1011891862}
+      objectReference: {fileID: 0}
     - target: {fileID: 7772812137609515629, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: 'ropeRigidbodies.Array.data[3]'
       value: 
-      objectReference: {fileID: 1556527527}
+      objectReference: {fileID: 0}
     - target: {fileID: 7772812137609515629, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: 'ropeRigidbodies.Array.data[4]'
       value: 
-      objectReference: {fileID: 1767904579}
+      objectReference: {fileID: 0}
     - target: {fileID: 7772812137609515629, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: 'ropeRigidbodies.Array.data[5]'
       value: 
-      objectReference: {fileID: 1992211479}
+      objectReference: {fileID: 0}
     - target: {fileID: 7772812137609515629, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: 'ropeRigidbodies.Array.data[6]'
       value: 
-      objectReference: {fileID: 1755406625}
+      objectReference: {fileID: 0}
     - target: {fileID: 7772812137609515629, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: 'ropeRigidbodies.Array.data[7]'
       value: 
-      objectReference: {fileID: 847311467}
+      objectReference: {fileID: 0}
     - target: {fileID: 7772812137609515629, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: 'ropeRigidbodies.Array.data[8]'
       value: 
-      objectReference: {fileID: 154324582}
+      objectReference: {fileID: 0}
     - target: {fileID: 7772812137609515629, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: 'ropeRigidbodies.Array.data[9]'
       value: 
-      objectReference: {fileID: 1279940964}
+      objectReference: {fileID: 0}
     - target: {fileID: 8353727549381825071, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
       propertyPath: m_IsKinematic
       value: 1
@@ -14343,12 +14343,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1970109212640543908, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 9053917795602404812, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 753279744}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
+--- !u!54 &1549322681 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3490096606081290414, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
+  m_PrefabInstance: {fileID: 1549322680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1549322682 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 1866259652809214473, guid: b1b3c3b3141a48f4eb7d090e190b7ac2, type: 3}
+  m_PrefabInstance: {fileID: 1549322680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1562227226
 GameObject:
   m_ObjectHideFlags: 0
@@ -16420,7 +16427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDialogueInProgress: 0
   isPastDeath: 0
-  hasMagic: 1
+  hasMagic: 0
   isPastWizard: 0
   hasFireball: 0
   isCameraHacked: 0
