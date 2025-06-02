@@ -111,8 +111,16 @@ public class InteractionController : MonoBehaviour
         {
             if(currentLevitateTarget.name == "Plug")
             {
-                endingSequence.StartEdgingDeath();
+                if(gameManager.GetCameraHacked() == true)
+                {
+                    gameManager.SetReadyToDie();
 
+                    endingSequence.StartEndingSequence();
+                }
+                else
+                {
+                    endingSequence.StartEdgingDeath();
+                }
             }
 
             currentHoverParticles.Stop();

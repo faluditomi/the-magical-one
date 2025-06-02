@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public bool isPastWizard;
     public bool hasFireball;
     public bool isCameraHacked;
+    public bool isReadyToDie;
     private Transform currentLevitatingTransform;
 
     public void StartLevitating(Transform levitatingObject)
@@ -32,6 +33,11 @@ public class GameManager : MonoBehaviour
     public void SetCameraHacked()
     {
         isCameraHacked = true;
+    }
+
+    public bool GetCameraHacked()
+    {
+        return isCameraHacked;
     }
 
     public void StartDialogue()
@@ -63,7 +69,17 @@ public class GameManager : MonoBehaviour
     {
         hasFireball = true;
     }
-    
+
+    public void SetReadyToDie()
+    {
+        isReadyToDie = true;
+    }
+
+    public bool GetReadyToDie()
+    {
+        return isReadyToDie;
+    }
+
     public Transform GetCurrentLevitatingTransform()
     {
         return currentLevitatingTransform;

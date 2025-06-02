@@ -17,10 +17,11 @@ public class EndingSequence : MonoBehaviour
 
     [SerializeField] private GameObject wizardGameObject;
     [SerializeField] private GameObject wizardReviveGameObject;
+    [SerializeField] private GameObject nurseGameObject;
+
+    private GameManager gameManager;
 
     private Coroutine fadeCoroutine;
-
-    private bool isFake = true;
 
     private void Awake()
     {
@@ -33,6 +34,8 @@ public class EndingSequence : MonoBehaviour
             Destroy(gameObject);
         }
 
+        gameManager = FindFirstObjectByType<GameManager>();
+
         fadeGroup.alpha = 0f;
         fakeDeathGroup.alpha = 0f;
         realDeathGroup.alpha = 0f;
@@ -40,7 +43,10 @@ public class EndingSequence : MonoBehaviour
 
     public void StartEdgingDeath()
     {
-        StartCoroutine(StartEdgingDeathCoroutine());
+        if(gameManager.GetReadyToDie() == false)
+        {
+            StartCoroutine(StartEdgingDeathCoroutine());
+        }
     }
 
     public void EndEdgingDeath()
@@ -60,7 +66,7 @@ public class EndingSequence : MonoBehaviour
         fakeDeathGroup.alpha = 0f;
         realDeathGroup.alpha = 0f;
 
-        if(isFake)
+        if(gameManager.GetReadyToDie() == false)
         {
             fadeGroup.blocksRaycasts = true;
 
@@ -97,11 +103,11 @@ public class EndingSequence : MonoBehaviour
 
             fakeDeathGroup.alpha = 0f;
             fadeGroup.alpha = 0f;
-
-            isFake = false;
         }
         else
         {
+            nurseGameObject.SetActive(false);
+
             fadeGroup.blocksRaycasts = true;
 
             for(float x = 0f; x <= 1; x += Time.deltaTime / fadeTime)
@@ -168,5 +174,5 @@ public class EndingSequence : MonoBehaviour
         }
 
         group.alpha = endAlpha;
-    }
+    } 
 }

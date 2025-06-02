@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\endingsequence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\resetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\resetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\resetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,15 +27,15 @@
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spells\\fireballspell.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\fireballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\fireballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fireballcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\nursereset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\nursereset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\nursereset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -58,8 +58,7 @@
               "RelativeToolTip": "Assets\\Scripts\\ResetController.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAowCsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T22:55:28.17Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T22:55:28.17Z"
             },
             {
               "$type": "Document",
@@ -71,8 +70,7 @@
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAwwCgAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T22:28:06.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T22:28:06.102Z"
             },
             {
               "$type": "Document",
@@ -97,8 +95,7 @@
               "RelativeToolTip": "Assets\\Scripts\\NurseReset.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T21:46:36.153Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T21:46:36.153Z"
             },
             {
               "$type": "Document",
@@ -110,8 +107,7 @@
               "RelativeToolTip": "Assets\\Scripts\\FireballController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T15:11:36.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T15:11:36.452Z"
             },
             {
               "$type": "Document",
@@ -123,8 +119,7 @@
               "RelativeToolTip": "Assets\\Scripts\\LevitateBehaviour.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAxwA0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T14:22:28.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T14:22:28.842Z"
             },
             {
               "$type": "Document",
@@ -136,8 +131,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Spells\\FireballSpell.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T13:52:16.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T13:52:16.737Z"
             },
             {
               "$type": "Document",
@@ -149,8 +143,7 @@
               "RelativeToolTip": "Assets\\Scripts\\InteractionController.cs",
               "ViewState": "AgIAAFkAAAAAAAAAAAAIwHMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-31T12:11:59.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-31T12:11:59.288Z"
             },
             {
               "$type": "Document",
@@ -162,8 +155,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Spells\\LevitateSpell.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-01T13:51:04.845Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T13:51:04.845Z"
             }
           ]
         }

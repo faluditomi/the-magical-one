@@ -15,11 +15,13 @@ public class LevitateBehaviour : MonoBehaviour
     private GameManager gameManager;
     public bool isRope;
     public List<Rigidbody> ropeRigidbodies;
+    private EndingSequence endingSequence;
 
     void Awake()
     {
         myRigidbody = GetComponent<Rigidbody>();
         gameManager = FindFirstObjectByType<GameManager>();
+        endingSequence = FindFirstObjectByType<EndingSequence>();
     }
 
     private void FixedUpdate()
@@ -88,6 +90,7 @@ public class LevitateBehaviour : MonoBehaviour
         }
         else
         {
+            
             foreach(Rigidbody rope in ropeRigidbodies)
             {
                 rope.useGravity = false;
@@ -119,5 +122,4 @@ public class LevitateBehaviour : MonoBehaviour
             }
         }
     }
-
 }
