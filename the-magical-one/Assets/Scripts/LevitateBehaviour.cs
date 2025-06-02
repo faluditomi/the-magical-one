@@ -88,6 +88,7 @@ public class LevitateBehaviour : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.unplug, new Vector3(0,1.64f,-4.058f));
             foreach(Rigidbody rope in ropeRigidbodies)
             {
                 rope.useGravity = false;

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="AudioFile" id="{a2e8e7d4-84da-44d7-bfd8-7b0459d2af50}">
+	<object class="AudioFile" id="{c12cbd41-c518-468e-9952-daefe96effff}">
 		<property name="assetPath">
-			<value>SFX_unplug.ogg</value>
+			<value>SFX_revival.ogg</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>96</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>4.9903541666666671</value>
+			<value>7.6473958333333334</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{93e57aa7-3ab8-4787-b546-95b25ce1b1e9}</destination>

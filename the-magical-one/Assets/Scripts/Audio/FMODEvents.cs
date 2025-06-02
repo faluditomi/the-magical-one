@@ -23,6 +23,10 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference magicLevitateLaunch { get; private set; }
     [field: SerializeField] public EventReference radio { get; private set; }
     [field: SerializeField] public EventReference radioImpact { get; private set; }
+    [field: SerializeField] public EventReference revival { get; private set; }
+    [field: SerializeField] public EventReference unplug { get; private set; }
+    [field: SerializeField] public EventReference angelic { get; private set; }
+
 
 
     [field: Header("NPC SFX")]

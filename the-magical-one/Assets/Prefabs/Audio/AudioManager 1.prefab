@@ -335,6 +335,27 @@ MonoBehaviour:
       Data3: 312478086
       Data4: 1191196742
     Path: event:/SFX/radio_impact
+  <revival>k__BackingField:
+    Guid:
+      Data1: 1306500763
+      Data2: 1174297163
+      Data3: -1334909788
+      Data4: 82331119
+    Path: event:/SFX/revival
+  <unplug>k__BackingField:
+    Guid:
+      Data1: 1077321729
+      Data2: 1127925167
+      Data3: 1821775792
+      Data4: -23520753
+    Path: event:/SFX/unplug
+  <angelic>k__BackingField:
+    Guid:
+      Data1: 377639682
+      Data2: 1247942580
+      Data3: -471304058
+      Data4: 1523879616
+    Path: event:/SFX/angelic
   <nurseBotMoving>k__BackingField:
     Guid:
       Data1: -1935548811
@@ -551,6 +572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRope: 0
+  isPlug: 0
   ropeRigidbodies: []
 --- !u!114 &238128972790097206
 MonoBehaviour:
@@ -564,6 +586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c48fb991daebeea4dbb75ebebd5f6f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRope: 0
+  ropeRigidbodies: []
 --- !u!114 &8076635413704825189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,6 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isRope: 0
+  isPlug: 0
   ropeRigidbodies: []
 --- !u!114 &8041178859137472841
 MonoBehaviour:
@@ -590,6 +615,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c48fb991daebeea4dbb75ebebd5f6f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRope: 0
+  ropeRigidbodies: []
 --- !u!1 &9219002807602935182
 GameObject:
   m_ObjectHideFlags: 0
