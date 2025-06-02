@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
 
 
     private EventInstance ambienceEventInstance;
-    private EventInstance machineDialysisInstance;
+    public EventInstance machineDialysisInstance;
 
     public EventInstance musicEventInstance;
     

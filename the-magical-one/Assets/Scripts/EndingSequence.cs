@@ -106,6 +106,7 @@ public class EndingSequence : MonoBehaviour
         }
         else
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.angelic, new Vector3(0, 1.64f, -4.058f));
             nurseGameObject.SetActive(false);
 
             fadeGroup.blocksRaycasts = true;
@@ -119,9 +120,9 @@ public class EndingSequence : MonoBehaviour
 
             fadeGroup.alpha = 1f;
 
-            AudioManager.instance.PlayOneShot(FMODEvents.instance.angelic, new Vector3(0, 1.64f, -4.058f));
+            
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(2f);
 
             for(float y = 0f; y <= 1; y += Time.deltaTime / 1)
             {

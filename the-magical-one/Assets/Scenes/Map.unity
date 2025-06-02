@@ -16430,7 +16430,7 @@ MonoBehaviour:
   hasMagic: 1
   isPastWizard: 1
   hasFireball: 0
-  isCameraHacked: 1
+  isCameraHacked: 0
   isReadyToDie: 0
 --- !u!4 &1834503800
 Transform:
