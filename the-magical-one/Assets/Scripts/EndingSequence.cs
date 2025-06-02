@@ -119,7 +119,7 @@ public class EndingSequence : MonoBehaviour
 
             fadeGroup.alpha = 1f;
 
-            //angelic music
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.angelic, new Vector3(0, 1.64f, -4.058f));
 
             yield return new WaitForSeconds(5f);
 
