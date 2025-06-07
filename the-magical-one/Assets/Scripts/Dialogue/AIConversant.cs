@@ -3,25 +3,36 @@ using System.Collections;
 using TMPro;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(Collider))]
 public class AIConversant : MonoBehaviour
 {
     #region Attributes
-    public Dialogue dialogue;
+    [Header("Dialogue Settings")]
+    [Tooltip("The dialogue that this NPC will use.")]
+    [SerializeField] private Dialogue dialogue;
+
+    [Tooltip("The dialogue will play itself without the player having to click.")]
+    [SerializeField] private bool dialoguePlaysItself;
+
+    [Tooltip("The dialogue will use voice audio when displayed.")]
+    [SerializeField] private bool useVoiceAudio;
+    
+    [Header("Text Settings")]
+    [Tooltip("Text will be displayed with a typewriter effect.")]
+    [SerializeField] private bool useTypewriterEffect;
+
+    [Tooltip("Text will fade in and out.")]
+    [SerializeField] private bool useFadeEffect;
+
     private Dialogue currentDialogue;
     private DialogueNode currentNode;
-
-    // private Transform dialogueBubblePosition;
-
-    private GameObject dialogueBubbleGameObject;
-
+    private GameManager gameManager;
+    private AudioSource audioSource;
     public Image dialoguePanelText;
 
-    private AudioSource audioSource;
-
     private bool isDialoguing;
-    private bool isEarlyQuit;
     private bool isTyping;
-    private GameManager gameManager;
 
     private int index;
     #endregion
@@ -29,11 +40,10 @@ public class AIConversant : MonoBehaviour
     #region MonoBehaviour Methods
     private void Awake()
     {
-        // dialogueBubblePosition = transform.Find("DialogueBoxPosition");
-
-        dialogueBubbleGameObject = transform.Find("DialogueBubble").gameObject;
-        
-        audioSource = GetComponent<AudioSource>();
+        if(useVoiceAudio)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
 
         gameManager = FindFirstObjectByType<GameManager>();
     }
@@ -82,8 +92,6 @@ public class AIConversant : MonoBehaviour
         {
             if(!isDialoguing)
             {
-                // dialogueBubbleGameObject.transform.position = dialogueBubblePosition.position;
-
                 StartCoroutine(FadeInImageBehaviour(dialoguePanelText));
 
                 isDialoguing = true;
@@ -115,7 +123,7 @@ public class AIConversant : MonoBehaviour
             {
                 yield return new WaitForEndOfFrame();
 
-                StartCoroutine(EarlyQuitDialogue());
+                StartCoroutine(QuitDialogue());
             }
         }
     }
@@ -129,40 +137,9 @@ public class AIConversant : MonoBehaviour
         currentDialogue = newDialogue;
 
         currentNode = currentDialogue.GetNodeByIndex(index);
-
-        isEarlyQuit = false;
-
-        // StartCoroutine(FadeInBehaviour(GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>()));
     }
 
     public IEnumerator QuitDialogue()
-    {
-        if(!isEarlyQuit)
-        {
-            yield return new WaitForEndOfFrame();
-
-            GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>().text = "";
-
-            GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>().color = new Color(GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>().color.r, GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>().color.g, GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>().color.b, 0f);
-
-            isDialoguing = false;
-
-            gameManager.StopDialogue();
-
-            StartCoroutine(FadeOutImageBehaviour(dialoguePanelText));
-
-            currentDialogue = null;
-
-            currentNode = null;
-
-            index = 0;
-
-            isEarlyQuit = true;
-        }
-    }
-
-    //Temporary. I can't think about it right now. Need an early quit for a bux fix but I can't remember what the bug was. Will remove after we send the demo.
-    public IEnumerator EarlyQuitDialogue()
     {
         yield return new WaitForEndOfFrame();
 
@@ -171,16 +148,6 @@ public class AIConversant : MonoBehaviour
         if(find != null)
         {
             find.GetComponent<TMP_Text>().text = "";
-        }
-
-        GameObject o = GameObject.Find(currentNode.speakerTextGameObject);
-
-        if(o != null)
-        {
-            o.GetComponent<TMP_Text>().text = "";
-
-            o.GetComponent<TMP_Text>().color = new Color(o.GetComponent<TMP_Text>().color.r,
-                o.GetComponent<TMP_Text>().color.g, o.GetComponent<TMP_Text>().color.b, 0f);
         }
 
         isDialoguing = false;
@@ -196,8 +163,6 @@ public class AIConversant : MonoBehaviour
         currentNode = null;
 
         index = 0;
-
-        isEarlyQuit = true;
     }
 
     //Updates the UI text.
@@ -213,32 +178,77 @@ public class AIConversant : MonoBehaviour
             {
                 isTyping = true;
 
-                audioSource.clip = currentNode.mAudioClip;
+                if(useTypewriterEffect)
+                {
+                    StartCoroutine(TypewriterEffectBehaviour());
+                }
+                else if(useFadeEffect)
+                {
+                    StartCoroutine(FadeEffectBehaviour());
+                }
+                else
+                {
+                    StartCoroutine(WriteTextBehaviour());
+                }
 
-                audioSource.Play();
+                isTyping = false;
 
-                StartCoroutine(TypewriterBehaviour());
+                if(useVoiceAudio)
+                {
+                    audioSource.clip = currentNode.mAudioClip;
 
-                yield return new WaitUntil(() => !audioSource.isPlaying);
+                    audioSource.Play();
 
-                StartCoroutine(RunDialogue());
+                    yield return new WaitUntil(() => !audioSource.isPlaying);
+                }
+
+                if(dialoguePlaysItself && useVoiceAudio)
+                {
+                    StartCoroutine(RunDialogue());
+                }
             }
         }
     }
+    #endregion
 
-    private IEnumerator WriteTextBehaviour()
+    #region Text Effects
+    //Writes the text with a typewriter effect.
+    private IEnumerator TypewriterEffectBehaviour()
+    {
+        var textMeshProUGUI = GameObject.Find(currentNode.dialogueTextGameObject).GetComponent<TMP_Text>();
+
+        StartCoroutine(FadeInBehaviour(textMeshProUGUI));
+
+        foreach(char c in currentNode.GetDialogueText())
+        {
+            textMeshProUGUI.text += c;
+
+            yield return new WaitForSeconds(0.005f);
+        }
+    }
+
+    //Writes the text with a fade effect.
+    private IEnumerator FadeEffectBehaviour()
     {
         TMP_Text textMeshProUGUI = GameObject.Find(currentNode.dialogueTextGameObject).GetComponent<TMP_Text>();
 
-        // TMP_Text speakerTextMeshProGUI = GameObject.Find(currentNode.speakerTextGameObject).GetComponent<TMP_Text>();
-
         textMeshProUGUI.color = new Color(textMeshProUGUI.color.r, textMeshProUGUI.color.g, textMeshProUGUI.color.b, 0f);
-
-        // speakerTextMeshProGUI.text = currentNode.GetSpeakerText();
 
         textMeshProUGUI.text = currentNode.GetDialogueText();
 
         StartCoroutine(FadeInBehaviour(textMeshProUGUI));
+
+        yield return new WaitForEndOfFrame();
+    }
+
+    //Writes the text without any effects.
+    private IEnumerator WriteTextBehaviour()
+    {
+        TMP_Text textMeshProUGUI = GameObject.Find(currentNode.dialogueTextGameObject).GetComponent<TMP_Text>();
+
+        textMeshProUGUI.color = new Color(textMeshProUGUI.color.r, textMeshProUGUI.color.g, textMeshProUGUI.color.b, 1f);
+
+        textMeshProUGUI.text = currentNode.GetDialogueText();
 
         yield return new WaitForEndOfFrame();
     }
@@ -296,22 +306,6 @@ public class AIConversant : MonoBehaviour
 
             yield return null;
         }
-    }
-
-    private IEnumerator TypewriterBehaviour()
-    {
-        var textMeshProUGUI = GameObject.Find(currentNode.dialogueTextGameObject).GetComponent<TMP_Text>();
-
-        StartCoroutine(FadeInBehaviour(textMeshProUGUI));
-
-        foreach(char c in currentNode.GetDialogueText())
-        {
-            textMeshProUGUI.text += c;
-
-            yield return new WaitForSeconds(0.005f);
-        }
-        
-        isTyping = false;
     }
     #endregion
 }

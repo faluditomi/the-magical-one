@@ -27,6 +27,31 @@ MonoBehaviour:
   mAudioClip: {fileID: 8300000, guid: f1c390d8e1a33f246ab4ac08d71c7568, type: 3}
   triggerActions:
   - death hello off
+--- !u!114 &-6291303853753779343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
+  m_Name: bd8bc668-6a12-48d8-8a4b-69619ad2fed7
+  m_EditorClassIdentifier: 
+  speakerText: 
+  dialogueText: 
+  children: []
+  rect:
+    serializedVersion: 2
+    x: 2072
+    y: 64
+    width: 200
+    height: 100
+  speakerTextGameObject: SpeakerText
+  dialogueTextGameObject: DeathDialogueText
+  mAudioClip: {fileID: 0}
+  triggerActions: []
 --- !u!114 &-4481077191806326158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +232,7 @@ MonoBehaviour:
   - {fileID: -2561748264552652391}
   - {fileID: -3360267865460791231}
   - {fileID: 8362535009197314484}
+  - {fileID: -6291303853753779343}
   newNodeOffset: {x: 250, y: 0}
 --- !u!114 &20164829027501603
 MonoBehaviour:
@@ -388,6 +414,7 @@ MonoBehaviour:
   - 8825ee85-6128-4591-ad4e-e8dea858d863
   - 4edc24c5-2c47-4b10-948f-58fd345aaf8d
   - c0db047b-4c3e-4bda-a187-2e79746256f9
+  - bd8bc668-6a12-48d8-8a4b-69619ad2fed7
   rect:
     serializedVersion: 2
     x: 1822
