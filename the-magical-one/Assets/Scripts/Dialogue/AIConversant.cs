@@ -79,10 +79,12 @@ public class AIConversant : MonoBehaviour
     //Call this coroutine to start the dialogue.
     public void StartDialogue()
     {
-        if(dialogue != null)
+        if(dialogue == null || isDialoguing)
         {
-            StartCoroutine(RunDialogue());
+            return;
         }
+
+        StartCoroutine(StartDialogueBehaviour());
     }
     #endregion
 
@@ -97,92 +99,36 @@ public class AIConversant : MonoBehaviour
     #endregion
 
     #region Coroutines
-    private IEnumerator RunDialogue()
+    private IEnumerator StartDialogueBehaviour()
     {
-        if(!isDialoguing)
-        {
-            StartCoroutine(FadeInImageBehaviour(dialogueBubble));
+        isDialoguing = true;
 
-            isDialoguing = true;
+        gameManager.StartDialogue();
 
-            gameManager.StartDialogue();
-
-            StartCoroutine(StartDialogue(dialogue));
-
-            yield return new WaitForEndOfFrame();
-        }
-            
-        dialogueText.text = "";
-
-        StartCoroutine(UpdateUI());
-
-        yield return new WaitForEndOfFrame();
-
-        if(currentNode != null && currentNode.GetTriggerActions().Count > 0)
-        {
-            TriggerActions();
-        }
-
-        if(HasNext())
-        {
-            Next();
-
-            index++;
-
-            yield return new WaitForEndOfFrame();
-        }
-        else
-        {
-            yield return new WaitForEndOfFrame();
-
-            StartCoroutine(QuitDialogue());
-        }
-    }
-
-    private IEnumerator StartDialogue(Dialogue newDialogue)
-    {
-        yield return new WaitForEndOfFrame();
+        currentDialogue = dialogue;
 
         index = 0;
 
-        currentDialogue = newDialogue;
-
-        currentNode = currentDialogue.GetNodeByIndex(index);
-    }
-
-    private IEnumerator QuitDialogue()
-    {
-        yield return new WaitForEndOfFrame();
-
         dialogueText.text = "";
 
-        isDialoguing = false;
+        StartCoroutine(FadeInImageBehaviour(dialogueBubble));
 
-        gameManager.StopDialogue();
-
-        StartCoroutine(FadeOutImageBehaviour(dialogueBubble));
-
-        currentDialogue = null;
-
-        dialogue = null;
-
-        currentNode = null;
-
-        index = 0;
-    }
-
-    //Updates the UI text.
-    private IEnumerator UpdateUI()
-    {
         yield return new WaitForEndOfFrame();
 
-        if(index <= currentDialogue.GetAllNodesByIndex())
+        while(HasNext())
         {
-            yield return new WaitForEndOfFrame();
+            currentNode = currentDialogue.GetNodeByIndex(index);
+
+            if(currentNode.GetTriggerActions().Count > 0)
+            {
+                TriggerActions();
+            }
 
             if(!isTyping)
             {
                 isTyping = true;
+
+                dialogueText.text = "";
 
                 if(useTypewriterEffect)
                 {
@@ -213,7 +159,32 @@ public class AIConversant : MonoBehaviour
                     StartDialogue();
                 }
             }
+
+            index++;
         }
+
+        StartCoroutine(QuitDialogue());
+    }
+
+    private IEnumerator QuitDialogue()
+    {
+        yield return new WaitForEndOfFrame();
+
+        dialogueText.text = "";
+
+        isDialoguing = false;
+
+        gameManager.StopDialogue();
+
+        StartCoroutine(FadeOutImageBehaviour(dialogueBubble));
+
+        currentDialogue = null;
+
+        dialogue = null;
+
+        currentNode = null;
+
+        index = 0;
     }
     #endregion
 
