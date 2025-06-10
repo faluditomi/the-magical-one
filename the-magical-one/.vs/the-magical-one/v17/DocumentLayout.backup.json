@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\dialogue\\aiconversant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\dialogue\\aiconversant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\aiconversant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|c:\\my shit\\unity projects\\the-magical-one\\the-magical-one\\assets\\scripts\\dialogue\\dialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialogue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\dialogue\\dialoguenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguenode.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\dialogue\\dialoguetrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{848A62CA-A16F-719A-FDDF-074BAF1B5B0F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dialogue\\dialoguetrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1EE6D734-018A-0DCC-5FC0-7DD7522AF76A}|Assembly-CSharp-Editor.csproj|C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\assets\\scripts\\dialogue\\editor\\dialogue editor\\dialoguepropertydrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1EE6D734-018A-0DCC-5FC0-7DD7522AF76A}|Assembly-CSharp-Editor.csproj|solutionrelative:assets\\scripts\\dialogue\\editor\\dialogue editor\\dialoguepropertydrawer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,57 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Dialogue.cs",
-              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\Dialogue.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Dialogue\\Dialogue.cs",
-              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\Dialogue.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Dialogue\\Dialogue.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T09:54:56.274Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DialogueNode.cs",
-              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\DialogueNode.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Dialogue\\DialogueNode.cs",
-              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\DialogueNode.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Dialogue\\DialogueNode.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAABRwJIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T09:54:44.213Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DialogueTrigger.cs",
-              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\DialogueTrigger.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Dialogue\\DialogueTrigger.cs",
-              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\DialogueTrigger.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Dialogue\\DialogueTrigger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T09:54:35.092Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DialoguePropertyDrawer.cs",
-              "DocumentMoniker": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\Editor\\Dialogue Editor\\DialoguePropertyDrawer.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Dialogue\\Editor\\Dialogue Editor\\DialoguePropertyDrawer.cs",
-              "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\Editor\\Dialogue Editor\\DialoguePropertyDrawer.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Dialogue\\Editor\\Dialogue Editor\\DialoguePropertyDrawer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-07T09:54:25.592Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -89,7 +24,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Dialogue\\AIConversant.cs",
               "ToolTip": "C:\\My Shit\\Unity Projects\\the-magical-one\\the-magical-one\\Assets\\Scripts\\Dialogue\\AIConversant.cs",
               "RelativeToolTip": "Assets\\Scripts\\Dialogue\\AIConversant.cs",
-              "ViewState": "AgIAAOcAAAAAAAAAAAAkwPQAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAmwEwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-07T09:54:06.767Z",
               "EditorCaption": ""

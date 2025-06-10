@@ -17,7 +17,13 @@ public class AIConversant : MonoBehaviour
 
     [Tooltip("The dialogue will use voice audio when displayed.")]
     [SerializeField] private bool useVoiceAudio;
-    
+
+    [Header("Bubble")]
+    [Tooltip("The dialogue bubble that will be displayed when dialoguing.")]
+    [SerializeField] private Image dialogueBubble;
+    [Tooltip("The dialogue text that is inside the bubble.")]
+    [SerializeField] private TMP_Text dialogueText;
+
     [Header("Text Settings")]
     [Tooltip("Text will be displayed with a typewriter effect.")]
     [SerializeField] private bool useTypewriterEffect;
@@ -25,13 +31,10 @@ public class AIConversant : MonoBehaviour
     [Tooltip("Text will fade in and out.")]
     [SerializeField] private bool useFadeEffect;
 
-    [SerializeField] private TMP_Text dialogueText;
-
     private Dialogue currentDialogue;
     private DialogueNode currentNode;
     private GameManager gameManager;
     private AudioSource audioSource;
-    public Image dialoguePanelText;
 
     private bool isDialoguing;
     private bool isTyping;
@@ -67,12 +70,18 @@ public class AIConversant : MonoBehaviour
     //Triggers actions, if there are any, when dialoguing. 
     private void TriggerActions()
     {
-        if(currentNode != null && currentNode.GetTriggerActions().Count > 0)
+        foreach(DialogueTrigger trigger in this.GetComponents<DialogueTrigger>())
         {
-            foreach(DialogueTrigger trigger in this.GetComponents<DialogueTrigger>())
-            {
-                trigger.Trigger(currentNode.GetTriggerActions());
-            }
+            trigger.Trigger(currentNode.GetTriggerActions());
+        }
+    }
+
+    //Call this coroutine to start the dialogue.
+    public void StartDialogue()
+    {
+        if(dialogue != null)
+        {
+            StartCoroutine(RunDialogue());
         }
     }
     #endregion
@@ -88,46 +97,45 @@ public class AIConversant : MonoBehaviour
     #endregion
 
     #region Coroutines
-    //Call this coroutine to start the dialogue.
-    public IEnumerator RunDialogue()
+    private IEnumerator RunDialogue()
     {
-        if(dialogue != null)
+        if(!isDialoguing)
         {
-            if(!isDialoguing)
-            {
-                StartCoroutine(FadeInImageBehaviour(dialoguePanelText));
+            StartCoroutine(FadeInImageBehaviour(dialogueBubble));
 
-                isDialoguing = true;
+            isDialoguing = true;
 
-                gameManager.StartDialogue();
+            gameManager.StartDialogue();
 
-                StartCoroutine(StartDialogue(dialogue));
-
-                yield return new WaitForEndOfFrame();
-            }
-            
-            dialogueText.text = "";
-
-            StartCoroutine(UpdateUI());
+            StartCoroutine(StartDialogue(dialogue));
 
             yield return new WaitForEndOfFrame();
+        }
+            
+        dialogueText.text = "";
 
+        StartCoroutine(UpdateUI());
+
+        yield return new WaitForEndOfFrame();
+
+        if(currentNode != null && currentNode.GetTriggerActions().Count > 0)
+        {
             TriggerActions();
+        }
 
-            if(HasNext())
-            {
-                Next();
+        if(HasNext())
+        {
+            Next();
 
-                index++;
+            index++;
 
-                yield return new WaitForEndOfFrame();
-            }
-            else
-            {
-                yield return new WaitForEndOfFrame();
+            yield return new WaitForEndOfFrame();
+        }
+        else
+        {
+            yield return new WaitForEndOfFrame();
 
-                StartCoroutine(QuitDialogue());
-            }
+            StartCoroutine(QuitDialogue());
         }
     }
 
@@ -142,7 +150,7 @@ public class AIConversant : MonoBehaviour
         currentNode = currentDialogue.GetNodeByIndex(index);
     }
 
-    public IEnumerator QuitDialogue()
+    private IEnumerator QuitDialogue()
     {
         yield return new WaitForEndOfFrame();
 
@@ -152,7 +160,7 @@ public class AIConversant : MonoBehaviour
 
         gameManager.StopDialogue();
 
-        StartCoroutine(FadeOutImageBehaviour(dialoguePanelText));
+        StartCoroutine(FadeOutImageBehaviour(dialogueBubble));
 
         currentDialogue = null;
 
@@ -202,7 +210,7 @@ public class AIConversant : MonoBehaviour
 
                 if(dialoguePlaysItself && useVoiceAudio)
                 {
-                    StartCoroutine(RunDialogue());
+                    StartDialogue();
                 }
             }
         }

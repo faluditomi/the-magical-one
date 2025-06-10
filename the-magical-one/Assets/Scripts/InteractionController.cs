@@ -140,7 +140,7 @@ public class InteractionController : MonoBehaviour
             }
 
             AIConversant aIConversant = currentDialogueTarget.GetComponent<AIConversant>();
-            aIConversant.StartCoroutine(aIConversant.RunDialogue());
+            aIConversant.StartDialogue();
         }
     }
 

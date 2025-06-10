@@ -101,7 +101,6 @@ public class Dialogue : ScriptableObject, ISerializationCallbackReceiver
     {
         DialogueNode newNode = CreateInstance<DialogueNode>();
 
-        //Where the random naming happens.
         newNode.name = Guid.NewGuid().ToString();
 
         if(parent)
@@ -109,12 +108,6 @@ public class Dialogue : ScriptableObject, ISerializationCallbackReceiver
             parent.AddChild(newNode.name);
 
             newNode.SetPosition(parent.GetRect().position + newNodeOffset);
-
-            //newNode.SetSpeakerTextGameObject(parent.GetSpeakerTextGameObject());
-
-            newNode.SetDialogueTextGameObject(parent.GetDialogueTextGameObject());
-
-            //newNode.SetSpeakerText(parent.GetSpeakerText());
         }
 
         return newNode;

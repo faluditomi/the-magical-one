@@ -6,17 +6,11 @@ using UnityEditor;
 public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
 {
     #region Attributes
-    //[TextArea(1, 15)] [SerializeField] string speakerText;
-
     [TextArea(10,15)] [SerializeField] string dialogueText;
 
     [HideInInspector] [SerializeField] List<string> children = new List<string>();
 
     [HideInInspector] [SerializeField] Rect rect = new Rect(0, 0, 200, 100);
-
-    //[SerializeField] public string speakerTextGameObject = "SpeakerText";
-
-    [SerializeField] public string dialogueTextGameObject = "DialogueText";
 
     [SerializeField] public AudioClip mAudioClip;
 
@@ -29,11 +23,6 @@ public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
         return rect;
     }
 
-    //public string GetSpeakerText()
-    //{
-    //    return speakerText;
-    //}
-
     public string GetDialogueText()
     {
         return dialogueText;
@@ -42,16 +31,6 @@ public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
     public List<string> GetChildren()
     {
         return children;
-    }
-
-    //public string GetSpeakerTextGameObject()
-    //{
-    //    return speakerTextGameObject;
-    //}
-
-    public string GetDialogueTextGameObject()
-    {
-        return dialogueTextGameObject;
     }
 
     public List<string> GetTriggerActions()
@@ -71,18 +50,6 @@ public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
         EditorUtility.SetDirty(this);
     }
 
-    //public void SetSpeakerText(string newSpeakerText)
-    //{
-    //    if(newSpeakerText != speakerText)
-    //    {
-    //        Undo.RecordObject(this, "Updated Speaker Text.");
-
-    //        speakerText = newSpeakerText;
-
-    //        EditorUtility.SetDirty(this);
-    //    }
-    //}
-
     public void SetText(string newDialogueText)
     {
         if(newDialogueText != dialogueText)
@@ -93,24 +60,6 @@ public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
 
             EditorUtility.SetDirty(this);
         }
-    }
-
-    //public void SetSpeakerTextGameObject(string newSpeakerTextGameObject)
-    //{
-    //    Undo.RecordObject(this, "Updated Speaker Text Name.");
-
-    //    speakerTextGameObject = newSpeakerTextGameObject;
-
-    //    EditorUtility.SetDirty(this);
-    //}
-
-    public void SetDialogueTextGameObject(string newDialogueTextGameObject)
-    {
-        Undo.RecordObject(this, "Updated Dialogue Text Name.");
-
-        dialogueTextGameObject = newDialogueTextGameObject;
-
-        EditorUtility.SetDirty(this);
     }
 
     public void AddChild(string childID)
