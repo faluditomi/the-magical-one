@@ -110,11 +110,11 @@ public class Dialogue : ScriptableObject, ISerializationCallbackReceiver
 
             newNode.SetPosition(parent.GetRect().position + newNodeOffset);
 
-            newNode.SetSpeakerTextGameObject(parent.GetSpeakerTextGameObject());
+            //newNode.SetSpeakerTextGameObject(parent.GetSpeakerTextGameObject());
 
             newNode.SetDialogueTextGameObject(parent.GetDialogueTextGameObject());
 
-            newNode.SetSpeakerText(parent.GetSpeakerText());
+            //newNode.SetSpeakerText(parent.GetSpeakerText());
         }
 
         return newNode;

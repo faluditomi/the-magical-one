@@ -226,7 +226,7 @@ public class DialogueEditor : EditorWindow
 
         GUILayout.BeginArea(node.GetRect(), style);
 
-        node.SetSpeakerText(EditorGUILayout.TextField(node.GetSpeakerText()));
+        //node.SetSpeakerText(EditorGUILayout.TextField(node.GetSpeakerText()));
 
         node.SetText(EditorGUILayout.TextField(node.GetDialogueText()));
 

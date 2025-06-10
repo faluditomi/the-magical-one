@@ -12,7 +12,7 @@ public class AIConversant : MonoBehaviour
     [Tooltip("The dialogue that this NPC will use.")]
     [SerializeField] private Dialogue dialogue;
 
-    [Tooltip("The dialogue will play itself without the player having to click.")]
+    [Tooltip("The dialogue will play itself without the player having to click. (Use Voice Audio Recommended)")]
     [SerializeField] private bool dialoguePlaysItself;
 
     [Tooltip("The dialogue will use voice audio when displayed.")]
@@ -24,6 +24,8 @@ public class AIConversant : MonoBehaviour
 
     [Tooltip("Text will fade in and out.")]
     [SerializeField] private bool useFadeEffect;
+
+    [SerializeField] private TMP_Text dialogueText;
 
     private Dialogue currentDialogue;
     private DialogueNode currentNode;
@@ -86,6 +88,7 @@ public class AIConversant : MonoBehaviour
     #endregion
 
     #region Coroutines
+    //Call this coroutine to start the dialogue.
     public IEnumerator RunDialogue()
     {
         if(dialogue != null)
@@ -103,7 +106,7 @@ public class AIConversant : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
             
-            GameObject.Find(currentNode.dialogueTextGameObject).GetComponent<TMP_Text>().text = "";
+            dialogueText.text = "";
 
             StartCoroutine(UpdateUI());
 
@@ -143,12 +146,7 @@ public class AIConversant : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        GameObject find = GameObject.Find(currentNode.dialogueTextGameObject);
-
-        if(find != null)
-        {
-            find.GetComponent<TMP_Text>().text = "";
-        }
+        dialogueText.text = "";
 
         isDialoguing = false;
 
@@ -215,13 +213,11 @@ public class AIConversant : MonoBehaviour
     //Writes the text with a typewriter effect.
     private IEnumerator TypewriterEffectBehaviour()
     {
-        var textMeshProUGUI = GameObject.Find(currentNode.dialogueTextGameObject).GetComponent<TMP_Text>();
-
-        StartCoroutine(FadeInBehaviour(textMeshProUGUI));
+        StartCoroutine(FadeInBehaviour(dialogueText));
 
         foreach(char c in currentNode.GetDialogueText())
         {
-            textMeshProUGUI.text += c;
+            dialogueText.text += c;
 
             yield return new WaitForSeconds(0.005f);
         }
@@ -230,13 +226,11 @@ public class AIConversant : MonoBehaviour
     //Writes the text with a fade effect.
     private IEnumerator FadeEffectBehaviour()
     {
-        TMP_Text textMeshProUGUI = GameObject.Find(currentNode.dialogueTextGameObject).GetComponent<TMP_Text>();
+        dialogueText.color = new Color(dialogueText.color.r, dialogueText.color.g, dialogueText.color.b, 0f);
 
-        textMeshProUGUI.color = new Color(textMeshProUGUI.color.r, textMeshProUGUI.color.g, textMeshProUGUI.color.b, 0f);
+        dialogueText.text = currentNode.GetDialogueText();
 
-        textMeshProUGUI.text = currentNode.GetDialogueText();
-
-        StartCoroutine(FadeInBehaviour(textMeshProUGUI));
+        StartCoroutine(FadeInBehaviour(dialogueText));
 
         yield return new WaitForEndOfFrame();
     }
@@ -244,11 +238,9 @@ public class AIConversant : MonoBehaviour
     //Writes the text without any effects.
     private IEnumerator WriteTextBehaviour()
     {
-        TMP_Text textMeshProUGUI = GameObject.Find(currentNode.dialogueTextGameObject).GetComponent<TMP_Text>();
+        dialogueText.color = new Color(dialogueText.color.r, dialogueText.color.g, dialogueText.color.b, 1f);
 
-        textMeshProUGUI.color = new Color(textMeshProUGUI.color.r, textMeshProUGUI.color.g, textMeshProUGUI.color.b, 1f);
-
-        textMeshProUGUI.text = currentNode.GetDialogueText();
+        dialogueText.text = currentNode.GetDialogueText();
 
         yield return new WaitForEndOfFrame();
     }

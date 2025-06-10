@@ -6,7 +6,7 @@ using UnityEditor;
 public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
 {
     #region Attributes
-    [TextArea(1, 15)] [SerializeField] string speakerText;
+    //[TextArea(1, 15)] [SerializeField] string speakerText;
 
     [TextArea(10,15)] [SerializeField] string dialogueText;
 
@@ -14,7 +14,7 @@ public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
 
     [HideInInspector] [SerializeField] Rect rect = new Rect(0, 0, 200, 100);
 
-    [SerializeField] public string speakerTextGameObject = "SpeakerText";
+    //[SerializeField] public string speakerTextGameObject = "SpeakerText";
 
     [SerializeField] public string dialogueTextGameObject = "DialogueText";
 
@@ -29,10 +29,10 @@ public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
         return rect;
     }
 
-    public string GetSpeakerText()
-    {
-        return speakerText;
-    }
+    //public string GetSpeakerText()
+    //{
+    //    return speakerText;
+    //}
 
     public string GetDialogueText()
     {
@@ -44,10 +44,10 @@ public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
         return children;
     }
 
-    public string GetSpeakerTextGameObject()
-    {
-        return speakerTextGameObject;
-    }
+    //public string GetSpeakerTextGameObject()
+    //{
+    //    return speakerTextGameObject;
+    //}
 
     public string GetDialogueTextGameObject()
     {
@@ -71,17 +71,17 @@ public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
         EditorUtility.SetDirty(this);
     }
 
-    public void SetSpeakerText(string newSpeakerText)
-    {
-        if(newSpeakerText != speakerText)
-        {
-            Undo.RecordObject(this, "Updated Speaker Text.");
+    //public void SetSpeakerText(string newSpeakerText)
+    //{
+    //    if(newSpeakerText != speakerText)
+    //    {
+    //        Undo.RecordObject(this, "Updated Speaker Text.");
 
-            speakerText = newSpeakerText;
+    //        speakerText = newSpeakerText;
 
-            EditorUtility.SetDirty(this);
-        }
-    }
+    //        EditorUtility.SetDirty(this);
+    //    }
+    //}
 
     public void SetText(string newDialogueText)
     {
@@ -95,14 +95,14 @@ public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
         }
     }
 
-    public void SetSpeakerTextGameObject(string newSpeakerTextGameObject)
-    {
-        Undo.RecordObject(this, "Updated Speaker Text Name.");
+    //public void SetSpeakerTextGameObject(string newSpeakerTextGameObject)
+    //{
+    //    Undo.RecordObject(this, "Updated Speaker Text Name.");
 
-        speakerTextGameObject = newSpeakerTextGameObject;
+    //    speakerTextGameObject = newSpeakerTextGameObject;
 
-        EditorUtility.SetDirty(this);
-    }
+    //    EditorUtility.SetDirty(this);
+    //}
 
     public void SetDialogueTextGameObject(string newDialogueTextGameObject)
     {

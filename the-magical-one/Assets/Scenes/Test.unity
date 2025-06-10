@@ -10151,6 +10151,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8635781735915278978, guid: a99c3af97531714459f4c27f9fdf49ed, type: 3}
+      propertyPath: dialogueText
+      value: 
+      objectReference: {fileID: 1367638462}
+    - target: {fileID: 8635781735915278978, guid: a99c3af97531714459f4c27f9fdf49ed, type: 3}
       propertyPath: useFadeEffect
       value: 0
       objectReference: {fileID: 0}
@@ -10171,6 +10175,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a99c3af97531714459f4c27f9fdf49ed, type: 3}
+--- !u!114 &1367638462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7225234719528507363, guid: a99c3af97531714459f4c27f9fdf49ed, type: 3}
+  m_PrefabInstance: {fileID: 1367638461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1427866916
 GameObject:
   m_ObjectHideFlags: 0
@@ -17012,6 +17027,7 @@ MonoBehaviour:
   useVoiceAudio: 0
   useTypewriterEffect: 0
   useFadeEffect: 0
+  dialogueText: {fileID: 0}
   dialoguePanelText: {fileID: 0}
 --- !u!82 &1971150151
 AudioSource:
