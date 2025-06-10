@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using System.Text;
 
 [RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Collider))]
@@ -28,6 +29,8 @@ public class AIConversant : MonoBehaviour
     [Tooltip("Text will be displayed with a typewriter effect.")]
     [SerializeField] private bool useTypewriterEffect;
 
+    [SerializeField] private float typewriterSpeed = 0.02f;
+
     [Tooltip("Text will fade in and out.")]
     [SerializeField] private bool useFadeEffect;
 
@@ -35,9 +38,11 @@ public class AIConversant : MonoBehaviour
     private DialogueNode currentNode;
     private GameManager gameManager;
     private AudioSource audioSource;
+    private DialogueTrigger[] dialogueTriggers;
+    private WaitForSeconds typewriterWait;
+    private StringBuilder stringBuilder = new StringBuilder();
 
     private bool isDialoguing;
-    private bool isTyping;
 
     private int index;
     #endregion
@@ -51,26 +56,29 @@ public class AIConversant : MonoBehaviour
         }
 
         gameManager = FindFirstObjectByType<GameManager>();
+
+        dialogueTriggers = GetComponents<DialogueTrigger>();
+
+        typewriterWait = new WaitForSeconds(typewriterSpeed);
     }
     #endregion
 
     #region Normal Methods
-    //Changes the current node to the next one.
-    private void Next()
-    {
-        currentNode = (index < currentDialogue.GetAllNodesByIndex()) ? currentDialogue.GetNodeByIndex(index) : currentDialogue.GetNodeByIndex(index - 1);
-    }
-
     //Checks if there are anymore nodes.
     private bool HasNext()
     {
-        return (index <= currentDialogue.GetAllNodesByIndex() - 1);
+        if(currentDialogue == null)
+        {
+            return false;
+        }
+            
+        return (index < currentDialogue.GetAllNodesByIndex());
     }
 
     //Triggers actions, if there are any, when dialoguing. 
     private void TriggerActions()
     {
-        foreach(DialogueTrigger trigger in this.GetComponents<DialogueTrigger>())
+        foreach(DialogueTrigger trigger in dialogueTriggers)
         {
             trigger.Trigger(currentNode.GetTriggerActions());
         }
@@ -119,45 +127,43 @@ public class AIConversant : MonoBehaviour
         {
             currentNode = currentDialogue.GetNodeByIndex(index);
 
-            if(currentNode.GetTriggerActions().Count > 0)
+            if(dialogueTriggers.Length > 0 && currentNode.GetTriggerActions().Count > 0)
             {
                 TriggerActions();
             }
 
-            if(!isTyping)
+            if(useTypewriterEffect)
             {
-                isTyping = true;
+                StartCoroutine(TypewriterEffectBehaviour());
+            }
+            else if(useFadeEffect)
+            {
+                StartCoroutine(FadeEffectBehaviour());
+            }
+            else
+            {
+                StartCoroutine(WriteTextBehaviour());
+            }
 
-                dialogueText.text = "";
+            if(useVoiceAudio && currentNode.mAudioClip != null)
+            {
+                audioSource.clip = currentNode.mAudioClip;
 
-                if(useTypewriterEffect)
+                audioSource.Play();
+
+                if(dialoguePlaysItself)
                 {
-                    StartCoroutine(TypewriterEffectBehaviour());
-                }
-                else if(useFadeEffect)
-                {
-                    StartCoroutine(FadeEffectBehaviour());
-                }
-                else
-                {
-                    StartCoroutine(WriteTextBehaviour());
-                }
-
-                isTyping = false;
-
-                if(useVoiceAudio)
-                {
-                    audioSource.clip = currentNode.mAudioClip;
-
-                    audioSource.Play();
-
                     yield return new WaitUntil(() => !audioSource.isPlaying);
                 }
-
-                if(dialoguePlaysItself && useVoiceAudio)
-                {
-                    StartDialogue();
-                }
+            }
+            else if(dialoguePlaysItself)
+            {
+                //Need to calculate this based on text length.
+                yield return new WaitForSeconds(5f);
+            }
+            else
+            {
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
             }
 
             index++;
@@ -194,11 +200,19 @@ public class AIConversant : MonoBehaviour
     {
         StartCoroutine(FadeInBehaviour(dialogueText));
 
-        foreach(char c in currentNode.GetDialogueText())
-        {
-            dialogueText.text += c;
+        stringBuilder.Clear();
 
-            yield return new WaitForSeconds(0.005f);
+        dialogueText.text = "";
+
+        string fullText = currentNode.GetDialogueText();
+
+        foreach(char c in fullText)
+        {
+            stringBuilder.Append(c);
+
+            dialogueText.text = stringBuilder.ToString();
+
+            yield return typewriterWait;
         }
     }
 
