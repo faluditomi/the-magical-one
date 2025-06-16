@@ -2,7 +2,6 @@
 using UnityEngine;
 using UnityEditor;
 
-[CreateAssetMenu(fileName = "New Dialogue Node", menuName = "DialogueNodes", order = 0)]
 public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
 {
     #region Attributes
@@ -12,7 +11,7 @@ public class DialogueNode : ScriptableObject, ISerializationCallbackReceiver
 
     [HideInInspector] [SerializeField] Rect rect = new Rect(0, 0, 200, 100);
 
-    [SerializeField] public AudioClip mAudioClip;
+    [SerializeField] public AudioClip voiceAudioClip;
 
     [SerializeField] List<string> triggerActions = new List<string>();
     #endregion

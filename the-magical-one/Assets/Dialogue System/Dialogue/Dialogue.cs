@@ -51,19 +51,17 @@ public class Dialogue : ScriptableObject, ISerializationCallbackReceiver
         return nodes[0];
     }
 
-    public List<DialogueNode> GetAllChildren(DialogueNode parentNode)
+    public void GetChildren(DialogueNode parentNode, List<DialogueNode> children)
     {
-        List<DialogueNode> dialogueNodes = new List<DialogueNode>();
-            
+        children.Clear();
+
         foreach(string childID in parentNode.GetChildren())
         {
             if(nodeLookup.ContainsKey(childID))
             {
-                dialogueNodes.Add(nodeLookup[childID]);
+                children.Add(nodeLookup[childID]);
             }
         }
-
-        return dialogueNodes;
     }
 
     //Runs the methods if only its an Editor window.
@@ -117,13 +115,6 @@ public class Dialogue : ScriptableObject, ISerializationCallbackReceiver
     public void OnBeforeSerialize()
     {
         #if UNITY_EDITOR
-        if(nodes.Count == 0)
-        {
-            DialogueNode newNode = MakeNode(null);
-
-            AddNode(newNode);
-        }
-
         if(AssetDatabase.GetAssetPath(this) != "")
         {
             foreach(DialogueNode node in GetAllNodes())

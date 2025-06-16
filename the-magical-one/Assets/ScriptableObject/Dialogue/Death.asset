@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
   m_Name: 964073c1-f531-46d8-8c8a-88faf806e8f9
   m_EditorClassIdentifier: 
-  dialogueText: "Ohh\u2026 uhh\u2026 what? I mean \u2014 hi!"
+  dialogueText: "Ohh\u2026 uhh\u2026 what? I mean... hi!"
   children:
   - 5c83bfcb-7076-4531-8905-f5d49eb98594
   - 42245d4e-9a43-4360-abfd-83a46f8c0456
@@ -22,7 +22,7 @@ MonoBehaviour:
     y: 182
     width: 200
     height: 100
-  mAudioClip: {fileID: 8300000, guid: f1c390d8e1a33f246ab4ac08d71c7568, type: 3}
+  voiceAudioClip: {fileID: 8300000, guid: f1c390d8e1a33f246ab4ac08d71c7568, type: 3}
   triggerActions:
   - death hello off
 --- !u!114 &-4481077191806326158
@@ -44,11 +44,11 @@ MonoBehaviour:
   - 1b8639a4-c39f-4523-aab9-95df21efd60b
   rect:
     serializedVersion: 2
-    x: 776
-    y: 11
+    x: 698
+    y: 51
     width: 200
     height: 100
-  mAudioClip: {fileID: 8300000, guid: b39f96997348ee94bb53f2aeb039e10e, type: 3}
+  voiceAudioClip: {fileID: 8300000, guid: b39f96997348ee94bb53f2aeb039e10e, type: 3}
   triggerActions: []
 --- !u!114 &-4447484904414920398
 MonoBehaviour:
@@ -70,7 +70,7 @@ MonoBehaviour:
     y: 64
     width: 200
     height: 100
-  mAudioClip: {fileID: 0}
+  voiceAudioClip: {fileID: 0}
   triggerActions: []
 --- !u!114 &-3364254772331239846
 MonoBehaviour:
@@ -93,7 +93,7 @@ MonoBehaviour:
     y: 3
     width: 200
     height: 100
-  mAudioClip: {fileID: 0}
+  voiceAudioClip: {fileID: 0}
   triggerActions: []
 --- !u!114 &-3360267865460791231
 MonoBehaviour:
@@ -113,11 +113,11 @@ MonoBehaviour:
   - 3e874adf-2424-4709-9fc2-89a5f2c19a88
   rect:
     serializedVersion: 2
-    x: 1575
-    y: 136
+    x: 1389
+    y: 162
     width: 200
     height: 100
-  mAudioClip: {fileID: 8300000, guid: e4893321ecc3e4149bec2274710c3990, type: 3}
+  voiceAudioClip: {fileID: 8300000, guid: e4893321ecc3e4149bec2274710c3990, type: 3}
   triggerActions: []
 --- !u!114 &-2561748264552652391
 MonoBehaviour:
@@ -137,11 +137,11 @@ MonoBehaviour:
   - 42190bc6-80fa-4610-a8a2-2185e53a302c
   rect:
     serializedVersion: 2
-    x: 1295
-    y: 28
+    x: 1163
+    y: 74
     width: 200
     height: 100
-  mAudioClip: {fileID: 8300000, guid: d22307403a3340245b89d73b5a9fcdef, type: 3}
+  voiceAudioClip: {fileID: 8300000, guid: d22307403a3340245b89d73b5a9fcdef, type: 3}
   triggerActions: []
 --- !u!114 &-1721382719347773226
 MonoBehaviour:
@@ -164,7 +164,7 @@ MonoBehaviour:
     y: 4
     width: 200
     height: 100
-  mAudioClip: {fileID: 0}
+  voiceAudioClip: {fileID: 0}
   triggerActions: []
 --- !u!114 &11400000
 MonoBehaviour:
@@ -209,7 +209,7 @@ MonoBehaviour:
     y: 3
     width: 200
     height: 100
-  mAudioClip: {fileID: 0}
+  voiceAudioClip: {fileID: 0}
   triggerActions: []
 --- !u!114 &1394622614209530999
 MonoBehaviour:
@@ -223,18 +223,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8913e1fe684e0f444bc4e19729d1fd72, type: 3}
   m_Name: 1b8639a4-c39f-4523-aab9-95df21efd60b
   m_EditorClassIdentifier: 
-  dialogueText: "Anyway \u2014 last human alive. By a long shot. Mostly paralysed,
-    partly locked in, and absolutely obsolete. I know you\u2019re due for the crossing
-    but still, I can\u2019t take you with me."
+  dialogueText: "Anyway... last human alive. By a long shot. Mostly paralysed, partly
+    locked in, and absolutely obsolete. I know you\u2019re due for the crossing but
+    still, I can\u2019t take you with me."
   children:
   - a56de345-582c-405f-9904-5581dceb9e52
   rect:
     serializedVersion: 2
-    x: 1052
-    y: 124
+    x: 932
+    y: 150
     width: 200
     height: 100
-  mAudioClip: {fileID: 8300000, guid: bf13340834e7389418408f8ee62a91da, type: 3}
+  voiceAudioClip: {fileID: 8300000, guid: bf13340834e7389418408f8ee62a91da, type: 3}
   triggerActions: []
 --- !u!114 &3191805186737618517
 MonoBehaviour:
@@ -255,11 +255,11 @@ MonoBehaviour:
   - 62e2e75b-d755-4db0-9af1-50be555c9878
   rect:
     serializedVersion: 2
-    x: 515
-    y: 113
+    x: 469
+    y: 143
     width: 200
     height: 100
-  mAudioClip: {fileID: 8300000, guid: 3e9fbe00a052f4947a7f23118b7c062d, type: 3}
+  voiceAudioClip: {fileID: 8300000, guid: 3e9fbe00a052f4947a7f23118b7c062d, type: 3}
   triggerActions: []
 --- !u!114 &4641435973911834361
 MonoBehaviour:
@@ -282,7 +282,7 @@ MonoBehaviour:
     y: 5
     width: 200
     height: 100
-  mAudioClip: {fileID: 0}
+  voiceAudioClip: {fileID: 0}
   triggerActions: []
 --- !u!114 &5662607250066737669
 MonoBehaviour:
@@ -304,7 +304,7 @@ MonoBehaviour:
     y: 3
     width: 200
     height: 100
-  mAudioClip: {fileID: 0}
+  voiceAudioClip: {fileID: 0}
   triggerActions: []
 --- !u!114 &5822087367141641222
 MonoBehaviour:
@@ -329,7 +329,7 @@ MonoBehaviour:
     y: 5
     width: 200
     height: 100
-  mAudioClip: {fileID: 0}
+  voiceAudioClip: {fileID: 0}
   triggerActions: []
 --- !u!114 &8362535009197314484
 MonoBehaviour:
@@ -352,11 +352,11 @@ MonoBehaviour:
   - bd8bc668-6a12-48d8-8a4b-69619ad2fed7
   rect:
     serializedVersion: 2
-    x: 1822
-    y: 64
+    x: 1596
+    y: 76
     width: 200
     height: 100
-  mAudioClip: {fileID: 8300000, guid: baf74b9453700e8478f6c0dd49514014, type: 3}
+  voiceAudioClip: {fileID: 8300000, guid: baf74b9453700e8478f6c0dd49514014, type: 3}
   triggerActions:
   - bye
 --- !u!114 &8738918024660327911
@@ -377,11 +377,11 @@ MonoBehaviour:
   - 0e083ef5-d5ef-4cf8-ac05-500b2bbc5931
   rect:
     serializedVersion: 2
-    x: 243
-    y: 27
+    x: 239
+    y: 83
     width: 200
     height: 100
-  mAudioClip: {fileID: 8300000, guid: acce99d6c697d5f4887edd1977da569a, type: 3}
+  voiceAudioClip: {fileID: 8300000, guid: acce99d6c697d5f4887edd1977da569a, type: 3}
   triggerActions: []
 --- !u!114 &8938516765409243600
 MonoBehaviour:
@@ -404,5 +404,5 @@ MonoBehaviour:
     y: 4
     width: 200
     height: 100
-  mAudioClip: {fileID: 0}
+  voiceAudioClip: {fileID: 0}
   triggerActions: []

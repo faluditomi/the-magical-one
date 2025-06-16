@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &170950462387992083
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3615623002345779821}
-  m_Layer: 0
-  m_Name: DialogueBoxPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3615623002345779821
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170950462387992083}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.1684542, y: -0.7752652, z: -0.12925984, w: -0.5948773}
-  m_LocalPosition: {x: -13.300289, y: -3.694522, z: 7.33756}
-  m_LocalScale: {x: 2.4999993, y: 2.4999998, z: 2.4999993}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5687290023507552648}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &734728808319081524
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,9 +460,7 @@ GameObject:
   - component: {fileID: 8680432861247880716}
   - component: {fileID: 4266942352047018981}
   - component: {fileID: 8377436522678694216}
-  - component: {fileID: 547557448798961886}
   - component: {fileID: 2215048157155750946}
-  - component: {fileID: 8764352621909283743}
   m_Layer: 0
   m_Name: Dialogue
   m_TagString: StartDialogue
@@ -552,7 +519,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 02577354f057a4248a99907aa2426058, type: 2}
-  dialoguePanelText: {fileID: 8746789539543639946}
+  dialoguePlaysItself: 0
+  useVoiceAudio: 0
+  dialogueImage: {fileID: 0}
+  dialogueText: {fileID: 0}
+  useTypewriterEffect: 0
+  typewriterSpeed: 0.02
+  useFadeEffect: 0
 --- !u!82 &4266942352047018981
 AudioSource:
   m_ObjectHideFlags: 0
@@ -662,64 +635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce744c479e1e14f44bc15742dcadf7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actions:
-  - magic
-  event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: HasMagic
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
---- !u!114 &547557448798961886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4416941004479621360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce744c479e1e14f44bc15742dcadf7a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actions:
-  - wizard dead
-  event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: PastWizard
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  actionEvents: []
 --- !u!65 &2215048157155750946
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -741,35 +657,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000002, y: 4.2, z: 2}
   m_Center: {x: 0.0000026904067, y: 1.8902644, z: 0.00000023841852}
---- !u!114 &8764352621909283743
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4416941004479621360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce744c479e1e14f44bc15742dcadf7a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actions:
-  - wizard hello off
-  event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2193334227417531844}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &4463422424755948111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1124,7 +1011,6 @@ Transform:
   - {fileID: 4149184560136113315}
   - {fileID: 3664740088715292800}
   - {fileID: 6200588119322356719}
-  - {fileID: 3615623002345779821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7199177439850077948
@@ -1582,17 +1468,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9019704663283722212, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
   m_PrefabInstance: {fileID: 6639365346699432634}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8746789539543639946 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2684450102715036976, guid: fdafe461dd13b8042996c7be6827f3af, type: 3}
-  m_PrefabInstance: {fileID: 6639365346699432634}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6661710718710582846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1739,7 +1614,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hospital Bed (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4399887528891097137, guid: 7f6cd3d3262e5e849bbf5f14873d7c94, type: 3}
+    - {fileID: 8873819466786671516, guid: 7f6cd3d3262e5e849bbf5f14873d7c94, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

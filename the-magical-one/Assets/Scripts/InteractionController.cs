@@ -57,12 +57,12 @@ public class InteractionController : MonoBehaviour
         {
             currentDialogueTarget = hit.collider.gameObject;
 
-            if((!currentDialogueTarget.name.Equals("Dialogue") || (gameManager.isPastDeath && !gameManager.isPastWizard))
-            && !gameManager.isDialogueInProgress)
-            {
-                currentHoverParticles = currentDialogueTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>();
-                currentHoverParticles.Play();
-            }
+            //if((!currentDialogueTarget.name.Equals("Dialogue") || (gameManager.isPastDeath && !gameManager.isPastWizard))
+            //&& !gameManager.isDialogueInProgress)
+            //{
+            //    currentHoverParticles = currentDialogueTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>();
+            //    currentHoverParticles.Play();
+            //}
 
 
         }

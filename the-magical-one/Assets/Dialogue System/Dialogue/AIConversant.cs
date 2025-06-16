@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine.UI;
 using System.Text;
 
-[RequireComponent(typeof(AudioSource))]
 [RequireComponent(typeof(Collider))]
 public class AIConversant : MonoBehaviour
 {
@@ -20,8 +19,8 @@ public class AIConversant : MonoBehaviour
     [SerializeField] private bool useVoiceAudio;
 
     [Header("Bubble")]
-    [Tooltip("The dialogue bubble that will be displayed when dialoguing.")]
-    [SerializeField] private Image dialogueBubble;
+    [Tooltip("The dialogue image that will be displayed when dialoguing.")]
+    [SerializeField] private Image dialogueImage;
     [Tooltip("The dialogue text that is inside the bubble.")]
     [SerializeField] private TMP_Text dialogueText;
 
@@ -36,7 +35,6 @@ public class AIConversant : MonoBehaviour
 
     private Dialogue currentDialogue;
     private DialogueNode currentNode;
-    private GameManager gameManager;
     private AudioSource audioSource;
     private DialogueTrigger[] dialogueTriggers;
     private WaitForSeconds typewriterWait;
@@ -53,9 +51,14 @@ public class AIConversant : MonoBehaviour
         if(useVoiceAudio)
         {
             audioSource = GetComponent<AudioSource>();
-        }
 
-        gameManager = FindFirstObjectByType<GameManager>();
+            if(audioSource == null)
+            {
+                Debug.LogWarning($"AIConversant on '{gameObject.name}' has 'Use Voice Audio' enabled, but no AudioSource component was found. Disabling voice audio to prevent errors.", this);
+
+                useVoiceAudio = false;
+            }
+        }
 
         dialogueTriggers = GetComponents<DialogueTrigger>();
 
@@ -111,15 +114,13 @@ public class AIConversant : MonoBehaviour
     {
         isDialoguing = true;
 
-        gameManager.StartDialogue();
-
         currentDialogue = dialogue;
 
         index = 0;
 
         dialogueText.text = "";
 
-        StartCoroutine(FadeInImageBehaviour(dialogueBubble));
+        StartCoroutine(FadeInImageBehaviour(dialogueImage));
 
         yield return new WaitForEndOfFrame();
 
@@ -145,9 +146,9 @@ public class AIConversant : MonoBehaviour
                 StartCoroutine(WriteTextBehaviour());
             }
 
-            if(useVoiceAudio && currentNode.mAudioClip != null)
+            if(useVoiceAudio && currentNode.voiceAudioClip != null)
             {
-                audioSource.clip = currentNode.mAudioClip;
+                audioSource.clip = currentNode.voiceAudioClip;
 
                 audioSource.Play();
 
@@ -180,9 +181,7 @@ public class AIConversant : MonoBehaviour
 
         isDialoguing = false;
 
-        gameManager.StopDialogue();
-
-        StartCoroutine(FadeOutImageBehaviour(dialogueBubble));
+        StartCoroutine(FadeOutImageBehaviour(dialogueImage));
 
         currentDialogue = null;
 
