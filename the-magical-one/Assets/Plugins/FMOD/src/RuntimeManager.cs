@@ -1421,15 +1421,15 @@ retry:
             }
         }
 
-        public static FMOD.Studio.Bus GetBus(string path)
-        {
-            FMOD.Studio.Bus bus;
-            if (StudioSystem.getBus(path, out bus) != FMOD.RESULT.OK)
-            {
-                throw new BusNotFoundException(path);
-            }
-            return bus;
-        }
+        //public static FMOD.Studio.Bus GetBus(string path)
+        //{
+        //    FMOD.Studio.Bus bus;
+        //    if (StudioSystem.getBus(path, out bus) != FMOD.RESULT.OK)
+        //    {
+        //        throw new BusNotFoundException(path);
+        //    }
+        //    return bus;
+        //}
 
         public static FMOD.Studio.VCA GetVCA(string path)
         {

@@ -26,13 +26,13 @@ public class MenuVolumeControls : MonoBehaviour
 
         instance = this;
 
-        masterBus = RuntimeManager.GetBus("bus:/");
+        //masterBus = RuntimeManager.GetBus("bus:/");
 
-        musicBus = RuntimeManager.GetBus("bus:/Music");
+        //musicBus = RuntimeManager.GetBus("bus:/Music");
 
-        ambienceBus = RuntimeManager.GetBus("bus:/Ambience");
+        //ambienceBus = RuntimeManager.GetBus("bus:/Ambience");
 
-        sfxBus = RuntimeManager.GetBus("bus:/SFX");
+        //sfxBus = RuntimeManager.GetBus("bus:/SFX");
 
         if(PlayerPrefs.HasKey(VolumeSlider.VolumeType.MASTER.ToString()))
         {

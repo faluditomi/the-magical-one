@@ -19,7 +19,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Awake()
     {
-        masterBus = RuntimeManager.GetBus("bus:/");
+        //masterBus = RuntimeManager.GetBus("bus:/");
         cameraController = FindFirstObjectByType<CameraController>();
     }
 

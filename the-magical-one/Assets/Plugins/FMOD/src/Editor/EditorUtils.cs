@@ -378,7 +378,7 @@ namespace FMODUnity
         {
             if (RuntimeManager.IsInitialized && RuntimeManager.HaveMasterBanksLoaded)
             {
-                RuntimeManager.GetBus("bus:/").setPaused(EditorApplication.isPaused);
+                //RuntimeManager.GetBus("bus:/").setPaused(EditorApplication.isPaused);
                 RuntimeManager.StudioSystem.update();
             }
         }

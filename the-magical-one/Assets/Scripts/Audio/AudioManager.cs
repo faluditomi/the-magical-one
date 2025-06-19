@@ -66,7 +66,7 @@ public class AudioManager : MonoBehaviour
     {
         machineDialysisInstance = RuntimeManager.CreateInstance(FMODEvents.instance.machineDialysis);
 
-        RuntimeManager.AttachInstanceToGameObject(machineDialysisInstance, AudioObjects.instance.machineDialysis, AudioObjects.instance.machineDialysis.GetComponent<Rigidbody>());
+        //RuntimeManager.AttachInstanceToGameObject(machineDialysisInstance, AudioObjects.instance.machineDialysis, AudioObjects.instance.machineDialysis.GetComponent<Rigidbody>());
         eventInstances.Add(machineDialysisInstance);
         machineDialysisInstance.start();
     }

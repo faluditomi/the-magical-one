@@ -66,7 +66,7 @@ public class SpellEventSubscriber : MonoBehaviour
         }
 
         spell.cast += action;
-        Debug.Log($"Subscribed to {spellWord} spell event.");
+        //Debug.Log($"Subscribed to {spellWord} spell event.");
     }
 
 }

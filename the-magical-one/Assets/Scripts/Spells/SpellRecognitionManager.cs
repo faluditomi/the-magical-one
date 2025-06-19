@@ -134,7 +134,7 @@ public class SpellRecognitionManager : MonoBehaviour
         if (cancellationTokenSource != null)
         {
             cancellationTokenSource.Cancel();
-            Debug.Log($"ResetSegmentation: Canceled running tasks.");
+            //Debug.Log($"ResetSegmentation: Canceled running tasks.");
         }
 
         spellsInCurrentSegment = new ConcurrentBag<SpellWords>();

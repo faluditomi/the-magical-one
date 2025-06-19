@@ -1,117 +1,113 @@
 using UnityEngine;
-using FMODUnity;
 using FMOD.Studio;
 
 public class InteractionController : MonoBehaviour
 {
+    [SerializeField] private Transform levitatePosition;
+    private Transform cameraTransform;
+
+    private GameObject currentLookTarget;
 
     private NurseReset nurseReset;
-    private Transform cameraTransform;
-    private Transform levitatePosition;
-    private GameObject currentLevitateTarget;
-    private GameObject currentDialogueTarget;
-    private ParticleSystem currentHoverParticles;
-    public EventInstance levitateEventInstance;
     private GameManager gameManager;
     private EndingSequence endingSequence;
+    private FireballController fireballController;
+
+    public EventInstance levitateEventInstance;
+
+    private void Awake()
+    {
+        cameraTransform = Camera.main.transform;
+
+        nurseReset = FindFirstObjectByType<NurseReset>();
+        gameManager = FindFirstObjectByType<GameManager>();
+        endingSequence = FindFirstObjectByType<EndingSequence>();
+        fireballController = GetComponent<FireballController>();
+    }
 
     private void Start()
     {
         levitateEventInstance = AudioManager.instance.CreateEventInstance(FMODEvents.instance.magicLevitate);
     }
 
-    private void Awake()
+    private void OnEnable()
     {
-        cameraTransform = Camera.main.transform;
-        levitatePosition = transform.Find("LevitatePosition");
-        nurseReset = FindFirstObjectByType<NurseReset>();
-        gameManager = FindFirstObjectByType<GameManager>();
-        endingSequence = FindFirstObjectByType<EndingSequence>();
+        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Levitate, Levitate);
+        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Hello, StartDialogue);
+        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Fireball, Fireball);
     }
 
     private void Update()
     {
         if(gameManager.IsLevitationInProgress())
         {
+            if(currentLookTarget != null)
+            {
+                ManageParticleState(null);
+
+                currentLookTarget = null;
+            }
+
             return;
         }
+
+        GameObject newLookTarget = null;
 
         RaycastHit hit;
-        int layerToIgnore = 2;
-        int layerMask = ~(1 << layerToIgnore);
-        Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, int.MaxValue, layerMask);
 
-        if(hit.collider == null)
+        int layerToIgnore = 2;
+
+        int layerMask = ~(1 << layerToIgnore);
+
+        if(Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, float.MaxValue, layerMask))
         {
-            NullTargets();
+            if(hit.collider.CompareTag("Levitateable") || hit.collider.CompareTag("StartDialogue"))
+            {
+                newLookTarget = hit.collider.gameObject;
+            }
+        }
+        
+        if(newLookTarget == currentLookTarget)
+        {
             return;
         }
 
-        if(hit.collider.CompareTag("Levitateable") && gameManager.hasMagic)
-        {
-            currentLevitateTarget = hit.collider.gameObject;
-            currentHoverParticles = currentLevitateTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>();
-            currentHoverParticles.Play();
-        }
-        else if(hit.collider.CompareTag("StartDialogue"))
-        {
-            currentDialogueTarget = hit.collider.gameObject;
+        ManageParticleState(newLookTarget);
 
-            //if((!currentDialogueTarget.name.Equals("Dialogue") || (gameManager.isPastDeath && !gameManager.isPastWizard))
-            //&& !gameManager.isDialogueInProgress)
-            //{
-            //    currentHoverParticles = currentDialogueTarget.transform.Find("HoverParticles").GetComponent<ParticleSystem>();
-            //    currentHoverParticles.Play();
-            //}
-
-
-        }
-        else
-        {
-            NullTargets();
-        }
+        currentLookTarget = newLookTarget;
     }
 
-    private void NullTargets()
+    private void ManageParticleState(GameObject newTarget)
     {
-        if(currentLevitateTarget != null)
+        if(currentLookTarget != null && currentLookTarget.CompareTag("Levitateable"))
         {
-            currentLevitateTarget = null;
+            Transform particleTransform = currentLookTarget.transform.Find("HoverParticles");
+            if(particleTransform != null && particleTransform.gameObject.activeSelf)
+            {
+                particleTransform.gameObject.SetActive(false);
+            }
         }
-        if(currentDialogueTarget != null)
+
+        if(newTarget != null && newTarget.CompareTag("Levitateable") && gameManager.hasMagic)
         {
-            currentDialogueTarget = null;
+            Transform particleTransform = newTarget.transform.Find("HoverParticles");
+
+            if(particleTransform != null)
+            {
+                particleTransform.gameObject.SetActive(true);
+            }
         }
-        if(currentHoverParticles != null)
-        {
-            currentHoverParticles.Stop();
-            currentHoverParticles = null;
-        }
-    }
-
-    private void OnEnable()
-    {
-        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Levitate, Levitate);
-
-        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Hello, StartDialogue);
-        // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yep, StartDialogue);
-        // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Okay, StartDialogue);
-        // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yes, StartDialogue);
-        // SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Yeah, StartDialogue);
-
-        SpellEventSubscriber.Instance().SubscribeToSpell(SpellWords.Fireball, Fireball);
     }
 
     private void Levitate(SpellArgs args)
     {
-        LevitateArgs myArgs = SpellSessionCache.GetSpellArgs<LevitateArgs>(args);
-        Debug.Log("You cast levitate!");
-
-        if(currentLevitateTarget != null && gameManager.hasMagic)
+        if(currentLookTarget != null && currentLookTarget.CompareTag("Levitateable") && gameManager.hasMagic)
         {
-            if(currentLevitateTarget.name == "Plug")
+            LevitateArgs myArgs = SpellSessionCache.GetSpellArgs<LevitateArgs>(args);
+
+            if(currentLookTarget.name == "Plug")
             {
-                if(gameManager.GetCameraHacked() == true)
+                if(gameManager.GetCameraHacked())
                 {
                     gameManager.SetReadyToDie();
 
@@ -123,42 +119,39 @@ public class InteractionController : MonoBehaviour
                 }
             }
 
-            currentHoverParticles.Stop();
             AudioManager.instance.StartInstancePlaybackAtThisPosition(levitateEventInstance, gameObject);
-            currentLevitateTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
-            nurseReset.AddTarget(currentLevitateTarget, currentLevitateTarget.transform.Find("ResetPosition").position);
+
+            currentLookTarget.GetComponent<LevitateBehaviour>().StartLevitate(myArgs.shuffleSpeed, myArgs.collectedRadius, levitatePosition);
+
+            Transform resetPos = currentLookTarget.transform.Find("ResetPosition");
+
+            if(resetPos != null)
+            {
+                nurseReset.AddTarget(currentLookTarget, resetPos.position);
+            }
         }
     }
 
     private void StartDialogue(SpellArgs args)
     {
-        if(currentDialogueTarget != null && !gameManager.isDialogueInProgress)
+        if(currentLookTarget != null && currentLookTarget.CompareTag("StartDialogue"))
         {
-            if(currentDialogueTarget.name.Equals("Dialogue") && (!gameManager.isPastDeath || gameManager.isPastWizard))
-            {
-                return;
-            }
+            AIConversant aIConversant = currentLookTarget.GetComponent<AIConversant>();
 
-            AIConversant aIConversant = currentDialogueTarget.GetComponent<AIConversant>();
-            aIConversant.StartDialogue();
+            if(aIConversant != null)
+            {
+                aIConversant.StartDialogue();
+            }
         }
     }
 
     private void Fireball(SpellArgs args)
     {
-        FireballArgs myArgs = SpellSessionCache.GetSpellArgs<FireballArgs>(args);
-
-        FireballController shooter = GetComponent<FireballController>();
-
-        if(shooter != null && gameManager.hasFireball == true)
+        if (fireballController != null && gameManager.hasFireball)
         {
-            shooter.ShootFireball(myArgs.speed, myArgs.radius);
+            FireballArgs myArgs = SpellSessionCache.GetSpellArgs<FireballArgs>(args);
+
+            fireballController.ShootFireball(myArgs.speed, myArgs.radius);
         }
     }
-
-    public GameObject GetCurrentLevitateTarget()
-    {
-        return currentLevitateTarget;
-    }
-    
 }

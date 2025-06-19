@@ -2,12 +2,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     private bool isLevitationInProgress;
-    public bool isDialogueInProgress;
-    public bool isPastDeath;
     public bool hasMagic;
-    public bool isPastWizard;
     public bool hasFireball;
     public bool isCameraHacked;
     public bool isReadyToDie;
@@ -16,12 +12,14 @@ public class GameManager : MonoBehaviour
     public void StartLevitating(Transform levitatingObject)
     {
         isLevitationInProgress = true;
+
         currentLevitatingTransform = levitatingObject;
     }
 
     public void StopLevitating()
     {
         isLevitationInProgress = false;
+
         currentLevitatingTransform = null;
     }
 
@@ -40,29 +38,9 @@ public class GameManager : MonoBehaviour
         return isCameraHacked;
     }
 
-    public void StartDialogue()
-    {
-        isDialogueInProgress = true;
-    }
-
-    public void StopDialogue()
-    {
-        isDialogueInProgress = false;
-    }
-
-    public void PastDeath()
-    {
-        isPastDeath = true;
-    }
-
     public void HasMagic()
     {
         hasMagic = true;
-    }
-
-    public void PastWizard()
-    {
-        isPastWizard = true;
     }
 
     public void HasFireball()
